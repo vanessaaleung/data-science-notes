@@ -1,6 +1,11 @@
 # Introduction to Airflow
+1. [What is a Workflow](#what-is-a-workflow)
+2. [What is Airflow](#what-is-airflow)
+3. [DAGs](#dags)
+4. [Airflow Dags](#airflow-dags)
+5. [Airflow UI](#airflow-ui)
 
-## What is a workflow?
+## What is a Workflow?
 _A set of steps to accomplish a given data engineerning task_
 - Dowloading files, copyingg data, filtering, writing to a database, etc.
 
@@ -55,7 +60,7 @@ default_arguments  = {
 etl_dag = DAG( 'etl_workflow', default_args = default_arguments )
 ```
 
-## DAGs on the command line
+### DAGs on the command Line
 - Start Airflow processes
 - Manually run DAGs/Tasks
 - Get logging information from Airflow
