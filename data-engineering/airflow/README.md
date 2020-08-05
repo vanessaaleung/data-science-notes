@@ -4,6 +4,15 @@
 </p>
 
 1. [Introduction to Airflow](https://github.com/vanessaaleung/DS-notes/blob/master/data-engineering/airflow/intro.md)
-2. [Implementing Airflow DAGs]()
+    - What is a Workflow
+    - What is Airflow
+    - DAGs
+    - Airflow Dags
+    - Airflow UI
+2. [Implementing Airflow DAGs](https://github.com/vanessaaleung/DS-notes/blob/master/data-engineering/airflow/implementing-dags.md)
+    - Airflow Operators
+    - Airflow Tasks
+    - Additional Operators
+    - Airflow Scheduling
 3. [Maintaining and monitoring Airflow workflows]()
 4. [Building production pipelines in Airflow]()
