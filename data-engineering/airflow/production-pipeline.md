@@ -1,6 +1,7 @@
 # Building Production Pipelines in Airflow
 1. [Templates](#templates)
 2. [More Templates](#more-templates)
+3. [Branching](#branching)
 
 ## Templates
 _Allow substituting information during a DAG run_
@@ -51,4 +52,26 @@ _Reference to the Airflow macros package which provides various objects/methods 
 - `{{ macros.uuid }}`: Python's `uuid` object
 - `{[ macros.ds_add('2020-04-15, 5) }}`: modify days from a date, this returns `2020-04-20`
 
+## Branching
+_Provides conditional logic_
 
+<img src="https://user-images.githubusercontent.com/6249654/48800846-3a19e980-ed0b-11e8-89d0-29ceba2ce2fb.png" height="200px">
+
+- Tasks can be selectively executed / skipped
+- `BranchPythonOperator`
+- Takes a `python_callable` to return the next task id to follow
+```python
+def branch_test(**kwargs):
+  if int(kwargs['ds_nodash']) % 2 == 0:
+    return 'even_day_task'
+  else:
+    return 'odd_day_task'
+
+branch_task = BranchPythonOperator(
+  provide_context=True,   # provide access to the runtime variables and macros to the function
+  python_callable=branch_text
+)
+
+branch_task >> even_day_task
+branch_task >> odd_day_task
+```
