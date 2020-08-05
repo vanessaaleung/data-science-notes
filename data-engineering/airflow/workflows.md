@@ -2,6 +2,7 @@
 1. [Airflow Sensors](#airflow-sensors)
 2. [Airflow Executors](#airflow-executors)
 3. [Debugging and Troubleshooting](#debugging-and-troubleshooting)
+4. [SLAs and Reporting](#slas-and-reporting)
 
 ## Airflow Sensors
 _An operator that waits for a certain condition to be true_
@@ -76,15 +77,57 @@ _Default Airflow Executor_
   - add more systems
   - change DAG scheduling
 
-## DAG Won't Load
+### DAG Won't Load
 - DAG not in web UI
 - DAG not in `airflow list_dags`
 - Solutions
   - Verify DAG file is in the correct folder
   - Determine the DAGs folder via `airflow.cfg`
 
-## Syntax Errors
+### Syntax Errors
 - Most common reason
 - Solutions
   - `airflow list_dags`
   - Run the Python interpreter
+
+## SLAs and Reporting
+### SLAs
+_Service Level Agreement_
+- The amount of time a task/DAG should require to run
+- Defining SLAs
+  - `sla`
+  ```python
+  task1 = BashOperator(
+    ...
+    sla=timedelta(seconds=30)
+  )
+  ```
+  - on the `default_args`
+  ```python
+  default_Args={
+    'sla': timedelta(minutes=20)
+  }
+  ```
+- timedelta object
+  ```python
+  from datetime import timedelta
+  timedelta(seconds=30)
+  ```
+
+### SLA Misses
+_Any time the task/DAG does not meet the expected timing_
+- If is missed, an email is sent out and a log is stored
+- Can be viewed in web UI: Browse: SLA Misses
+
+### General Reporting
+- Options for success/failure/error
+```python
+default_args={
+  'email_on_failure': True,
+  'email_on_retry': False,
+  'email_on_success': True
+}
+```
+- Within DAGs from the EmailOperator
+
+
