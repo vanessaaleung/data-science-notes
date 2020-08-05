@@ -62,3 +62,7 @@ etl_dag = DAG( 'etl_workflow', default_args = default_arguments )
 - `airflow -h`: descriptions/help
 - `airflow list_dags`: show all recognized DAGs
 
+## Airflow UI
+- `Tree View`: lists the tasks and any ordering between them in a tree structure
+- `Graph View`: shows any tasks and their dependencies in a graph structure
+- `Code`: provides full access to the Python code that makes up the DAG
