@@ -1,4 +1,6 @@
 # Maintaining and Monitoring Airflow Workflows
+1. [Airflow Sensors](#airflow-sensors)
+2. [Airflow Executors](#airflow-executors)
 
 ## Airflow Sensors
 _An operator that waits for a certain condition to be true_
@@ -34,3 +36,31 @@ init_sales_cleanup >> file_sensor_task >> generate_report
 ### Why Sensors
 - Uncertain when the condition will be true
 - Repeatedly run a check without adding cycles/loops to the DAG
+
+## Airflow Executors
+### What is an Executor?
+- Run tasks
+- Different executors handle running the tasks differently
+- `SequentialExecutor`, `LocalExecutor`, `CeleryExecutor`
+
+### SequentialExecutor
+_Default Airflow Executor_
+- Runs one task at a time
+- Useful for debugging
+- Not recommended for production: limitations of task resources
+
+### LocalExecutor
+- Runs on a single system
+- Treats tasks as processes
+- **Parallelism** defined by the user: unlimited or limited to a number
+- Utilize all resources
+
+### CeleryExecutor
+- Uses a Celery backend as task manager
+- Multiple worker systems can be defined
+- More difficult to setup & configure
+- Powerful for organizations with extensive workflows
+
+### Determine the Executor
+- Via the `airflow.cfg` file, `executor= ...`
+- Via the first line of `airflow list_dags`: `INFO-Using SequentialExecutor`
