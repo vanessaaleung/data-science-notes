@@ -14,5 +14,9 @@
     - Airflow Tasks
     - Additional Operators
     - Airflow Scheduling
-3. [Maintaining and monitoring Airflow workflows]()
-4. [Building production pipelines in Airflow]()
+3. [Maintaining and Monitoring Airflow Workflows](https://github.com/vanessaaleung/DS-notes/blob/master/data-engineering/airflow/workflows.md)
+    - Airflow Sensors
+    - Airflow Executors
+    - Debugging and Troubleshooting
+    - SLAs and Reporting
+4. [Building Production Pipelines in Airflow](https://github.com/vanessaaleung/DS-notes/blob/master/data-engineering/airflow/production-pipeline.md)
