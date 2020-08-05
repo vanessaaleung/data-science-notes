@@ -93,7 +93,8 @@ _Default Airflow Executor_
 ## SLAs and Reporting
 ### SLAs
 _Service Level Agreement_
-- The amount of time a task/DAG should require to run
+- Airflow: The amount of time a task/DAG should require to run
+- Business: Uptime/ Availability guarantee
 - Defining SLAs
   - `sla`
   ```python
@@ -104,7 +105,7 @@ _Service Level Agreement_
   ```
   - on the `default_args`
   ```python
-  default_Args={
+  default_args={
     'sla': timedelta(minutes=20)
   }
   ```
@@ -120,14 +121,13 @@ _Any time the task/DAG does not meet the expected timing_
 - Can be viewed in web UI: Browse: SLA Misses
 
 ### General Reporting
-- Options for success/failure/error
+- Options for success/failure/error: setup email alerting
+- Within DAGs from the EmailOperator
 ```python
 default_args={
+  'email': ['xxx'],
   'email_on_failure': True,
   'email_on_retry': False,
   'email_on_success': True
 }
 ```
-- Within DAGs from the EmailOperator
-
-
