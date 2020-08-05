@@ -1,7 +1,7 @@
 # Implementing Airflow DAGS
 
 ## Airflow operators
-_Represents a sigle task in a workflow_
+_Represents a single task in a workflow_
 - Run independently ususally
 - Generally don't share information
 
@@ -24,3 +24,25 @@ example_task = BashOperator(
 - Not guaranteed to run in the same location/environment
 
 ## Airflow tasks
+_Instances of operators_
+- Assigned to a variable in Python
+```python
+task_id='bash_example'
+```
+### Task Dependencies
+_Define a given order of task completion_
+- Upstream: `>>`, means before
+- Downstream: `<<`, means after
+```python
+task1 >> task2 >> task3
+```
+- Mixed dependencies
+```python
+task1 >> task2 << task3
+```
+or
+```python
+task1 >> task2 
+task3 >> task2 
+```
+Either task 1 or 3 can run first
