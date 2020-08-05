@@ -31,6 +31,9 @@ t1 = BashOperator(
   params={'filenams': ['file1.txt', 'file2.txt']}
 )
 ```
+
+- However, when using a single task instead of a loop, all entries would succeed or fail as a single task. Separate operators allow for better monitoring and scheduling of these tasks.
+  
 ### Variables
 _Provides assorted information about DAG runs, tasks, and system configuration_
 - Execution Date: `{{ ds }}`
