@@ -2,6 +2,7 @@
 1. [Templates](#templates)
 2. [More Templates](#more-templates)
 3. [Branching](#branching)
+4. [Creating a Production Pipeline](#creating-a-production-pipeline)
 
 ## Templates
 _Allow substituting information during a DAG run_
@@ -75,3 +76,23 @@ branch_task = BranchPythonOperator(
 branch_task >> even_day_task
 branch_task >> odd_day_task
 ```
+## Creating a Production Pipeline
+### Running DAGs & Tasks
+- Run a specific task
+```shell
+airflow run <dag_id> <task_id> <date>
+```
+- Run a full DAG
+```shell
+airflow trigger_dag -e <date> <dag_id>
+```
+### Operators Reminder
+- BashOperator: expects `bash_command`
+- PythonOperator: expects `python_callable`
+- BrachPythonOperator: requires `python_callable` and `provide_context=True`, the callable must accept `**kwargs`
+- FileSensor: requires `filepath`, might need `mode` or `poke_interval`
+
+### Template Reminder
+- Check which fields can use templated strings
+  - run `help(<Airflow object>)`, i.e., `help(BashOperator)`
+  - look for a line that referencing `templated_fields`, e.g. `('bash_command', 'env')`
