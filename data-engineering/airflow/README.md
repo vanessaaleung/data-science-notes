@@ -20,3 +20,7 @@
     - Debugging and Troubleshooting
     - SLAs and Reporting
 4. [Building Production Pipelines in Airflow](https://github.com/vanessaaleung/DS-notes/blob/master/data-engineering/airflow/production-pipeline.md)
+    - Templates
+    - More Templates
+    - Branching
+    - Creating a Production Pipeline
