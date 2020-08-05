@@ -1,6 +1,6 @@
 # Airflow
 <p align="center">
-  <img src="https://airflow.apache.org/images/feature-image.png" height="300px">
+  <img src="https://airflow.apache.org/images/feature-image.png" height="200px">
 </p>
 
 1. [Introduction to Airflow](https://github.com/vanessaaleung/DS-notes/blob/master/data-engineering/airflow/intro.md)
