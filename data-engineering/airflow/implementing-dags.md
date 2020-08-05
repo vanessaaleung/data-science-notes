@@ -1,6 +1,10 @@
 # Implementing Airflow DAGS
+1. [Airflow Operators](#airflow-operators)
+2. [Airflow Tasks](#airflow-tasks)
+3. [Additional Operators](#additional-operators)
+4. [Airflow Scheduling](#airflow-scheduling)
 
-## Airflow operators
+## Airflow Operators
 _Represents a single task in a workflow_
 - Run independently ususally
 - Generally don't share information
@@ -23,7 +27,7 @@ example_task = BashOperator(
 - Can specify environment variables for the command
 - Not guaranteed to run in the same location/environment
 
-## Airflow tasks
+## Airflow Tasks
 _Instances of operators_
 - Assigned to a variable in Python
 ```python
@@ -84,3 +88,45 @@ email_task = EmailOperator(
   files='latest_sales.xlsx'
 )
 ```
+## Airflow Scheduling
+### DAG Runs
+_A specific instance of a workflow at a point in time_
+- Can be run manually or via `schedule_interval`
+- Maintain state for each workflow and the tasks within
+  - running
+  - failed
+  - success
+  
+### Schedule Details
+- `start_date`: initially schedule the DAG run
+- `end_date`: when to stop running new DAG instances
+- `max_tries`: how many attempts to make before fully failing the diagram
+- `schedule_interval`: how often to schedule the DAG
+    - between the `start_date` and `end_date`
+    - can be defined in `cron` syntax
+      - consists of 5 fields separated by a space
+      - `*` represnets running for every interval
+      - can be comma separated values in fields for a list of values
+      <img src="https://ostechnix.com/wp-content/uploads/2018/05/cron-job-format-1.png">
+      
+      ```python
+      0 12 * * *                # run daily at noon
+      * * 25 2 *                # run once per minute on Feb 25
+      0,15,30,45 * * * *        # run every 15 minutes
+      ```
+- use the `start_date` as the earliest possible value
+- schedule the task at `start_date` + `schedule_interval`
+```
+'start_date': datetime(2020, 2, 25),
+'schedule_interval': @daily
+```
+means the earliest starting time to run the DAG is on Feb 26th, 2020
+
+### Airflow Scheduler Presets
+- `@hourly`
+- `@daily`
+- `@weekly`
+- Special presets for `schedule_interval`
+  - `None`: Don't schedule ever, used for manually triggered DAGs
+  - `@once`: schedule only once
+
