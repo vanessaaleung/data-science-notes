@@ -1,6 +1,37 @@
 # Spark
+_A fast and general engine for large-scale data processing_
 
-1. [Performance Tuning]()
+## What is Spark?
+- 4 libraries built on top of Spark core
+  - Spark SQL
+  - Spark Streaming
+  - MLlib
+  - GraphX
+- Used for
+  - Process data at scale by parallelizing execution over multiple machines
+  - Interactive analytics in notebook format
+  - Machine Learning
+  
+## Starting Spark
+```python
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.getOrCreate()
+```
+
+## Read CSV Files
+- Actual execution is postponed until performing an action on the dataframe like `.show()`
+```python
+prices = spark.read.options(header="true").csv('file_path')
+prices.show()
+```
+## Enforcing a Schema
+```python
+schema = StructType([StructField("store", StringType(), nullable=False),
+                      ...
+                      ])
+prices = spark.read.options(header="true").schema(schema).csv('file_path')
+```
 
 ## Performance Tuning
 - Caching Data In Memory
