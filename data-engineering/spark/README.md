@@ -26,6 +26,7 @@ prices = spark.read.options(header="true").csv('file_path')
 prices.show()
 ```
 ## Enforcing a Schema
+- `ByteType()`: can hold values between -128 and 127
 ```python
 schema = StructType([StructField("store", StringType(), nullable=False),
                       ...
