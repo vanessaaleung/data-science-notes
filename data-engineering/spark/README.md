@@ -1,6 +1,10 @@
 # Spark
 _A fast and general engine for large-scale data processing_
 
+<p align="center">
+  <img src="https://open-dse.github.io/assets/images/ekhtiar/spark.png" width="300px">
+</p>
+
 ## What is Spark?
 - 4 libraries built on top of Spark core
   - Spark SQL
@@ -27,6 +31,9 @@ prices.show()
 ```
 ## Enforcing a Schema
 - `ByteType()`: can hold values between -128 and 127
+- `ShortType()`: good for numbers within the range of [-32,768, 32,767]
+- `DateType()`, `BooleanType()`, etc.
+
 ```python
 schema = StructType([StructField("store", StringType(), nullable=False),
                       ...
@@ -34,6 +41,23 @@ schema = StructType([StructField("store", StringType(), nullable=False),
 prices = spark.read.options(header="true").schema(schema).csv('file_path')
 ```
 
+## Data Cleaning
+- Implicit standards
+  - Regional datetimes vs. UTC
+  - Column naming conventions
+- Handle Invalid Rows - remove them authomatically
+  ```python
+  prices = spark.read.options(mode="DROPMALFORMED").csv(...)
+  ```
+- Fill missing data
+  ```python
+  prices.fillna(25, subset=[col])
+  ```
+- Conditionally replace values with `when`
+  ```python
+  employees.withColumn('end_date', when(col('end_date') > one_year_from_now, None).otherwice(col('end_date'))
+  ```
+  
 ## Performance Tuning
 - Caching Data In Memory
 - Other Configuration Options
