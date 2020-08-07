@@ -1,4 +1,6 @@
 # Airflow
+_A platform to program workflows_
+
 <p align="center">
   <img src="https://airflow.apache.org/images/feature-image.png" height="200px">
 </p>
