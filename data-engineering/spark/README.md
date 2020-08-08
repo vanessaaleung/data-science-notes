@@ -129,12 +129,38 @@ python script.py
   - Closest to end-user experiences
   - Most difficult to debug
   - Combine the services of many systems
-  
+- Test Suite: uniitest, doctest, pytest, nose
+
 ### Write a Unit Test
 - Inputs are clear, create in-memory DataFrames makes testing easier
 - Data is close to where it is being used ("code-proximity")
 - Create small, resuable and well-named functions
 - `assertDataFrameEqual()`
+
+## CI/CD Pipeline
+### Continuous Integration
+- Get code changes integrated with the master branch (the codes run in production) regularly
+
+### Continuous Delivery
+- All artifacts should be in deployable state at any time without breaking things
+
+### circleci
+- looks for .circleci/config.yml
+- job: a collection of steps that get executed in some environment, e.g. Docker
+- steps
+  - `checkout`: checkout code
+  - `pip install -r requirements.txt`: install test & build requirements
+  - `pytest`: run tests
+```yml
+jobs:
+  test:
+    docker:
+      - image: circleci/python:3.6.4
+    steps:
+      - checkout          
+      - run: pip install -r requirements.txt
+      - run: pytest
+```
 
 ## Performance Tuning
 - Caching Data In Memory
