@@ -35,8 +35,8 @@ task_id='bash_example'
 ```
 ### Task Dependencies
 _Define a given order of task completion_
-- Upstream: `>>`, means before
-- Downstream: `<<`, means after
+- Upstream: `>>`, means before, ```python task1.set_downstream(task2)```
+- Downstream: `<<`, means after, ```python task2.set_upstream(task1)```
 ```python
 task1 >> task2 >> task3
 ```
