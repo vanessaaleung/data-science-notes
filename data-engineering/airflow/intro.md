@@ -18,6 +18,18 @@ _A platform to program workflows_
 - Workflows are written in Python
 - Implements workflows as DAGs: Directed Acyclic Graphs
 
+### Installing and Configuring Airflow
+```shell
+export AIRFLOW_HOME=~/airflow
+pip install apache-airflow
+airflow initdb
+```
+- folders
+  -  `dags`: store the dags
+  - `test`: unit test the possible deployment, ensure consistency across DAGs
+  - `plugins`: store custom operators, and hooks
+  - `connections, pools, variables`: provide a location for various configuration files you can import into Airflow
+
 ## DAGs
 - The set of tasks that make up the workflow
 - Consists of the tasks and the dependencies between tasks
