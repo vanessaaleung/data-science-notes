@@ -10,6 +10,9 @@ _A fast and general engine for large-scale data processing_
 3. Transforming Data
 4. Packaging Application
 5. Testing
+6. CI/CD Pipeline
+7. Running PySpark from Airflow
+8. Performance Tuning
 
 ## Basic Intro
 - 4 libraries built on top of Spark core
