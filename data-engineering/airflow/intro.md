@@ -7,7 +7,8 @@
 
 ## What is a Workflow?
 _A set of steps to accomplish a given data engineerning task_
-- Dowloading files, copyingg data, filtering, writing to a database, etc.
+- Dowloading files, copying data, filtering, writing to a database, etc.
+- Scheduled at a time/ triggered by an event
 
 ## What is Airflow?
 _A platform to program workflows_
