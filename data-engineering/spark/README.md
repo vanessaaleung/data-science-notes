@@ -5,7 +5,7 @@ _A fast and general engine for large-scale data processing_
   <img src="https://open-dse.github.io/assets/images/ekhtiar/spark.png" width="300px">
 </p>
 
-## What is Spark?
+## Basic Intro
 - 4 libraries built on top of Spark core
   - Spark SQL
   - Spark Streaming
@@ -15,31 +15,29 @@ _A fast and general engine for large-scale data processing_
   - Process data at scale by parallelizing execution over multiple machines
   - Interactive analytics in notebook format
   - Machine Learning
-  
-## Starting Spark
-```python
-from pyspark.sql import SparkSession
+- Starting Spark
+  ```python
+  from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.getOrCreate()
-```
+  spark = SparkSession.builder.getOrCreate()
+  ```
+- Read CSV Files
+  - Actual execution is postponed until performing an action on the dataframe like `.show()`
+  ```python
+  prices = spark.read.options(header="true").csv('file_path')
+  prices.show()
+  ```
+- Enforcing a Schema
+  - `ByteType()`: can hold values between -128 and 127
+  - `ShortType()`: good for numbers within the range of [-32,768, 32,767]
+  - `DateType()`, `BooleanType()`, etc.
 
-## Read CSV Files
-- Actual execution is postponed until performing an action on the dataframe like `.show()`
-```python
-prices = spark.read.options(header="true").csv('file_path')
-prices.show()
-```
-## Enforcing a Schema
-- `ByteType()`: can hold values between -128 and 127
-- `ShortType()`: good for numbers within the range of [-32,768, 32,767]
-- `DateType()`, `BooleanType()`, etc.
-
-```python
-schema = StructType([StructField("store", StringType(), nullable=False),
-                      ...
-                      ])
-prices = spark.read.options(header="true").schema(schema).csv('file_path')
-```
+  ```python
+  schema = StructType([StructField("store", StringType(), nullable=False),
+                        ...
+                        ])
+  prices = spark.read.options(header="true").schema(schema).csv('file_path')
+  ```
 
 ## Data Cleaning
 - Implicit standards
@@ -49,15 +47,46 @@ prices = spark.read.options(header="true").schema(schema).csv('file_path')
   ```python
   prices = spark.read.options(mode="DROPMALFORMED").csv(...)
   ```
+  - default mode is `"PERMISSIVE"`
 - Fill missing data
   ```python
   prices.fillna(25, subset=[col])
   ```
-- Conditionally replace values with `when`
+- Conditionally Replacing Values with `when`
   ```python
-  employees.withColumn('end_date', when(col('end_date') > one_year_from_now, None).otherwice(col('end_date'))
+  employees.withColumn('end_date', when(col('end_date') > one_year_from_now, None)
+           .otherwice(col('end_date'))
   ```
-  
+
+## Transforming Data
+- Filtering rows
+  - Function `col` creates Column objects
+  ```python
+  prices.filter(col('country') == 'BE')
+  ```
+- Selecting and renaming columns with `select`
+  ```python
+  prices.select(col("store"), 
+                col("brand").alia("brandname"))
+        .distinct())
+  ```
+- Grouping and aggregation with `groupBy`
+  ```python
+  prices.groupBy(col('brand')).mean('price')
+  ```
+  ```python
+  prices.groupBy(col('brand'))
+        .agg(avg('price'), count('brand'))
+  ```
+- Joining with `join`
+  ```python
+  ratings.join(prices, ['brand', 'model'])
+  ```
+- Ordering with `orderBy`
+  ```python
+  prices.orderBy(col('date'))
+  ```
+
 ## Performance Tuning
 - Caching Data In Memory
 - Other Configuration Options
