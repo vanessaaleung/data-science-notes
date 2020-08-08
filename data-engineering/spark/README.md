@@ -112,6 +112,10 @@ python script.py
     --py-files dependencies.zip \
     --pydiaper/cleaning/clean_prices.py
   ```
+## Test Pyramid
+- Unit Testing: test pieces of code that don't't rely on external dependencies
+- Integration/Service Test: interaction with file systems and databases, slower
+- UI test
 
 ## Performance Tuning
 - Caching Data In Memory
