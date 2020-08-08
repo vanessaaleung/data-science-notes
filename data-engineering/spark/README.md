@@ -9,7 +9,7 @@ _A fast and general engine for large-scale data processing_
 2. Data Cleaning
 3. Transforming Data
 4. Packaging Application
-5. Test Pyramid
+5. Testing
 
 ## Basic Intro
 - 4 libraries built on top of Spark core
@@ -118,7 +118,9 @@ python script.py
     --py-files dependencies.zip \
     --pydiaper/cleaning/clean_prices.py
   ```
-## Test Pyramid
+  
+## Testing
+### Test Pyramid
 - Unit Testing: test pieces of code that don't rely on external dependencies
 - Integration/Service Test
   - interaction with file systems and databases, slower
@@ -127,6 +129,13 @@ python script.py
   - Closest to end-user experiences
   - Most difficult to debug
   - Combine the services of many systems
+  
+### Write a Unit Test
+- Inputs are clear, create in-memory DataFrames makes testing easier
+- Data is close to where it is being used ("code-proximity")
+- Create small, resuable and well-named functions
+- `assertDataFrameEqual()`
+
 ## Performance Tuning
 - Caching Data In Memory
 - Other Configuration Options
