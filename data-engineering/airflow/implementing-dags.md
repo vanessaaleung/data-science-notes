@@ -88,6 +88,52 @@ email_task = EmailOperator(
   files='latest_sales.xlsx'
 )
 ```
+### Running PySpark from Airflow
+1. BashOperator: must have the Spark binaries installed on the Airflow server
+  ```python
+  spark_master = (
+    "spark://"
+    "spark_standalone_cluster_ip"
+    ":7077")
+
+  command = (
+    "spark-submit "
+    "--master {master}"
+    "--py-files package1.zip"
+    "/path/to/app.py"
+  ).format(master=spark_master)
+
+  BashOperator(bash_command=command, ...)
+  ```
+2. SSHOperator
+- `contrib`: contains all 3rd party contributed operator
+- `ssh_conn_id='spark_master_ssh'`: refers to a connection that you can configure in the Airflow user interface
+- shift the responsibility of having the Spark binaries installed to a different machine
+```python
+from airflow.contrib.operators.ssh_operator import SSHOperator
+
+task = SSHOperator(
+  task_id='ssh_spark_submit',
+  ssh_conn_id='spark_master_ssh'
+  ...
+)
+```
+
+3. SparkSubmitOperator
+- Use `spark-submit` directly on the Airflow server
+- Similar to using `BashOperator`
+- provides keyword arguments for `spark-submit`, no need to write in strings
+```python
+from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
+
+spark_task = SparkSubmit Operator(
+  application='/path/to/app.py',
+  py_files='',
+  conn_id='spark_default'
+  ...
+)
+```
+
 ## Airflow Scheduling
 ### DAG Runs
 _A specific instance of a workflow at a point in time_
