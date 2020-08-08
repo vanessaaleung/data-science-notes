@@ -64,7 +64,7 @@ _A fast and general engine for large-scale data processing_
   ```python
   prices.filter(col('country') == 'BE')
   ```
-- Selecting and renaming columns with `select`
+- Selecting and renaming columns with `select` and `alias`
   ```python
   prices.select(col("store"), 
                 col("brand").alia("brandname"))
@@ -85,6 +85,32 @@ _A fast and general engine for large-scale data processing_
 - Ordering with `orderBy`
   ```python
   prices.orderBy(col('date'))
+  ```
+## Packaging Application
+- run with python
+```shell
+python script.py
+```
+- use spark-submit to launch a job
+  - sets up launch environment for use with the cluster manager and the selected deploy mode
+  ```shell
+  spark-submit \
+    --master "local[*]" \ # tells Spark where it can get resources from 
+    --py-files PY_FILES \ # copy Python modules to all nodes
+    --MAIN_PYTHON_FILE \ # tells Spark the entry point of the application (the main file)
+    app_arguments  # optional arguments parsed by the main script
+  ```
+- Collecting all dependencies in one archive
+  ```shell
+  zip \
+    --recurse-paths \    # recursively add all files in all subfolders
+    dependencies.zip \   # name of the resulting archive
+    pydiaper
+  ```
+  ```shell
+  spark-submit \
+    --py-files dependencies.zip \
+    --pydiaper/cleaning/clean_prices.py
   ```
 
 ## Performance Tuning
