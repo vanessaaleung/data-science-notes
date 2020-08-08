@@ -5,6 +5,12 @@ _A fast and general engine for large-scale data processing_
   <img src="https://open-dse.github.io/assets/images/ekhtiar/spark.png" width="300px">
 </p>
 
+1. Basic Intro
+2. Data Cleaning
+3. Transforming Data
+4. Packaging Application
+5. Test Pyramid
+
 ## Basic Intro
 - 4 libraries built on top of Spark core
   - Spark SQL
@@ -113,10 +119,14 @@ python script.py
     --pydiaper/cleaning/clean_prices.py
   ```
 ## Test Pyramid
-- Unit Testing: test pieces of code that don't't rely on external dependencies
-- Integration/Service Test: interaction with file systems and databases, slower
+- Unit Testing: test pieces of code that don't rely on external dependencies
+- Integration/Service Test
+  - interaction with file systems and databases, slower
+  - tests the interaction between a few services
 - UI test
-
+  - Closest to end-user experiences
+  - Most difficult to debug
+  - Combine the services of many systems
 ## Performance Tuning
 - Caching Data In Memory
 - Other Configuration Options
