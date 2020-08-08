@@ -126,7 +126,7 @@ task = SSHOperator(
 ```python
 from airflow.contrib.operators.spark_submit_operator import SparkSubmitOperator
 
-spark_task = SparkSubmit Operator(
+spark_task = SparkSubmitOperator(
   application='/path/to/app.py',
   py_files='',
   conn_id='spark_default'
