@@ -1,5 +1,9 @@
 # Data Engineering
 
+<p align="center">
+  <img src="https://miro.medium.com/max/3840/0*hmFg5WnkeqLcRLjA.jpg" height="300px">
+</p>
+
 1. [Airflow](https://github.com/vanessaaleung/DS-notes/tree/master/data-engineering/airflow)
 _A platform to program workflows_
 
