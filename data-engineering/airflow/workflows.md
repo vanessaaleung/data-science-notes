@@ -58,6 +58,7 @@ _Default Airflow Executor_
 - Utilize all resources
 
 ### CeleryExecutor
+_Distributing tasks across multiple worker machines_
 - Uses a Celery backend as task manager
 - Multiple worker systems can be defined
 - More difficult to setup & configure
