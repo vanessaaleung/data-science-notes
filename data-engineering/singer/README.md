@@ -9,6 +9,18 @@ _Open-source standard/specification for writing scripts that move data_
 2. [Running An Ingestion Pipeline with Singer](#running-an-ingestion-pipeline-with-singer)
 
 ## Introduction
+Singer describes how data extraction scripts(**taps**) and data loading scripts(**targets**) should communicate, allowing them to be used in any combination to move data from any source to any destination like databases, web APIs, files, queues, etc..
+
+```Shell
+› pip install target-csv tap-exchangeratesapi
+› tap-exchangeratesapi | target-csv
+INFO Replicating the latest exchange rate data from exchangeratesapi.io
+INFO Tap exiting normally
+› cat exchange_rate.csv
+AUD,BGN,BRL,CAD,CHF,CNY,CZK,DKK,GBP,HKD,HRK,HUF,IDR,ILS,INR,JPY,KRW,MXN,MYR,NOK,NZD,PHP,PLN,RON,RUB,SEK,SGD,THB,TRY,ZAR,EUR,USD,date
+1.3023,1.8435,3.0889,1.3109,1.0038,6.869,25.47,7.0076,0.79652,7.7614,7.0011,290.88,13317.0,3.6988,66.608,112.21,1129.4,19.694,4.4405,8.3292,1.3867,50.198,4.0632,4.2577,58.105,8.9724,1.4037,34.882,3.581,12.915,0.9426,1.0,2017-02-24T00:00:00Z
+```
+
 - data exchange format: JSON
 - extract with taps and load with targets
   - language independent
