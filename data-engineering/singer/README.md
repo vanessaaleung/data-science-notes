@@ -5,6 +5,9 @@ _Open-source standard/specification for writing scripts that move data_
   <img src="https://images.ctfassets.net/fi0zmnwlsnja/34ci8cjJN1evEENDyxD5hT/2cc4bc14208d7916f14b8c0ab959d6df/singer_logo.png?w=636&h=272&q=50&fit=fill" height="200px">
 </p>
 
+1. [Introduction](#introduction)
+2. [Running An Ingestion Pipeline with Singer](#running-an-ingestion-pipeline-with-singer)
+
 ## Introduction
 - data exchange format: JSON
 - extract with taps and load with targets
@@ -51,3 +54,55 @@ with open("foo.json", mode="w") as fh:
   # Serialize ``obj`` as a JSON formatted stream to ``fp``
   json.dump(obj=json_schema, fp=fh)
 ```
+
+## Running An Ingestion Pipeline with Singer
+### Streaming record messages
+- with `write_record`
+```python
+columns = ("id", "name", "age", ...)
+users = {"(1, "Adrian", 32, False),
+            ...}
+singer.write_record(stream_name="xxx",
+                    record=dict(zip(columns, users.pop())))
+```
+```shell
+{"type": "RECORD", "stream": "xxx", "record": {"id":1, "name": "Adrian", ...}}
+```
+- or
+```python
+fixed_dict = {"type": "RECORD", "stream": "xxx"}
+record_msg = {**fixed_dict, "record": dict(zip(columns, users.pop()))}
+```
+### Chaining taps and targets
+```python
+import singer
+
+singer.write_schema(stream_name="xxx", schema=...)
+singer.write_records(stream_name="xxx", records=...)
+```
+- Ingestion pipelie: Pipe the tap's output into a Singer target, using the `|` symbol
+  - `tap-marketing-api | target-csv`: pipe the output of the `tap-marketing-api` tap to `target-csv`
+  - 
+  ```shell
+  tap-marketing-api | target-csv --config some_config_file
+  ```
+  
+### Modular Ingestion Pipelines
+- Each tap/target is designed to do one thing very well
+```shell
+my-packaged-tap | target-csv
+my-packaged-tap | target-google-sheets
+```
+
+### Keeping Tracking with State Messages
+- e.g. keeps track of the last record the tap reported on
+|id|name|last_updated_on|
+|---|---|---|
+|1|Adrian|2019-06-14|
+|2|Ruanne|2019-06-16|
+|3|Hillary|2019-06-16|
+
+```python
+singer.write_state(value={"max-last-updated-on": some_variable}) 
+```
+
