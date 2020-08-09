@@ -11,6 +11,7 @@ _Open-source standard/specification for writing scripts that move data_
 ## Introduction
 Singer describes how data extraction scripts(**taps**) and data loading scripts(**targets**) should communicate, allowing them to be used in any combination to move data from any source to any destination like databases, web APIs, files, queues, etc..
 
+- need to install tap and target in two different envs
 ```Shell
 › pip install target-csv tap-exchangeratesapi
 › tap-exchangeratesapi | target-csv
