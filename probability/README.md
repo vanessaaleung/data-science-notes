@@ -3,6 +3,9 @@
 ## Probability Basics
 ### Sample Space
 _S: Set of all possible outcomes_
+<p align="center">
+  <img src="https://www.mathsisfun.com/data/images/probability-sample-space.svg">
+</p>
 
 ### Probability
 _P(A):  Likelihood of event A within the sample space_
