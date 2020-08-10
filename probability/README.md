@@ -5,6 +5,10 @@
     3. Mutually Exclusive Events
     4. Using Simulation for Probability Estimation
 2. [More Probability Concepts](#more-probability-concepts)
+    1. Conditional Probability
+    2. Bayes Rule
+    3. Independent Events
+3. [Data Generating Process](#data-generating-process)
 
 ## Probability Basics
 ### Sample Space
@@ -45,5 +49,9 @@ _Probability of one occuring is independent of the probability of the other_
 - <img src="https://render.githubusercontent.com/render/math?math=P(A \cap B) = P(A)P(B)">
 - Conditional Probability <img src="https://render.githubusercontent.com/render/math?math=P(A|B) = P(A)">
 
+## Data Generating Process (DGP)
+1. Define Possible Outcomes for Random Variables
+2. Assign Probabilities
+3. Define Relationships between Random Variables
 
 
