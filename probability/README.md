@@ -9,7 +9,6 @@
     2. Bayes Rule
     3. Independent Events
 3. [Data Generating Process](#data-generating-process)
-4. [Resampling Methods](#resampling-methods)
 
 ## Probability Basics
 ### Sample Space
@@ -54,26 +53,4 @@ _Probability of one occuring is independent of the probability of the other_
 1. Define Possible Outcomes for Random Variables
 2. Assign Probabilities
 3. Define Relationships between Random Variables
-
-## Resampling Methods
-_Simulate multiple instances of the dataset by resamplinng it_
-- Usage
-    - Model Validationn
-    - Uncertainty Estimation
-    - Significance Testing
-- Computationally expensive
-- No strict assumptions regarding the distribution
-
-### Bootstrapping
-- Most common
-- Samplingg with replacement
-
-### Jackknife
-- No random sampling
-- One or more observations from the original dataset are systematically exlucded in creating new datasets
-- Estimating the bias and variance of estimators
-- Linear approximation of bootstrapping
-
-## Permutation Testing
-- Label Switching
 
