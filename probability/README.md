@@ -8,6 +8,10 @@
     1. Conditional Probability
     2. Bayes Rule
     3. Independent Events
+    4. Bernoulli Distribution
+    5. Binomial Distribution
+    6. Normal Distribution
+    7. Poisson Distribution
 3. [Data Generating Process](#data-generating-process)
 
 ## Probability Basics
