@@ -25,6 +25,24 @@ _A range of values that we are fairly sure includes the true value of an unknown
 - Has an associated confidence level that represents the frequency in which the interval will contain this value
 - Mean: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bar{X}\pm&space;Z_{\frac{\alpha}{2}}\frac{\sigma&space;}{\sqrt{n}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\bar{X}\pm&space;Z_{\frac{\alpha}{2}}\frac{\sigma&space;}{\sqrt{n}}" title="\bar{X}\pm Z_{\frac{\alpha}{2}}\frac{\sigma }{\sqrt{n}}" /></a>
 - Proportions: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{p}&space;\pm&space;Z_{\frac{\alpha}{2}}&space;\sqrt{&space;\frac{\hat{p}(1-\hat{p})}&space;{n}&space;}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{p}&space;\pm&space;Z_{\frac{\alpha}{2}}&space;\sqrt{&space;\frac{\hat{p}(1-\hat{p})}&space;{n}&space;}" title="\hat{p} \pm Z_{\frac{\alpha}{2}} \sqrt{ \frac{\hat{p}(1-\hat{p})} {n} }" /></a>
-- Margin of error: the part after the <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\pm" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\pm" title="\pm" /></a> sign
+- Margin of error: the part after the <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\pm" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\pm" title="\pm" /></a> sign, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;=\text{Standard&space;Error}\times&space;\text{z-score}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;=\text{Standard&space;Error}\times&space;\text{z-score}" title="=\text{Standard Error}\times \text{z-score}" /></a>
+
+```python
+from scipy.stats import sem, t
+data = [1, 2, 3, 4, 5]
+confidence = 0.95
+
+# Compute the standard error and margin of error
+std_err = sem(data)
+margin_error = std_err * z_score
+
+# Compute and print the lower threshold
+lower = sample_mean - margin_error
+print(lower)
+
+# Compute and print the upper threshold
+upper = sample_mean + margin_error
+print(upper)
+```
 
 
