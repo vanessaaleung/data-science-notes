@@ -45,19 +45,57 @@ spark.stop()
   - `count()`: number of rows
   - `show()`: display rows
   - `printSchema()`
-  - `dtypes()`
+  - `dtypes`
 
 - Read from csv
   ```python
-  cars = spark.read.csv('csv', header=True)
+  flights = spark.read.csv('flights.csv',
+                         sep=',',
+                         header=True,
+                         inferSchema=True,
+                         nullValue='NA')
   ```
   - sep: field seperator
   - schema: explicity column data types
   - inferSchema: deduce data types from data
   - nullValue: placeholder for missing data
 
-
-
+## Data Preparation
+- Dropping columns
+  ```python
+  cars = cars.drop('xxx')
+  # or select those wanted
+  cars = cars.select('xxx')
+  ```
+- Filter out missing values
+  ```python
+  cars.filter('cyl IS NULL')
+  # or more aggressive
+  cars = cars.dropna()
+  ```
+- Mutating columns
+  ```python
+  cars = cars.withColumn('newColumn', xxx)
+  ```
+- Indexing Categorical Data
+  - index are assigned according to the descending relative frequency of each of the string values, i.e. most common one gets zero
+  - `stringOrderType`: to change order
+  ```python
+  from pyspark.ml.feature import StringIndexer
+  indexer = StringIndexer(inputCol='type', outputCol='type_idx')
+  # Assign index values to strings
+  indexer = indexer.fit(cars)
+  # Create column with index values
+  cars = indexer.transform(cars)
+  ```
+- Assembling columns
+  - ML algorithms in Spark operate on a single vector of operators
+  ```python
+  from pyspark.ml.feature import VectorAssembler
+  
+  assembler =VectorAssembler(inputCols=['col1', 'col2'], outputCol='features')
+  assembler.transform(cars)
+  ```
 
 
 
