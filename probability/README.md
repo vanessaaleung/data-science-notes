@@ -56,6 +56,11 @@ _Discrete distribution that models the probability of two outcomes_
     <img src="https://probabilitycourse.com/images/chapter3/bernoulli(p)%20color.png" height="200px">
 </p>
 
+```python
+from scipy.stats import bernoulli
+data = bernoulli.rvs(p=0.5, size=10)
+```
+
 ### Binomial Distribution
 _Sum of the outcomes of multiple Bernoulli trails_
 
@@ -68,13 +73,20 @@ _Sum of the outcomes of multiple Bernoulli trails_
 - n: number of trials
 - p: probability of success
 
+```python
+# Given 10 shots and have an 80% chance of making a given shot
+# The probability of 8 or less successes is
+prob = binom.pmf(k=8, n=10, p=0.8)
+```
+
 ### Normal Distribution
 - bell-curve shaped
+- Gaussian distribution
 - 68-95-99.7
     - <img src="https://image3.slideserve.com/6601976/the-68-95-99-7-rule-l.jpg"  height="200px">
 
 ### Poisson Distribution
-_Count/Number of times something happened_
+_Counting events over time given some continuous rate_
 
 <p align="center">
     <img src="https://brilliant-staff-media.s3-us-west-2.amazonaws.com/tiffany-wang/673kAjHJ5d.png" height="200px">
