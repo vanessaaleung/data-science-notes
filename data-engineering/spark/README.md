@@ -5,14 +5,15 @@ _A fast and general engine for large-scale data processing_
   <img src="https://open-dse.github.io/assets/images/ekhtiar/spark.png" width="300px">
 </p>
 
-1. Basic Intro
-2. Data Cleaning
-3. Transforming Data
-4. Packaging Application
-5. Testing
-6. CI/CD Pipeline
-7. Running PySpark from Airflow
-8. Performance Tuning
+1. [Basic Intro](#basic-intro)
+2. [Data Cleaning](#data-cleaning)
+3. [Transforming Data](#transforming-data)
+4. [Packaging Application](#packaging-application)
+5. [Testing](#testing)
+6. [CI/CD Pipeline](#cicd-pipeline)
+7. [Running PySpark from Airflow](#running-pyspark-from-airflow)
+8. [Performance Tuning](#performance-tuning)
+9. [Machine Learning & Spark]()
 
 ## Basic Intro
 - 4 libraries built on top of Spark core
