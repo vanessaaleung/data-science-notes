@@ -83,9 +83,9 @@ spark.stop()
   ```python
   from pyspark.ml.feature import StringIndexer
   indexer = StringIndexer(inputCol='type', outputCol='type_idx')
-  # Assign index values to strings
+  # Indexer identifies categories in the data
   indexer = indexer.fit(cars)
-  # Create column with index values
+  # Indexer creates a new column with numeric index values
   cars = indexer.transform(cars)
   ```
 - Assembling columns
@@ -96,7 +96,22 @@ spark.stop()
   assembler =VectorAssembler(inputCols=['col1', 'col2'], outputCol='features')
   assembler.transform(cars)
   ```
+## Pipeline
+### Leakage
+- should only fit training data
 
+### Pipelin
+_Consists of a series of operations_
 
+```python
+from pyspark.ml import Pipeline
+pipeline = Pipeline(stages=[indexer, onehot, assemble, regression])
+pipeline = pipeline.fit(train)
+predictions = pipeline.transform(test)
+```
+- Access stages in pipeline
+```python
+pipeline.stage[3]
+```
 
 
