@@ -41,7 +41,20 @@ spark = SparkSession.builder \
 spark.stop()
 ```
 ## Loading Data
+- Methods
+  - `count()`: number of rows
+  - `show()`: display rows
+  - `printSchema()`
+  - `dtypes()`
 
+- Read from csv
+  ```python
+  cars = spark.read.csv('csv', header=True)
+  ```
+  - sep: field seperator
+  - schema: explicity column data types
+  - inferSchema: deduce data types from data
+  - nullValue: placeholder for missing data
 
 
 
