@@ -49,6 +49,39 @@ _Probability of one occuring is independent of the probability of the other_
 - <img src="https://render.githubusercontent.com/render/math?math=P(A \cap B) = P(A)P(B)">
 - Conditional Probability <img src="https://render.githubusercontent.com/render/math?math=P(A|B) = P(A)">
 
+### Bernoulli Distribution
+_Discrete distribution that models the probability of two outcomes_
+
+<p align="center">
+    <img src="https://probabilitycourse.com/images/chapter3/bernoulli(p)%20color.png" height="200px">
+</p>
+
+### Binomial Distribution
+_Sum of the outcomes of multiple Bernoulli trails_
+
+<p align="center">
+    <img src="https://i1.wp.com/www.real-statistics.com/wp-content/uploads/2012/11/binomial-distribution-chart.png?resize=483%2C291" height="200px">
+</p>
+
+- Model the number of successful outcomes in trials where there is some consistent probability of success
+- k: number of success
+- n: number of trials
+- p: probability of success
+
+### Normal Distribution
+- bell-curve shaped
+- 68-95-99.7
+    - <img src="https://image3.slideserve.com/6601976/the-68-95-99-7-rule-l.jpg"  height="200px">
+
+### Poisson Distribution
+_Count/Number of times something happened_
+
+<p align="center">
+    <img src="https://brilliant-staff-media.s3-us-west-2.amazonaws.com/tiffany-wang/673kAjHJ5d.png" height="200px">
+</p>
+
+- lambda: average rate
+
 ## Data Generating Process (DGP)
 1. Define Possible Outcomes for Random Variables
 2. Assign Probabilities
