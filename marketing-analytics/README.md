@@ -14,5 +14,25 @@
   - Improve inventory
   - Upsell products
   
-## Association rules
-{antecedent} -> {consequent}
+## Association Ruless
+- Association rule
+  - {health} -> {cooking}
+- Multi-antecedent rule
+  - {humor, travel} -> {language}
+- Multi-consequent rule
+  - {biography} -> {history, language}
+
+### Generating rules with itertools
+```python
+from itertools import permutations
+# Extract unique items
+flattened = [item for transaction in transactions for item in transaction]
+items = list(set(flattened))
+```
+```python
+# Compute and print rules
+rules = list(permutations(items, 2))
+print(rules)
+```
+
+
