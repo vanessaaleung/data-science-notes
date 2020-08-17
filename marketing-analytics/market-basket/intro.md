@@ -4,7 +4,9 @@
 
 ## Steps
 1. Construct Association Rules - Identify products frequently purchased together
-2. Construct recommendations based on these findings
+2. Filter rules using metrics
+3. Apply intuition and common sense
+4. Construct recommendations based on these findings
 
 ## Usage
   - Recommendations engine
