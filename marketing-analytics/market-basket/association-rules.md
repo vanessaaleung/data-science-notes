@@ -62,7 +62,7 @@ conviction = supportT * supportnP / supportTnP
 ```
 
 ## Association and Dissociation
-### Zhang's metric
+_Zhang's metric_
 - takes values between [-1, +1]
 - +1: perfect association
 - -1: perfect dissociation
@@ -77,7 +77,7 @@ conviction = supportT * supportnP / supportTnP
 
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Confidence(\bar{A}\rightarrow&space;B)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Confidence(\bar{A}\rightarrow&space;B)" title="Confidence(\bar{A}\rightarrow B)" /></a>: degree of dissociation
 
-#### Constructing using support
+### Constructing using support
 <p align="center">
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Zhang(A\rightarrow&space;B)&space;=&space;\frac{Support(A\&B)-Support(A)Support(B)}&space;{Max[Support(A\&B)(1-Support(A)),&space;Support(A)(Support(B)-Support(A\&B))]}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Zhang(A\rightarrow&space;B)&space;=&space;\frac{Support(A\&B)-Support(A)Support(B)}&space;{Max[Support(A\&B)(1-Support(A)),&space;Support(A)(Support(B)-Support(A\&B))]}" title="Zhang(A\rightarrow B) = \frac{Support(A\&B)-Support(A)Support(B)} {Max[Support(A\&B)(1-Support(A)), Support(A)(Support(B)-Support(A\&B))]}" /></a>
 </p>
@@ -85,7 +85,7 @@ conviction = supportT * supportnP / supportTnP
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;=&space;\frac{Leverage(A\rightarrow&space;B)}&space;{Max[Support(A\&B)Support(\bar{A}),&space;Support(A)Support(\bar{A}&space;\&&space;B)]}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;=&space;\frac{Leverage(A\rightarrow&space;B)}&space;{Max[Support(A\&B)Support(\bar{A}),&space;Support(A)Support(\bar{A}&space;\&&space;B)]}" title="= \frac{Leverage(A\rightarrow B)} {Max[Support(A\&B)Support(\bar{A}), Support(A)Support(\bar{A} \& B)]}" /></a>
 </p>
 
-#### Computing
+### Computing using Support
 ```python
 # Compute the numerator
 num = supportHP - supportH * support P
@@ -98,5 +98,3 @@ denom = max(supportHP * (1-supportH), supportH * (supportP - supportHP)
 # Compute Zhang's metric
 zhang = num / denom
 ```
-
-
