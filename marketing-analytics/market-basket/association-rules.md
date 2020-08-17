@@ -77,7 +77,10 @@ conviction = supportT * supportnP / supportTnP
 
 #### Constructing using support
 <p align="center">
-  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Zhang(A&space;\rightarrow&space;B)&space;=&space;\frac{Support(A\&B)-Support(A)Support(B)}&space;{Max[Support(AB)(1-Support(A)),&space;Support(A)Support(B)-Support(AB)]}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Zhang(A&space;\rightarrow&space;B)&space;=&space;\frac{Support(A\&B)-Support(A)Support(B)}&space;{Max[Support(AB)(1-Support(A)),&space;Support(A)Support(B)-Support(AB)]}" title="Zhang(A \rightarrow B) = \frac{Support(A\&B)-Support(A)Support(B)} {Max[Support(AB)(1-Support(A)), Support(A)Support(B)-Support(AB)]}" /></a>
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Zhang(A&space;\rightarrow&space;B)&space;=&space;\frac{Support(A\&B)-Support(A)Support(B)}&space;{Max[Support(A\&B)(1-Support(A)),&space;Support(A)Support(B)-Support(A\&B)]}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Zhang(A&space;\rightarrow&space;B)&space;=&space;\frac{Support(A\&B)-Support(A)Support(B)}&space;{Max[Support(A\&B)(1-Support(A)),&space;Support(A)Support(B)-Support(A\&B)]}" title="Zhang(A \rightarrow B) = \frac{Support(A\&B)-Support(A)Support(B)} {Max[Support(A\&B)(1-Support(A)), Support(A)Support(B)-Support(A\&B)]}" /></a>
+</p>
+<p align="center">
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;=&space;\frac{Leverage(A\rightarrow&space;B)}&space;{Max[Support(A\&B)(Support(\bar{A})),&space;-Leverage(A&space;\rightarrow&space;B)]}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;=&space;\frac{Leverage(A\rightarrow&space;B)}&space;{Max[Support(A\&B)(Support(\bar{A})),&space;-Leverage(A&space;\rightarrow&space;B)]}" title="= \frac{Leverage(A\rightarrow B)} {Max[Support(A\&B)(Support(\bar{A})), -Leverage(A \rightarrow B)]}" /></a>
 </p>
 
 #### Computing
@@ -87,7 +90,7 @@ num = supportHP - supportH * support P
 ```
 ```python
 # Compute the numerator
-denom = max(supportHP * (1-supportH), supportH * (supportP - support(HP))
+denom = max(supportHP * (1-supportH), supportH * (supportP - supportHP)
 ```
 ```python
 # Compute Zhang's metric
