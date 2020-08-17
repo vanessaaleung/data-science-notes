@@ -49,6 +49,7 @@ _If > 1: two items occur in transactions together less frequently than their ind
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Conviction(X\rightarrow&space;Y)=\frac{Support(X)Support(\bar{Y})}{Support(X\&\bar{Y})}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Conviction(X\rightarrow&space;Y)=\frac{Support(X)Support(\bar{Y})}{Support(X\&\bar{Y})}" title="Conviction(X\rightarrow Y)=\frac{Support(X)Support(\bar{Y})}{Support(X\&\bar{Y})}" /></a>
 </p>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bar{Y}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\bar{Y}" title="\bar{Y}" /></a>: transactions that do not include Y
+
 - based on support
 
 ```python
@@ -73,6 +74,7 @@ conviction = supportT * supportnP / supportTnP
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Confidence=\frac{Support(A\&B)}{Support(A)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Confidence=\frac{Support(A\&B)}{Support(A)}" title="Confidence=\frac{Support(A\&B)}{Support(A)}" /></a>
 </p>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Confidence(A&space;\rightarrow&space;B)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Confidence(A&space;\rightarrow&space;B)" title="Confidence(A \rightarrow B)" /></a>: degree of association
+
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Confidence(\bar{A}\rightarrow&space;B)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Confidence(\bar{A}\rightarrow&space;B)" title="Confidence(\bar{A}\rightarrow B)" /></a>: degree of dissociation
 
 #### Constructing using support
