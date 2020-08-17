@@ -46,7 +46,9 @@ _A measure of performance for rules_
 #### Support
 _Measures the share of transactions that contain an itemset_
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{number&space;of&space;transactions&space;with&space;items(s))}}{\text{number&space;of&space;transactions}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\text{number&space;of&space;transactions&space;with&space;items(s))}}{\text{number&space;of&space;transactions}}" title="\frac{\text{number of transactions with items(s))}}{\text{number of transactions}}" /></a>
+<p align="center">
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{number&space;of&space;transactions&space;with&space;items(s))}}{\text{number&space;of&space;transactions}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\text{number&space;of&space;transactions&space;with&space;items(s))}}{\text{number&space;of&space;transactions}}" title="\frac{\text{number of transactions with items(s))}}{\text{number of transactions}}" /></a>
+</p>
 
 #### Preparinng the data
 ```python
@@ -72,4 +74,10 @@ import numpy as np
 onehot['fiction+poetry'] = np.logical_and(onehot['fiction'], onehot['poetry'])
 onehot.mean()
 ```
+#### Confidence
+_Probability that we'll purchase Y, given that we have purchased X_
+<p align="center">
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{Support(X\&Y)}{Support(X)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{Support(X\&Y)}{Support(X)}" title="\frac{Support(X\&Y)}{Support(X)}" /></a>
+</p>
+
 
