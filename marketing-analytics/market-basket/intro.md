@@ -1,4 +1,9 @@
 # Introduction to Market Basket Analysis
+- Association Rules
+- Metrics
+  - Support
+  - Confidence
+  - Lift
 
 ## Steps
 1. Construct Association Rules - Identify products frequently purchased together
@@ -11,7 +16,7 @@
   - Improve inventory
   - Upsell products
   
-## Association Ruless
+## Association Rules
 - Association rule
   - {health} -> {cooking}
 - Multi-antecedent rule
@@ -44,13 +49,12 @@ _Measures the share of transactions that contain an itemset_
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\text{number&space;of&space;transactions&space;with&space;items(s))}}{\text{number&space;of&space;transactions}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\text{number&space;of&space;transactions&space;with&space;items(s))}}{\text{number&space;of&space;transactions}}" title="\frac{\text{number of transactions with items(s))}}{\text{number of transactions}}" /></a>
 </p>
 
-#### Preparinng the data
+#### Preparing the data
 ```python
 from mlxtend.preprocessing import TransactionEncoder
 # Instantiate transaction encode
 encoder = TransactionEncoder().fit(transactions)
 ```
-#### Preparing the data
 ```python
 # One-hot encode itemsets
 onehot = encoder.transform(transactions)
@@ -74,4 +78,8 @@ _Probability that we'll purchase Y, given that we have purchased X_
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{Support(X\&Y)}{Support(X)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{Support(X\&Y)}{Support(X)}" title="\frac{Support(X\&Y)}{Support(X)}" /></a>
 </p>
 
-
+### Lift
+_If > 1: two items occur in transactions together more often than their individual support values, the relationship is unlikely to be explained by random chance_
+<p align="center">
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{Support(X\&Y)}{Support(X)Support(Y)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{Support(X\&Y)}{Support(X)Support(Y)}" title="\frac{Support(X\&Y)}{Support(X)Support(Y)}" /></a>
+</p>
