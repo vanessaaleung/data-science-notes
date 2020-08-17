@@ -1,9 +1,6 @@
 # Introduction to Market Basket Analysis
 - Association Rules
-- Metrics
-  - Support
-  - Confidence
-  - Lift
+- Metric: Support
 
 ## Steps
 1. Construct Association Rules - Identify products frequently purchased together
@@ -72,14 +69,3 @@ import numpy as np
 onehot['fiction+poetry'] = np.logical_and(onehot['fiction'], onehot['poetry'])
 onehot.mean()
 ```
-### Confidence
-_Probability that we'll purchase Y, given that we have purchased X_
-<p align="center">
-  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{Support(X\&Y)}{Support(X)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{Support(X\&Y)}{Support(X)}" title="\frac{Support(X\&Y)}{Support(X)}" /></a>
-</p>
-
-### Lift
-_If > 1: two items occur in transactions together more often than their individual support values, the relationship is unlikely to be explained by random chance_
-<p align="center">
-  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{Support(X\&Y)}{Support(X)Support(Y)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{Support(X\&Y)}{Support(X)Support(Y)}" title="\frac{Support(X\&Y)}{Support(X)Support(Y)}" /></a>
-</p>
