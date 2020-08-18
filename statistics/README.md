@@ -29,7 +29,8 @@ _Independent variables are not highly correlated with each other_
 - Correlation matrix, heatmap, pairplots
 
 #### Solution
-Remove independent variables with high VIF values
+- Remove independent variables with high VIF values
+- Adding interaction term won’t fix the problem
 
 ### The Error Term Assumptions
 _Investigated with plots of the observed individuals against X/y_ 
