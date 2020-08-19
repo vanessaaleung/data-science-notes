@@ -6,6 +6,13 @@
 4. [Law of Large Numbers](#law-of-large-numbers)
 
 ## Linear Regression Assumptions
+1. Linearity
+2. No/Little Multicollinearity
+3. Exogeneity - No omitted variables
+4. Normally distributed Error Term
+5. Homoscedastic - Constant Variance of Error Terms
+6. Independent Error Terms - No Autocorrelation
+
 ### 1. Linearity
 _Linear relationship between the independent and dependent variables_
 <p align="center">
@@ -32,14 +39,28 @@ _Independent variables are not highly correlated with each other_
 - Remove independent variables with high VIF values
 - Adding interaction term won’t fix the problem
 
+### 3. Exogeneity - No omitted variables
+_Each independent variable gives us information completely external to the rest of the model_
+
+#### Why
+- The model can only be predictive, can’t generate inference
+
+#### Detection
+- Intuition
+- Check correlation
+
+#### Solution
+Use instrumental variables
+
 ### The Error Term Assumptions
 _Investigated with plots of the observed individuals against X/y_ 
+<hr/>
 
 <p align="center">
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;e_{i}\text{(Residual)}=Y_{i}(Observed)-&space;\hat{Y}_i&space;\text{(Predicted&space;Value)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;e_{i}\text{(Residual)}=Y_{i}(Observed)-&space;\hat{Y}_i&space;\text{(Predicted&space;Value)}" title="e_{i}\text{(Residual)}=Y_{i}(Observed)- \hat{Y}_i \text{(Predicted Value)}" /></a>
 </p>
 
-#### 3. Normally distributed
+### 4. Normally distributed
 - When size is large, doesn't matter, apply central limit theorem
 
 #### Detection
@@ -52,11 +73,7 @@ _Investigated with plots of the observed individuals against X/y_
 #### Solution
 Change functional form, e.g. log
 
-#### Detection
-- Normality test
-- QQ plot of residuals
-
-### 4. Homoscedastic 
+### 5. Homoscedastic 
 _Has constant variance at every value of X_
 
 - `/hoʊmoʊsɪdæsˈtɪk/`
@@ -73,7 +90,7 @@ When income is small, the variance of spending is small. When income increases, 
 #### Solution
 - Log things
 
-### 5. Independent - No Autocorrelation
+### 6. Independent - No Autocorrelation
 _When there's a natural order of X_
 
 **Example**
