@@ -1,6 +1,8 @@
 # Product Sense
 
 ## AARRR Framework
+[Link](https://medium.com/@ms.mbalke/aarrr-framework-metrics-that-let-your-startup-sound-like-a-pirate-ship-e91d4082994b)
+
 <img src="https://www.pallav.io/wp-content/uploads/2018/07/AARRR-Funnel-Created-by-Pallav-Kaushish-2.png" height="400px">
 
 ### Acquisition
