@@ -5,6 +5,7 @@
 3. [Central Limit Theorem (CLT)](#central-limit-theorem)
 4. [Law of Large Numbers](#law-of-large-numbers)
 5. [Nonparametric](#nonparametric)
+6. [Other Terminology](#other-terminology)
 
 ## Linear Regression Assumptions
 1. Linearity
@@ -175,3 +176,24 @@ _Data that does not fit a known or well-understood distribution_
 - Wilcoxon Signed-Rank Test
 - Kruskal-Wallis H Test
 - Friedman Test
+
+## Other Terminology
+### R-squared
+_The proportion of the variance for a dependent variable that's explained by an independent variables in a regression model_
+
+<img src="https://www.rapidinsight.com/wp-content/uploads/r-squared.png" height="300px">
+
+- Variation: the difference between each point and the mean of Y
+- Squared: the difference in each data point is squared so that the points below the mean doesn’t cancel out the points above the mean
+- ranges from 0 to 1 (100%)
+- An R-squared of 100% means that all movements of a dependent variable are completely explained by movements in the independent variables
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;R^2=1-\frac{\text{Unexplained&space;Variation}}{\text{Total&space;Variation}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;R^2=1-\frac{\text{Unexplained&space;Variation}}{\text{Total&space;Variation}}" title="R^2=1-\frac{\text{Unexplained Variation}}{\text{Total Variation}}" /></a>
+
+#### Limitation
+- It doesn't convey the reliability of the model
+- R-Squared only works as intended in a simple linear regression model with one explanatory variable. With a multiple regression made up of several independent variables, the R-Squared must be adjusted
+
+#### Adjusted R-squared
+- Every predictor added to a model increases R-squared and never decreases it
+- Adjusted R-squared compensates for the addition of variables and only increases if the new term enhances the model more than what is predicted by chance and 
+
