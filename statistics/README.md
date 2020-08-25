@@ -203,6 +203,7 @@ _How likely the result is robust and repeatable_
 Example: A 95% confidence interval
 
 If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time.
+95% of intervals constructed contain the true mean.
 
 ### Statistical Significance
 Quantifies whether a result is likely due to chance or to some factor of interest
