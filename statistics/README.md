@@ -197,3 +197,9 @@ _The proportion of the variance for a dependent variable that's explained by an 
 - Every predictor added to a model increases R-squared and never decreases it
 - Adjusted R-squared compensates for the addition of variables and only increases if the new term enhances the model more than what is predicted by chance and 
 
+### Confidence Interval
+_How likely the result is robust and repeatable_
+
+Example: A 95% confidence interval
+
+If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time.
