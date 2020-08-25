@@ -4,6 +4,7 @@
 2. [Linear Regression Assumptions](#linear-regression-assumptions)
 3. [Central Limit Theorem (CLT)](#central-limit-theorem)
 4. [Law of Large Numbers](#law-of-large-numbers)
+5. [Nonparametric](#nonparametric)
 
 ## Linear Regression Assumptions
 1. Linearity
@@ -149,4 +150,28 @@ upper = sample_mean + margin_error
 print(upper)
 ```
 
+## Nonparametric
+_Data that does not fit a known or well-understood distribution_
+- Data
+  - in ordinal, intervals form
+  - does not fit a well understood shape
+  - almost parametric but contains outliers, multiple peaks, a shift
+- Nonparametric methods are less powerful than their parametric counterparts, because they must be generalized to work for all types of data
 
+### Ranking Data
+- Before a nonparametric statistical method can be applied, the data must be converted into a rank format
+
+### Normality Testing
+- Shapiro-Wilk test
+- Kolmogorov-Smirnov test
+- Anderson-Darling test
+
+### Correlation
+- Spearman’s rank correlation coefficient
+- Kendall rank correlation coefficient
+
+### Compare Sample Means
+- Mann-Whitney U Test
+- Wilcoxon Signed-Rank Test
+- Kruskal-Wallis H Test
+- Friedman Test
