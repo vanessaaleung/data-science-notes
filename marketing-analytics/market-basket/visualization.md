@@ -34,3 +34,18 @@ _Provide starting point for pruning_
 ```python
 sns.scatterplot(x='antecedent support', y='consequent support', size='lift', data=rules)
 ```
+
+## Parallel Coordinates Plot
+_Visualize whether a rule exists between an antecedent and consequent_
+
+```python
+# Define coordinates and label
+coords = rules[['antecednet', 'consequent', 'rule']]
+```
+
+```python
+from pandas.plotting import parallel_coordinates
+
+parallel_coordinates(coords, 'rule', colormap='ocean')
+```
+
