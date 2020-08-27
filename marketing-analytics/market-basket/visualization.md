@@ -27,3 +27,10 @@ support_table = rules.pivot(index='consequents', columns='antecedents', values='
 # Generate heatmap
 sns.heatmap(support_table, annot=True, cbar=False, cmap='ocean')
 ```
+
+## Scatterplots
+_Provide starting point for pruning_
+
+```python
+sns.scatterplot(x='antecedent support', y='consequent support', size='lift', data=rules)
+```
