@@ -42,7 +42,8 @@ _Visualize whether a rule exists between an antecedent and consequent_
 
 ```python
 # Define coordinates and label
-coords = rules[['antecednet', 'consequent', 'rule']]
+# coords = rules[['antecednet', 'consequent', 'rule']]
+coords = rules_to_coordinates(rules)
 ```
 
 ```python
