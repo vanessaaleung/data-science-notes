@@ -56,6 +56,9 @@ filtered_rules = targeted_rules[(targeted_rules['antecedent support']  > 0.01) &
 ```
 
 - Grouping products
+
+Example: helping a gift store manager arrange the sections in her physical retail location according to association rules
+
 - Zhang's rule: provides a continuous measure of net association over [-1, 1] interval
 ```python
 # Compute Zhang's rule
