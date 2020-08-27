@@ -39,3 +39,10 @@ from mlextend.frequent_patterns import apriori
 
 frequent_itemsets = apriori(onehot, min_support=0.0005, max_len=4, use_colnames=True)
 ```
+
+### Basic Apriori Results Pruning
+1. Compute association rules
+```python
+rules = association_rules(frequent_itemsets, metric='support', min_threshold=0.001)
+```
+
