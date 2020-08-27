@@ -46,3 +46,20 @@ frequent_itemsets = apriori(onehot, min_support=0.0005, max_len=4, use_colnames=
 rules = association_rules(frequent_itemsets, metric='support', min_threshold=0.001)
 ```
 
+### Advanced Apriori Results Pruning
+- Filtering with multiple metrics
+```python
+targeted_rules = rules[rules['consequents'] == {'HERB MARKER THYME'}].copy()
+
+filtered_rules = targeted_rules[(targeted_rules['antecedent support']  > 0.01) &
+                                  (targeted_rules['support'] > 0.009)]
+```
+
+- Grouping products
+- Zhang's rule: provides a continuous measure of net association over [-1, 1] interval
+```python
+# Compute Zhang's rule
+rules['zhang'] =  zhangs_rule(rules)
+rules[rules['zhang'] < 0][['antecedents', 'consequents']]
+```
+
