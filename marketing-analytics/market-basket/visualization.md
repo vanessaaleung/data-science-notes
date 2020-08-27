@@ -38,6 +38,8 @@ sns.scatterplot(x='antecedent support', y='consequent support', size='lift', dat
 ## Parallel Coordinates Plot
 _Visualize whether a rule exists between an antecedent and consequent_
 
+<img src="parallel-coordinate.png" height="300px">
+
 ```python
 # Define coordinates and label
 coords = rules[['antecednet', 'consequent', 'rule']]
