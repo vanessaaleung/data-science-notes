@@ -98,6 +98,9 @@ _Counting events over time given some continuous rate_
 
 - lambda: average rate
 
+### Exponential Distribution
+- The waiting time between arrivals of a Poisson process is exponentially distributed
+
 ## Data Generating Process (DGP)
 1. Define Possible Outcomes for Random Variables
 2. Assign Probabilities
