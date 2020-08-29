@@ -5,13 +5,15 @@
     3. Mutually Exclusive Events
     4. Using Simulation for Probability Estimation
 2. [More Probability Concepts](#more-probability-concepts)
-    1. Conditional Probability
-    2. Bayes Rule
-    3. Independent Events
-    4. Bernoulli Distribution
-    5. Binomial Distribution
-    6. Normal Distribution
-    7. Poisson Distribution
+    1. [Conditional Probability](#conditional-probability)
+    2. [Bayes Rule](#bayes-rule)
+    3. [Independent Events](#independent-events)
+    4. [Bernoulli Distribution](#bernoulli-distribution)
+    5. [Binomial Distribution](#binomial-distribution)
+    6. [Normal Distribution](#normal-distribution)
+    7. [Poisson Distribution](#poisson-distribution)
+    8. [Exponential Distribution](#exponential-distribution)
+    9. [Probability Density Functions](#probability-density-functions)
 3. [Data Generating Process](#data-generating-process)
 
 ## Probability Basics
