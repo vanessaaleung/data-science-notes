@@ -54,7 +54,7 @@ _Probability of one occuring is independent of the probability of the other_
 - Conditional Probability <img src="https://render.githubusercontent.com/render/math?math=P(A|B) = P(A)">
 
 ### Bernoulli Distribution
-_Discrete distribution that models the probability of two outcomes_
+_Discrete, models the probability of two outcomes_
 
 <p align="center">
     <img src="https://probabilitycourse.com/images/chapter3/bernoulli(p)%20color.png" height="200px">
@@ -96,10 +96,22 @@ _Counting events over time given some continuous rate_
     <img src="https://brilliant-staff-media.s3-us-west-2.amazonaws.com/tiffany-wang/673kAjHJ5d.png" height="200px">
 </p>
 
-- lambda: average rate
+- lambda: the average number of arrivals in a given length of time
+
+#### Poisson process
+- The timing of the next event is completely independent of when the previous event happened
+- The number of  arrivals of a Poisson process in a given amount of time is Poisson distributed
+- Examples
+    - Natural  births in a given hospital
+    - Hit on a website during a given hour
 
 ### Exponential Distribution
 - The waiting time between arrivals of a Poisson process is exponentially distributed
+
+### Probability Density Functions (PDF)
+_Relative likelihood of observing a value of a continuous variable_
+
+<img src="https://faculty.nps.edu/rbassett/_book/statsbook_files/figure-html/unnamed-chunk-293-1.png" height="300px">
 
 ## Data Generating Process (DGP)
 1. Define Possible Outcomes for Random Variables
