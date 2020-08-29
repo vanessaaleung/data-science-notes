@@ -13,7 +13,7 @@
     6. [Normal Distribution](#normal-distribution)
     7. [Poisson Distribution](#poisson-distribution)
     8. [Exponential Distribution](#exponential-distribution)
-    9. [Probability Density Functions](#probability-density-functions)
+    9. [Probability Density Function (PDF)](#probability-density-function-pdf)
 3. [Data Generating Process](#data-generating-process)
 
 ## Probability Basics
