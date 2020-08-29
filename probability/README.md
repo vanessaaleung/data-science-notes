@@ -111,7 +111,10 @@ _Counting events over time given some continuous rate_
 ### Probability Density Functions (PDF)
 _Relative likelihood of observing a value of a continuous variable_
 
-<img src="https://faculty.nps.edu/rbassett/_book/statsbook_files/figure-html/unnamed-chunk-293-1.png" height="300px">
+- probability is given by the area under the *PDF, not the value of the PDF
+
+- Example: x is more likely to be less than 10 than to be greater than 10
+<img src="pdf.svg" height="300px">
 
 ## Data Generating Process (DGP)
 1. Define Possible Outcomes for Random Variables
