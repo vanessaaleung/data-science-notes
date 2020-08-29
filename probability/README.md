@@ -110,7 +110,7 @@ _Counting events over time given some continuous rate_
 ### Exponential Distribution
 - The waiting time between arrivals of a Poisson process is exponentially distributed
 
-### Probability Density Functions (PDF)
+### Probability Density Function (PDF)
 _Relative likelihood of observing a value of a continuous variable_
 
 - probability is given by the area under the *PDF, not the value of the PDF
