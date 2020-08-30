@@ -4,8 +4,8 @@
 3. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
 4. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
-## Linear Regression
-_A generalization of linear models_
+## GLM
+_A generalization of linear models, a unified framework for different data distributions_
 
 ### Linear Model
 ```python
@@ -13,7 +13,6 @@ from statsmodels.formula.api import ols
 model = ols(formula='y ~ X',  data=my_data).fit()
 ```
 ### GLM
-_A unified framework for different data distributions_
 ```python
 import statsmodels.api as sm
 from statsmodels.formula.api import glm
