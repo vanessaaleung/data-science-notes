@@ -13,6 +13,7 @@ from statsmodels.formula.api import ols
 model = ols(formula='y ~ X',  data=my_data).fit()
 ```
 ### GLM
+_A unified framework for different data distributions_
 ```python
 import statsmodels.api as sm
 from statsmodels.formula.api import glm
