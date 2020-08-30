@@ -4,7 +4,7 @@
 3. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
 4. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
-## GLM
+## Linear Regression
 _A generalization of linear models_
 
 ### Linear Model
@@ -12,13 +12,13 @@ _A generalization of linear models_
 from statsmodels.formula.api import ols
 model = ols(formula='y ~ X',  data=my_data).fit()
 ```
-
 ### GLM
 ```python
 import statsmodels.api as sm
 from statsmodels.formula.api import glm
 ```
 - `family`: the probability distribution of the response variable
+- Binomial GLM: for binary data
 ```python
 model=glm(formula='y~X',  data=my_data, family=sm.families.___).fit()
 ```
