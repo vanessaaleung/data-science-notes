@@ -4,7 +4,32 @@
 3. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
 4. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
+## GLM
+_A generalization of linear models_
+
+### Linear Model
+```python
+from statsmodels.formula.api import ols
+model = ols(formula='y ~ X',  data=my_data).fit()
+```
+
+### GLM
+```python
+import statsmodels.api as sm
+from statsmodels.formula.api import glm
+```
+- `family`: the probability distribution of the response variable
+```python
+model=glm(formula='y~X',  data=my_data, family=sm.families.___).fit()
+```
+
+### Assumptions
+- Linear in parameters
+- Errors are independent and normally distributed
+- The variance around the regression line is constant  for all values of x
+
 ## Regression Models
+_How much the response variable y changes on average for a unit increase in x_
 ### Linear Regression
 
 <img src="https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png" height="200px">
