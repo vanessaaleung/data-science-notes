@@ -1,8 +1,11 @@
 # Machine Learning
 1. [Regression Models](#regression-models)
-2. [Evaluating Models](#evaluating-models)
-3. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
-4. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
+2. [Interpreting Models](#interpreting-models)
+    - [Coefficients](#coefficients)
+    - [Significance Testing](#significance-testing)
+3. [Evaluating Models](#evaluating-models)
+4. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
+5. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
 ## GLM
 _A generalization of linear models, a unified framework for different data distributions_
@@ -65,7 +68,7 @@ acc = clf.score(X_test, y_test)
 _S-shaped curve that takes any real number and maps it between 0 and 1_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" title="f(x)=\frac{1}{1+e^{-x}}" /></a>
 
-## Evaluating Models
+## Interpreting Models
 ### Coefficients
 - Regression coefficients are obtained by the maximum likelihood estimation - value of parameters  maximizes the  probability of the observed data
 - Linear
@@ -73,7 +76,25 @@ _S-shaped curve that takes any real number and maps it between 0 and 1_
 
 - Logistic
   - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;log(odds)=-3.69&plus;1.8\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;log(odds)=-3.69&plus;1.8\times&space;weight" title="log(odds)=-3.69+1.8\times weight" /></a>
+  
+### Significance Testing
+_Whether constraining the parameter values to zero would reduce the model fit_
+- z-statistic
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;z=\hat{\beta}/SE" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;z=\hat{\beta}/SE" title="z=\hat{\beta}/SE" /></a>
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{\beta}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{\beta}" title="\hat{\beta}" /></a>: estimated coefficient
+  - rule of thumb: if > 2 is statistically significant
+  - z large -> coefficient <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\neq" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\neq" title="\neq" /></a> 0 -> variable significant
 
+### Confidence Intervals
+_Uncertainty of the estimates_
+- 95% confidence intervals: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[\hat{\beta}-1.96\times&space;SE,&space;\hat{\beta}&plus;1.96&space;\times&space;SE]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[\hat{\beta}-1.96\times&space;SE,&space;\hat{\beta}&plus;1.96&space;\times&space;SE]" title="[\hat{\beta}-1.96\times SE, \hat{\beta}+1.96 \times SE]" /></a>
+- e.g. The change in the log off can be as small as ___ (lower) or as much as ___ (upper)
+- Extracting the confidence interval
+  ```python
+  model_GLM.conf_int())
+  ```
+
+## Evaluating Models
 ### Regression Technique
 - R-squared
 - Mean absolute error (MAE)
