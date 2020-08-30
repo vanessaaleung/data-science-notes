@@ -67,6 +67,14 @@ _S-shaped curve that takes any real number and maps it between 0 and 1_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" title="f(x)=\frac{1}{1+e^{-x}}" /></a>
 
 ## Evaluating Models
+### Coefficients
+- Regression coefficients are obtained by the maximum likelihood estimation - value of parameters  maximizes the  probability of the observed data
+- Linear
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mu=-0.114&plus;0.32\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\mu=-0.114&plus;0.32\times&space;weight" title="\mu=-0.114+0.32\times weight" /></a>
+
+- Logistic
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;log(odds)=-3.69&plus;1.8\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;log(odds)=-3.69&plus;1.8\times&space;weight" title="log(odds)=-3.69+1.8\times weight" /></a>
+
 ### Regression Technique
 - R-squared
 - Mean absolute error (MAE)
