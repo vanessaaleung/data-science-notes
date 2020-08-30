@@ -1,9 +1,12 @@
 # Machine Learning
 1. [Regression Models](#regression-models)
+    - [Assumptions](#assumptions)
 2. [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
+    - [Confidence Interval](#confidence-interval)
 3. [Evaluating Models](#evaluating-models)
+    - Confusion Matrix(#confusion-matrix)
 4. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
 5. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
@@ -33,6 +36,7 @@ model=glm(formula='y~X',  data=my_data, family=sm.families.___).fit()
 
 ## Regression Models
 _How much the response variable y changes on average for a unit increase in x_
+
 ### Linear Regression
 
 <img src="https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png" height="200px">
@@ -153,8 +157,13 @@ _Linked to Type II error_
 recall = recall_score(y_test, preds)
 ```
 
-#### Confusion Matrices
+#### Confusion Matrix
+_How many observations the model classfied correctly and incorrectly_
 <img src="https://miro.medium.com/max/2692/1*I7KT0RgsHaWf0KZETJf56g.png" height="150px">
+
+```python
+pd.crosstab(y_actual,  y_predicted, rownames=['Actual'], colnames=['Predicted'], margins=True)
+```
 
 ```python
 matrix = confusion_matrix(y_test, preds)
