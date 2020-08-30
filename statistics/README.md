@@ -6,6 +6,9 @@
 4. [Law of Large Numbers](#law-of-large-numbers)
 5. [Nonparametric](#nonparametric)
 6. [Other Terminology](#other-terminology)
+    - [Standard Error (SE)](#standard-error-se)
+    - [Confidence Interval](#confidence-interval)
+  
 
 ## Linear Regression Assumptions
 1. Linearity
@@ -196,6 +199,9 @@ _The proportion of the variance for a dependent variable that's explained by an 
 #### Adjusted R-squared
 - Every predictor added to a model increases R-squared and never decreases it
 - Adjusted R-squared compensates for the addition of variables and only increases if the new term enhances the model more than what is predicted by chance and 
+
+### Standard Error (SE)
+_Standard deviation of a statisstic_
 
 ### Confidence Interval
 _How likely the result is robust and repeatable_
