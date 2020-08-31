@@ -73,8 +73,11 @@ _S-shaped curve that takes any real number and maps it between 0 and 1_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" title="f(x)=\frac{1}{1+e^{-x}}" /></a>
 
 ## Interpreting Models
+### Maximum Likelihood Estimation (MLE)
+_Obtain the values of betas, the parameters, which maximize the log-likelihood function (the probability of the observed data)_
+
 ### Coefficients
-- Regression coefficients are obtained by the maximum likelihood estimation - value of parameters  maximizes the  probability of the observed data
+- Regression coefficients are obtained by the maximum likelihood estimation
 - Linear
   - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mu=-0.114&plus;0.32\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\mu=-0.114&plus;0.32\times&space;weight" title="\mu=-0.114+0.32\times weight" /></a>
 
@@ -91,7 +94,10 @@ _Whether constraining the parameter values to zero would reduce the model fit_
 
 ### Confidence Intervals
 _Uncertainty of the estimates_
-- 95% confidence intervals: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[\hat{\beta}-1.96\times&space;SE,&space;\hat{\beta}&plus;1.96&space;\times&space;SE]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[\hat{\beta}-1.96\times&space;SE,&space;\hat{\beta}&plus;1.96&space;\times&space;SE]" title="[\hat{\beta}-1.96\times SE, \hat{\beta}+1.96 \times SE]" /></a>
+- 95% confidence intervals
+    - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;[\hat{\beta}-1.96\times&space;SE,&space;\hat{\beta}&plus;1.96&space;\times&space;SE]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;[\hat{\beta}-1.96\times&space;SE,&space;\hat{\beta}&plus;1.96&space;\times&space;SE]" title="[\hat{\beta}-1.96\times SE, \hat{\beta}+1.96 \times SE]" /></a>
+    - If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time. 95% of intervals constructed contain the true mean.
+
 - e.g. The change in the log off can be as small as ___ (lower) or as much as ___ (upper)
 - Extracting the confidence interval
   ```python
