@@ -10,7 +10,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
-    - [Confidence Interval](#confidence-interval)
+    - [Confidence Intervals](#confidence-intervals)
 - [Evaluating Models](#evaluating-models)
     - [Recall](#recall)
     - [Precision](#precision)
