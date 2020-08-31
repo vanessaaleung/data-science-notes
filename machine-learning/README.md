@@ -1,18 +1,44 @@
 # Machine Learning
-1. [Regression Models](#regression-models)
+_Giving computers the ability to learn, to make decisions from data without being explicitly programmed_
+
+- [Machine Learning Types](#)
+- [Classfication](#classfication)
+    - [k-Nearest Neighbors (kNN)](#k-nearest-neighbors-knn)
+- [Regression Models](#regression-models)
     - [Assumptions](#assumptions)
     - [Logistic Regression](#logistic-regression)
-2. [Interpreting Models](#interpreting-models)
+- [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
     - [Confidence Interval](#confidence-interval)
-3. [Evaluating Models](#evaluating-models)
+- [Evaluating Models](#evaluating-models)
     - [Recall](#recall)
     - [Precision](#precision)
     - [Confusion Matrix](#confusion-matrix)
-4. [Comparing Models](#comparing-models)
-5. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
-6. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
+- [Comparing Models](#comparing-models)
+- [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
+- [Bias-Variance Tradeoff](#bias-variance-tradeoff)
+
+## Machine Learning Types
+### Supervised
+_Use labeld data_
+
+### Unsupervised
+_Uncovering hidden patterns from unlabeled data_
+
+### Reinforcement Learning
+_Learn how to optimize behavior given a system of rewards and punishments_
+- Application: AlphaGo
+
+## Classification
+### k-Nearest Neighbors (kNN)
+_Predict the label of data by looking at the K closest labeled data points and getting them vote the majority_
+```python
+from sklearn.neighbors import KNeighborsClassifier
+knn= KNeighborsClassifier(n_neighbor=6)
+knn.fit(y, x)
+prediction = knn.predict(X_new)
+```
 
 ## GLM
 _A generalization of linear models, a unified framework for different data distributions_
