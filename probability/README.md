@@ -14,6 +14,7 @@
     7. [Poisson Distribution](#poisson-distribution)
     8. [Exponential Distribution](#exponential-distribution)
     9. [Probability Density Function (PDF)](#probability-density-function-pdf)
+    10. [Overdispersion](#overdispersion)
 3. [Data Generating Process](#data-generating-process)
 
 ## Probability Basics
@@ -99,7 +100,7 @@ _Probability an event occurs in a given unit of time does not change through tim
 </p>
 
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(y)=\frac{\lambda^y&space;e^{-\lambda}}{y!}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(y)=\frac{\lambda^y&space;e^{-\lambda}}{y!}" title="P(y)=\frac{\lambda^y e^{-\lambda}}{y!}" /></a>
-- lambda: the average number of arrivals in a given length of time
+- lambda: the average/mean number of arrivals in a given length of time
     - when increase lambda, the distribution spreads and becomes more symmetric
 - y: the event
     - Always positive
@@ -121,6 +122,7 @@ _Probability an event occurs in a given unit of time does not change through tim
 ```python 
 family=sm.families.Poisson())
 ```
+- Assumption: mean should be the same as the variance
 
 ### Exponential Distribution
 - The waiting time between arrivals of a Poisson process is exponentially distributed
@@ -132,6 +134,15 @@ _Relative likelihood of observing a value of a continuous variable_
 
 - Example: x is more likely to be less than 10 than to be greater than 10
 <img src="pdf.svg" height="300px">
+
+### Overdispersion
+- Overdispersion: variance > mean
+- Underdispersion: variance < mean, rare
+- Compute estimated overdispersion
+    - ratio = pearson chi-squared / degree of freedom of rediduals
+    - ratio = 1 -> approximately Poisson
+    - ratio < 1 -> underdispersion
+    - ratio > 1 -> overdispersion
 
 ## Data Generating Process (DGP)
 1. Define Possible Outcomes for Random Variables
