@@ -1,6 +1,7 @@
 # Machine Learning
 1. [Regression Models](#regression-models)
     - [Assumptions](#assumptions)
+    - [Logistic Regression](#logistic-regression)
 2. [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
@@ -31,7 +32,6 @@ from statsmodels.formula.api import glm
 ```python
 model=glm(formula='y~X',  data=my_data, family=sm.families.___).fit()
 ```
-
 ### Assumptions
 - Linear in parameters
 - Errors are independent and normally distributed
@@ -41,7 +41,6 @@ model=glm(formula='y~X',  data=my_data, family=sm.families.___).fit()
 _How much the response variable y changes on average for a unit increase in x_
 
 ### Linear Regression
-
 <img src="https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png" height="200px">
 
 ```python
@@ -70,10 +69,25 @@ clf.fit(X_train, y_train)
 # Compute and print the accuracy
 acc = clf.score(X_test, y_test)
 ```
-
 #### Sigmoid/Logistic Function
 _S-shaped curve that takes any real number and maps it between 0 and 1_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" title="f(x)=\frac{1}{1+e^{-x}}" /></a>
+
+#### Multicollinearity
+_Varibles are correlated with others_
+- Increase in standard errors of coefficients
+    - Coefficients may not be statistically significant
+- Check
+    - Coefficient is not significant, but variable is highly correlated with y
+    - Adding/removing a variable significantly changes coefficients
+    - High pairwise correlation
+- Variance Inflation Factor (VIF)
+    - How inflated the variance of the coefficient is compared to what it would be if the variables were not correlated with any other variable in the model
+    - Thresohold VIF > 2.5
+
+#### Interaction Terms
+_The effect of x1 on the response depends on the level of x2_
+
 
 ## Interpreting Models
 ### Maximum Likelihood Estimation (MLE)
