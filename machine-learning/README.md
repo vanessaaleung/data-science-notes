@@ -6,9 +6,12 @@
     - [Significance Testing](#significance-testing)
     - [Confidence Interval](#confidence-interval)
 3. [Evaluating Models](#evaluating-models)
-    - Confusion Matrix(#confusion-matrix)
-4. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
-5. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
+    - [Recall](#recall)
+    - [Precision](#precision)
+    - [Confusion Matrix](#confusion-matrix)
+4. [Comparing Models](#comparing-models)
+5. [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
+6. [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
 ## GLM
 _A generalization of linear models, a unified framework for different data distributions_
@@ -174,6 +177,28 @@ pd.crosstab(y_actual,  y_predicted, rownames=['Actual'], colnames=['Predicted'],
 ```python
 matrix = confusion_matrix(y_test, preds)
 ```
+
+## Comparing Models
+### Goodness of Fit
+_Whether the model is correctly specified and if we add more complexity would it be better_
+- complexity: adding more variables, non-linear or interaction terms
+
+### Deviance
+- Formula: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;D=-2Log&space;Likelihood(\beta)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;D=-2Log&space;Likelihood(\beta)" title="D=-2Log Likelihood(\beta)" /></a>
+- Measure of error
+- Lower deviance: better model fit
+- Benchmark: null deviance -> intercept-only model
+```python
+model.null_deviance
+model.deviance
+```
+- Evaluate
+    - Adding p predictors to the model, deviance should decrease by more than p
+
+## Complexity
+_The number of parameters_
+- A lower deviance does not necessarily mean a better fit, may be overfitting and has worse fit on new data
+
 
 ## Handling Missing Data and Outliers
 ### Missing Data
