@@ -92,13 +92,19 @@ prob = binom.pmf(k=8, n=10, p=0.8)
     - <img src="https://image3.slideserve.com/6601976/the-68-95-99-7-rule-l.jpg"  height="200px">
 
 ### Poisson Distribution
-_Counting events over time given some continuous rate_
+_Probability an event occurs in a given unit of time does not change through time_
 
 <p align="center">
     <img src="https://brilliant-staff-media.s3-us-west-2.amazonaws.com/tiffany-wang/673kAjHJ5d.png" height="200px">
 </p>
 
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(y)=\frac{\lambda^y&space;e^{-\lambda}}{y!}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(y)=\frac{\lambda^y&space;e^{-\lambda}}{y!}" title="P(y)=\frac{\lambda^y e^{-\lambda}}{y!}" /></a>
 - lambda: the average number of arrivals in a given length of time
+    - when increase lambda, the distribution spreads and becomes more symmetric
+- y: the event
+    - Always positive
+    - Discrete (not continuous)
+    - Lower bound at zero
 
 #### Poisson process
 - The timing of the next event is completely independent of when the previous event happened
@@ -106,6 +112,15 @@ _Counting events over time given some continuous rate_
 - Examples
     - Natural  births in a given hospital
     - Hit on a website during a given hour
+
+#### Poisson Regression
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;y\sim&space;Poisson(\lambda)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;y\sim&space;Poisson(\lambda)" title="y\sim Poisson(\lambda)" /></a>
+- Mean of the response: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;E(y)=\lambda" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;E(y)=\lambda" title="E(y)=\lambda" /></a>
+- Poisson regression model: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;log(\lambda)=\beta_0&plus;\beta_1x_1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;log(\lambda)=\beta_0&plus;\beta_1x_1" title="log(\lambda)=\beta_0+\beta_1x_1" /></a>
+- GLM with Poisson in Python: 
+```python 
+family=sm.families.Poisson())
+```
 
 ### Exponential Distribution
 - The waiting time between arrivals of a Poisson process is exponentially distributed
