@@ -40,6 +40,9 @@ knn.fit(y, x)
 prediction = knn.predict(X_new)
 ```
 
+- Larger k: smoother decision boundary, less complex
+- Smaller k: more complex model, may be overfitting
+
 ## GLM
 _A generalization of linear models, a unified framework for different data distributions_
 
@@ -188,6 +191,9 @@ mae = mean_absolute_error(y, preds)
 - Precision
 - Recall
 - Confusion Matrices
+
+#### Accuracy
+- Friction of correct predictions
 
 #### Precision
 _Percentage of observation you correctly guessed, linked to Type I error_
