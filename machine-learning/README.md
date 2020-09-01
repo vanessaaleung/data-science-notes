@@ -146,6 +146,7 @@ _The effect of x1 on the response depends on the level of x2_
 ###  Cross-validation
 - Why: the R-squared is dependent on the way splitting up the data, the test data may not be representative of the model's ability to generalize the unseen data
 - more folds, more computationally  expensive
+- split data into training and hold-out set, perform grid search cross-validation on training set
 
 ### Regularized Regression
 _Penalizing large coefficients_
@@ -265,7 +266,6 @@ recall = recall_score(y_test, preds)
 
 #### F1 Score
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;2\times\frac{precision\times&space;recall}{precision&space;&plus;&space;recall}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;2\times\frac{precision\times&space;recall}{precision&space;&plus;&space;recall}" title="2\times\frac{precision\times recall}{precision + recall}" /></a>
-
 
 #### Confusion Matrix
 _How many observations the model classfied correctly and incorrectly_
