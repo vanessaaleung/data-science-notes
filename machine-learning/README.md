@@ -22,7 +22,9 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Comparing Models](#comparing-models)
     - [Goodness of Fit](#goodness-of-fit)
     - [Deviance](#deviance)
-- [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
+- [Preprocessing]
+    - [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
+    - [Centering and Scaling](#centering-and-scaling)
 - [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
 ## Machine Learning Types
@@ -319,6 +321,16 @@ _The number of parameters_
 - Interquartile range (IQR)
   - Subtracting the first quartile from the third quartile
   <img src="https://naysan.ca/wp-content/uploads/2020/06/box_plot_ref_needed.png" height="200px">
+
+### Centering and Scaling
+- Scaling = Normalizing = Centering
+- Why scaling
+    - Features on larger scales can influence the model
+    - e.g. kNN uses distance when making predictions
+- Ways
+    -  Standardization: subtract the mean and divide by variance - center around 0 with variance 1
+    - Min-Max: subtract the minimum and divide by the range - range will be [0, 1]
+    - Normalize:  [-1, 1]
 
 ## Bias-Variance Tradeoff
 ### Types of error
