@@ -8,6 +8,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
     - [Assumptions](#assumptions)
     - [Logistic Regression](#logistic-regression)
     - [Cross Validation](#cross-validation)
+    - [Regularized Regression](#regularized-regression)
 - [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
@@ -17,6 +18,8 @@ _Giving computers the ability to learn, to make decisions from data without bein
     - [Precision](#precision)
     - [Confusion Matrix](#confusion-matrix)
 - [Comparing Models](#comparing-models)
+    - [Goodness of Fit](#goodness-of-fit)
+    - [Deviance](#deviance)
 - [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
 - [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
@@ -44,15 +47,11 @@ prediction = knn.predict(X_new)
 - Larger k: smoother decision boundary, less complex
 - Smaller k: more complex model, may be overfitting
 
-## GLM
-_A generalization of linear models, a unified framework for different data distributions_
+## Regression Models
+_How much the response variable y changes on average for a unit increase in x_
 
-### Linear Model
-```python
-from statsmodels.formula.api import ols
-model = ols(formula='y ~ X',  data=my_data).fit()
-```
 ### GLM
+_A generalization of linear models, a unified framework for different data distributions_
 ```python
 import statsmodels.api as sm
 from statsmodels.formula.api import glm
@@ -62,13 +61,17 @@ from statsmodels.formula.api import glm
 ```python
 model=glm(formula='y~X',  data=my_data, family=sm.families.___).fit()
 ```
-### Assumptions
+
+### Linear Model
+```python
+from statsmodels.formula.api import ols
+model = ols(formula='y ~ X',  data=my_data).fit()
+```
+
+#### Assumptions
 - Linear in parameters
 - Errors are independent and normally distributed
 - The variance around the regression line is constant  for all values of x
-
-## Regression Models
-_How much the response variable y changes on average for a unit increase in x_
 
 ### Linear Regression
 <img src="https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png" height="200px">
@@ -85,6 +88,12 @@ lm.fit(X_train, y_train)
 # Assign and print predictions
 preds = lm.predict(X_train)
 ```
+
+- How to fit
+    - Define an error functions for any given line, choose the line that minimizes the error/loss/cost function
+    - Minimize the vertical distance between the fit and the data - residual
+    - Minimize the sum  of the squares of the residuals - OLS (Ordinary Least Square)
+
 
 ### Logistic Regression
 _Compute the probabilities that each observation belong to a class using the sigmoid function_
@@ -122,6 +131,26 @@ _The effect of x1 on the response depends on the level of x2_
 ###  Cross-validation
 - Why: the R-squared is dependent on the way splitting up the data, the test data may not be representative of the model's ability to generalize the unseen data
 - more folds, more computationally  expensive
+
+### Regularized Regression
+_Penalizing large coefficients_
+- Why: large coefficients can lead overfitting
+
+#### Ridge Regression
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\alpha_i^2" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\alpha_i^2" title="\text{Loss function}=\text{OLS loss function} + \alpha \times \sum_{i=1}^{n}\alpha_i^2" /></a>
+- Alpha: Parameter we need to choose, controls model complexity
+    - Alpha = 0: get back OLS
+    - High alpha: lead to underfitting
+
+#### Lasso Regression
+-  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\mid&space;\alpha_i\mid" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\mid&space;\alpha_i\mid" title="\text{Loss function}=\text{OLS loss function} + \alpha \times \sum_{i=1}^{n}\mid \alpha_i\mid" /></a>
+- Usage: select important features of a dataset, shrinks the coefficients of less important  features to exactly 0
+
+```python
+from sklearn.linear_model import Lasso
+lasso = Lasso(alpha=0.1)
+lasso_coef = lasso.fit(X, y).coef_
+```
 
 ## Interpreting Models
 ### Maximum Likelihood Estimation (MLE)
@@ -246,7 +275,7 @@ model.deviance
 - Evaluate
     - Adding p predictors to the model, deviance should decrease by more than p
 
-## Complexity
+### Complexity
 _The number of parameters_
 - A lower deviance does not necessarily mean a better fit, may be overfitting and has worse fit on new data
 
