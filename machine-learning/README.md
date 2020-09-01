@@ -7,6 +7,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Regression Models](#regression-models)
     - [Assumptions](#assumptions)
     - [Logistic Regression](#logistic-regression)
+    - [Cross Validation](#cross-validation)
 - [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
@@ -98,6 +99,7 @@ clf.fit(X_train, y_train)
 # Compute and print the accuracy
 acc = clf.score(X_test, y_test)
 ```
+
 #### Sigmoid/Logistic Function
 _S-shaped curve that takes any real number and maps it between 0 and 1_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" title="f(x)=\frac{1}{1+e^{-x}}" /></a>
@@ -117,6 +119,9 @@ _Varibles are correlated with others_
 #### Interaction Terms
 _The effect of x1 on the response depends on the level of x2_
 
+###  Cross-validation
+- Why: the R-squared is dependent on the way splitting up the data, the test data may not be representative of the model's ability to generalize the unseen data
+- more folds, more computationally  expensive
 
 ## Interpreting Models
 ### Maximum Likelihood Estimation (MLE)
