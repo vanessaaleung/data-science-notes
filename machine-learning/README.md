@@ -7,8 +7,10 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Regression Models](#regression-models)
     - [Assumptions](#assumptions)
     - [Logistic Regression](#logistic-regression)
+        - [Receiver Operating Characteristics Curve (ROC Curve)](#receiver-operating-characteristics-curve-roc-curve)
     - [Cross Validation](#cross-validation)
     - [Regularized Regression](#regularized-regression)
+    - [Interaction Terms](#interaction-terms)
 - [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
@@ -96,7 +98,7 @@ preds = lm.predict(X_train)
 
 
 ### Logistic Regression
-_Compute the probabilities that each observation belong to a class using the sigmoid function_
+_Compute the **probabilities** that each observation belong to a class using the sigmoid function_
 
 ```python
 from sklearn.linear_model import LogisticRegression
@@ -125,7 +127,12 @@ _Varibles are correlated with others_
     - How inflated the variance of the coefficient is compared to what it would be if the variables were not correlated with any other variable in the model
     - Thresohold VIF > 2.5
 
-#### Interaction Terms
+#### Receiver Operating Characteristics Curve (ROC Curve)
+_The set of  points when trying all possible thresholds_
+
+<img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/ROC-Curve-Plot-for-a-No-Skill-Classifier-and-a-Logistic-Regression-Model.png" height="300px">
+
+### Interaction Terms
 _The effect of x1 on the response depends on the level of x2_
 
 ###  Cross-validation
@@ -236,6 +243,7 @@ _Percentage of observation you correctly guessed, linked to Type I error_
 ```python
 precision = precision_score(y_test, preds)
 ```
+- e.g. high precision: not many real emails predicted as spam
 
 #### Recall
 _Linked to Type II error_
@@ -245,6 +253,11 @@ _Linked to Type II error_
 ```python
 recall = recall_score(y_test, preds)
 ```
+- predicted most spam emails correctly
+
+#### F1 Score
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;2\times\frac{precision\times&space;recall}{precision&space;&plus;&space;recall}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;2\times\frac{precision\times&space;recall}{precision&space;&plus;&space;recall}" title="2\times\frac{precision\times recall}{precision + recall}" /></a>
+
 
 #### Confusion Matrix
 _How many observations the model classfied correctly and incorrectly_
