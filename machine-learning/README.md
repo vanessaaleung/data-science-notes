@@ -132,6 +132,14 @@ _The set of  points when trying all possible thresholds_
 
 <img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/ROC-Curve-Plot-for-a-No-Skill-Classifier-and-a-Logistic-Regression-Model.png" height="300px">
 
+#### Area Under the ROC Curve (AUC)
+- The larger, the better
+
+```python
+from sklearn.model_selection import cross_val_score
+cv_scores = cross_val_score(logreg, X, y, cv=5, scoring='roc_auc'
+```
+
 ### Interaction Terms
 _The effect of x1 on the response depends on the level of x2_
 
