@@ -12,6 +12,7 @@
     - [Confidence Interval](#confidence-interval)
     - [P-value](#p-value)
     - [Statistical Significance](#statistical-significance)
+    - [Statistical Power](#statistical-power)
   
 
 ## Linear Regression Assumptions
@@ -250,3 +251,7 @@ _Whether the difference of the data from the null hypothesis matters for practic
 e.g. test statistic is Pearson correlation, p-value is the fraction of replicates that have the correlation at least as large as observed
 
 The lower the p-value, the less likely the results are due purely to chance.
+
+### Statistical Power
+_The probability of rejecting the null hypothesis when the alternative is true_
+- P(Avoiding Type II error) = P(Avoiding not accepting a false null hypothesis) 
