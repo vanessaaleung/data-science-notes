@@ -6,8 +6,12 @@
 4. [Law of Large Numbers](#law-of-large-numbers)
 5. [Nonparametric](#nonparametric)
 6. [Other Terminology](#other-terminology)
+    - [R-squared](#r-squared)
+    - [Adjusted R-squared](#adjusted-r-squared)
     - [Standard Error (SE)](#standard-error-se)
     - [Confidence Interval](#confidence-interval)
+    - [P-value](#p-value)
+    - [Statistical Significance](#statistical-significance)
   
 
 ## Linear Regression Assumptions
@@ -203,6 +207,12 @@ _The proportion of the variance for a dependent variable that's explained by an 
 ### Standard Error (SE)
 _Standard deviation of a statisstic_
 
+### Hypothesis Testing
+_Assessment of how reasonable the observed data are assuming a hypothesis is true_
+
+### Test Statistic
+_A basis of comparison between the observed data and the data simulate under the null hypothesis_
+
 ### Confidence Interval
 _How likely the result is robust and repeatable_
 
@@ -212,7 +222,13 @@ If we repeat the experiment over and over again, we would expect the interval to
 95% of intervals constructed contain the true mean.
 
 ### Statistical Significance
-Quantifies whether a result is likely due to chance or to some factor of interest
+Quantifies whether a result is likely **due to chance** or to some factor of interest
+- low p-value
 
 ### P-value
+_Probability of obtaining a value of the test statistic is at least as extreme as what was observed, under the assumption the null hypothesis is true_
+
+### Practical Significance
+_Whether the difference of the data from the null hypothesis matters for practical considerations_
+
 The lower the p-value, the less likely the results are due purely to chance.
