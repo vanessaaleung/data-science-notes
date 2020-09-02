@@ -2,12 +2,23 @@
 ## Window Functions
 - Performs calculation across a set of rows that are somehow related to the current row
 - Does not cause rows to become grouped
-
+- `PARTITION BY`: narrow the window from the entire dataset to individual groups
 ```sql
-SELECT duration_seconds,
-     SUM(duration_seconds) OVER (ORDER BY start_time) AS running_total
-FROM tutorial.dc_bikeshare_q1_2012
+SELECT start_terminal,
+       SUM(duration_seconds) OVER
+         (PARTITION BY start_terminal ORDER BY start_time)
+         AS running_total
+  FROM tutorial.dc_bikeshare_q1_2012
 ```
+
+### RANK() and ROW_NUMBER()
+- some rows have indentical value
+- `ROW_NUMBER()` gives different numbers
+- `RANK()` gives the same rank
+
+### DENSE_RANK()
+- `RANK()` would give the identical rows a rank of 2, then skip ranks 3 and 4, so the next result would be 5
+- `DENSE_RANK()` would still give all the identical rows a rank of 2, but the following row would be 3 — no ranks would be skipped.
 
 ## Optimization
 ### Indexing
