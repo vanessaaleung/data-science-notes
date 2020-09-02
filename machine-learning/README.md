@@ -5,7 +5,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Classfication](#classfication)
     - [k-Nearest Neighbors (kNN)](#k-nearest-neighbors-knn)
 - [Regression Models](#regression-models)
-    - [Assumptions](#assumptions)
+    - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistic-regression)
         - [Receiver Operating Characteristics Curve (ROC Curve)](#receiver-operating-characteristics-curve-roc-curve)
     - [Cross Validation](#cross-validation)
@@ -113,6 +113,13 @@ clf.fit(X_train, y_train)
 acc = clf.score(X_test, y_test)
 ```
 
+#### Assumptions
+1. The outcome is binary
+2. Linear relationship between the logit of the outcome and the predictors. Logit function: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;logit(p)=log(\frac{p}{1-p})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;logit(p)=log(\frac{p}{1-p})" title="logit(p)=log(\frac{p}{1-p})" /></a>
+    - p: probability of the outcome
+3. No outliers/extreme  values in the continuous predictors
+4. No multicollinearity among the predictors
+
 #### Sigmoid/Logistic Function
 _S-shaped curve that takes any real number and maps it between 0 and 1_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;f(x)=\frac{1}{1&plus;e^{-x}}" title="f(x)=\frac{1}{1+e^{-x}}" /></a>
@@ -130,7 +137,7 @@ _Varibles are correlated with others_
     - Thresohold VIF > 2.5
 
 #### Receiver Operating Characteristics Curve (ROC Curve)
-_The set of  points when trying all possible thresholds_
+_The set of points when trying all possible thresholds_
 
 <img src="https://3qeqpr26caki16dnhd19sv6by6v-wpengine.netdna-ssl.com/wp-content/uploads/2018/08/ROC-Curve-Plot-for-a-No-Skill-Classifier-and-a-Logistic-Regression-Model.png" height="300px">
 
