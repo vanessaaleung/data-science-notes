@@ -213,6 +213,13 @@ _Assessment of how reasonable the observed data are assuming a hypothesis is tru
 ### Test Statistic
 _A basis of comparison between the observed data and the data simulate under the null hypothesis_
 
+#### Z-scores
+_The number of standard deviations from the mean a data point is_
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;z=\frac{x-\mu}{\sigma}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;z=\frac{x-\mu}{\sigma}" title="z=\frac{x-\mu}{\sigma}" /></a>
+
+- The higher/lower the z-score, the **less** likely the result is happen by chance
+
 ### Confidence Interval
 _How likely the result is robust and repeatable_
 
@@ -226,7 +233,10 @@ Quantifies whether a result is likely **due to chance** or to some factor of int
 - low p-value
 
 ### P-value
-_Probability of obtaining a value of the test statistic is at least as extreme as what was observed, under the assumption the null hypothesis is true_
+_Probability of obtaining a value of the test statistic is at least as extreme as  (>=) what was observed, under the assumption the null hypothesis is true_
+- The closer to 0, the more confidence we have that A and B are different
+- Commonly used threshold: 0.05
+- e.g. a vaccine study produced a P value of 0.04: Assuming that the vaccine had no effect, you’d obtain the observed difference or more in 4% of studies due to random sampling error.
 
 ### Practical Significance
 _Whether the difference of the data from the null hypothesis matters for practical considerations_
