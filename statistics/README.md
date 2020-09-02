@@ -2,7 +2,7 @@
 
 1. [Resampling Methods]()
 2. [Linear Regression Assumptions](#linear-regression-assumptions)
-3. [Central Limit Theorem (CLT)](#central-limit-theorem)
+3. [Central Limit Theorem (CLT)](#central-limit-theorem-clt)
 4. [Law of Large Numbers](#law-of-large-numbers)
 5. [Nonparametric](#nonparametric)
 6. [Other Terminology](#other-terminology)
