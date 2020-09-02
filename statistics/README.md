@@ -228,15 +228,21 @@ Example: A 95% confidence interval
 If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time.
 95% of intervals constructed contain the true mean.
 
+### Significance Level
+_Probability of rejecting the null hypothesis when it is true_
+- A significance level of 0.05 indicates a 5% risk of concluding that a difference exists when there is no actual difference
+- If the p-value is < significance level, we can reject the null hypothesis
+
 ### Statistical Significance
 Quantifies whether a result is likely **due to chance** or to some factor of interest
 - low p-value
 
 ### P-value
-_Probability of obtaining a value of the test statistic is at least as extreme as  (>=) what was observed, under the assumption the null hypothesis is true_
+_Probability of an observed (or more extreme) result assuming that the null hypothesis is true_
 - The closer to 0, the more confidence we have that A and B are different
 - Commonly used threshold: 0.05
-- e.g. a vaccine study produced a P value of 0.04: Assuming that the vaccine had no effect, you’d obtain the observed difference or more in 4% of studies due to random sampling error.
+- e.g. a vaccine study produced a P value of 0.04: Assuming that the vaccine had no effect, you’d obtain the observed difference or more in 4% of studies due to random sampling error
+- Do NOT measure the probability that the studied hypothesis is true
 
 ### Practical Significance
 _Whether the difference of the data from the null hypothesis matters for practical considerations_
