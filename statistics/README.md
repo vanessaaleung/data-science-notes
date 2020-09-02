@@ -231,4 +231,6 @@ _Probability of obtaining a value of the test statistic is at least as extreme a
 ### Practical Significance
 _Whether the difference of the data from the null hypothesis matters for practical considerations_
 
+e.g. test statistic is Pearson correlation, p-value is the fraction of replicates that have the correlation at least as large as observed
+
 The lower the p-value, the less likely the results are due purely to chance.
