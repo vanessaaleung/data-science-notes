@@ -1,5 +1,4 @@
-# DS-notes
-_Data Science Learning Notes_
+# Data Science Learning Notes
 
 <p align="center">
   <img src="https://insideanalysis.com/wp-content/uploads/2019/07/what-is-data-science.jpg" height="300px">
