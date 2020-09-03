@@ -1,7 +1,7 @@
 # Critical Metrics
-- User Engagement Metrics
-- Business Metrics
-- Customer Service Metrics
+- [User Engagement Metrics](#user-engagement-metrics)
+- [Business Metrics](#business-metrics)
+- [Customer Service Metrics](#customer-service-metrics)
 
 ## User Engagement Metrics
 1. Number of sessions per user
