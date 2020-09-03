@@ -34,3 +34,6 @@
   - Less useful than churn rate
 
 ## Customer Service Metrics
+1. Number of support tickets
+2. Net Promoter Score
+  - Not scientifically-backed, ask for reviews instead
