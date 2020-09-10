@@ -68,22 +68,42 @@ _How much the model generalizes on unseen data_
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Generalization&space;Error}&space;=&space;bias^2&space;&plus;&space;variance&space;&plus;&space;\text{irreducible&space;error}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Generalization&space;Error}&space;=&space;bias^2&space;&plus;&space;variance&space;&plus;&space;\text{irreducible&space;error}" title="\text{Generalization Error} = bias^2 + variance + \text{irreducible error}" /></a>
 
 - Irreducible error: error contribution of noise
-
-### Bias
-- How much the predicted value (fhat) and the true value (f) are different
-- High bias lead to underfitting
-
-### Variance
-- How much the predicted value (fhat) is inconsistent over different training sets
-- High variance lead to overfitting
-
-### Model Completxity
-- Sets the flexibility of the model function
-- e.g. Maximum tree depth, minimum samples per leaf
+- Bias
+  - How much the predicted value (fhat) and the true value (f) are **different**
+  - High bias lead to underfitting
+- Variance
+  - How much the predicted value (fhat) is **inconsistent** over different training sets
+  - High variance lead to overfitting
+- Model Completxity
+  - Sets the flexibility of the model function
+  - e.g. Maximum tree depth, minimum samples per leaf
 
 ### The Bias-Variance Tradeoff
-<img src="https://lh3.googleusercontent.com/proxy/oYwXEIwKUmsBBs89hqL5XitQ5TrFQbwvk7Y7B6FO6L6z_uUzQbSYwzcfaqgc3b9K4Qve83-HBOJoH-ayYKZSuysPaZiZQVQD-c70MFrm8OaJiMDsjQpwwlS9ovd1" height="300px">
-
 - find the model complexity with the lowest generalization error
 
+<img src="https://lh3.googleusercontent.com/proxy/oYwXEIwKUmsBBs89hqL5XitQ5TrFQbwvk7Y7B6FO6L6z_uUzQbSYwzcfaqgc3b9K4Qve83-HBOJoH-ayYKZSuysPaZiZQVQD-c70MFrm8OaJiMDsjQpwwlS9ovd1" height="200px">
+
 <img src="https://miro.medium.com/max/978/1*CgIdnlB6JK8orFKPXpc7Rg.png" height="300px">
+
+### Estimating the Generalization error
+1. Split the data
+2. Fit the model
+3. Evaluatethe error of  the model on test set
+4. Generalization error is approximately equals to the test set error
+
+### Model Evaluation with Cross-Validation
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{10-fold&space;CV&space;Error}&space;=&space;\frac{E_1&space;&plus;&space;...&plus;E_{10}}{10}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{10-fold&space;CV&space;Error}&space;=&space;\frac{E_1&space;&plus;&space;...&plus;E_{10}}{10}" title="\text{10-fold CV Error} = \frac{E_1 + ...+E_{10}}{10}" /></a>
+
+```python
+#  Set n-jobs to -1 in order to exploit all CPU cores in computation
+MSE_CV = -cross_val_score(dt,  X_train, y_train, cv=10, scoring='neg_mean_squared_error', n_jobs=-1
+
+print('CV MSE:', MSE_CV.mean())
+print('Train MSE:', MSE(y_train, y_predict_train))
+print('Test MSE:', MSE(y_test, y_predict_test))
+```
+
+- Diagnose Variance problems: CV error > training set error
+  - Remedy: decrease model complexity  - decrease max depth, increase min samples per leaf, gather more data
+- Diagnose Bias problems: CV error is approximately equals to training set error, but much greater than the desired error
+  - Remedy: increase complexity - gather more features data
