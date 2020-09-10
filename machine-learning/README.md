@@ -2,6 +2,7 @@
 _Giving computers the ability to learn, to make decisions from data without being explicitly programmed_
 
 - [Machine Learning Types](#)
+- [Tree-based Models](https://github.com/vanessaaleung/DS-notes/blob/master/machine-learning/tree-models.md)
 - [Classfication](#classfication)
     - [k-Nearest Neighbors (kNN)](#k-nearest-neighbors-knn)
 - [Regression Models](#regression-models)
@@ -22,7 +23,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Comparing Models](#comparing-models)
     - [Goodness of Fit](#goodness-of-fit)
     - [Deviance](#deviance)
-- [Preprocessing]
+- [Preprocessing](#preprocessing)
     - [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
     - [Centering and Scaling](#centering-and-scaling)
 - [Bias-Variance Tradeoff](#bias-variance-tradeoff)
