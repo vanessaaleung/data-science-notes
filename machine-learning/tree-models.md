@@ -20,3 +20,8 @@ dt.fit(X_train, y_train)
 y_pred = dt.predict(X_test)
 ```
 
+### Logistic regression vs classification tree
+- A classification tree divides the feature space into rectangular regions. 
+- A linear model such as logistic regression produces only a single linear decision boundary dividing the feature space into two decision regions
+
+<img src="logreg_tree.svg" height="300px">
