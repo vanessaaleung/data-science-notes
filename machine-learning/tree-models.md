@@ -2,6 +2,9 @@
 _Infer class labels, Capture non-linear relationships between features and labels_
 - Don't require feature scaling
 
+1. [Decision Tree](#decision-tree)
+2. [The Bias-Variance Tradeoff](#the-bias-variance-tradeoff)
+
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
 
@@ -58,3 +61,29 @@ dt = DecisionTreeRegressor(max_depth=4, min_samples_leaf=0.1, random_state=1)
 - Prediction: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{y}_{pred}(leaf)=\frac{1}{N_{leaf}}\sum_{i&space;\epsilon&space;leaf}^{}&space;y^{(i)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{y}_{pred}(leaf)=\frac{1}{N_{leaf}}\sum_{i&space;\epsilon&space;leaf}^{}&space;y^{(i)}" title="\hat{y}_{pred}(leaf)=\frac{1}{N_{leaf}}\sum_{i \epsilon leaf}^{} y^{(i)}" /></a>
 
 
+## The Bias-Variance Tradeoff
+### Generalization Error
+_How much the model generalizes on unseen data_
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Generalization&space;Error}&space;=&space;bias^2&space;&plus;&space;variance&space;&plus;&space;\text{irreducible&space;error}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Generalization&space;Error}&space;=&space;bias^2&space;&plus;&space;variance&space;&plus;&space;\text{irreducible&space;error}" title="\text{Generalization Error} = bias^2 + variance + \text{irreducible error}" /></a>
+
+- Irreducible error: error contribution of noise
+
+### Bias
+- How much the predicted value (fhat) and the true value (f) are different
+- High bias lead to underfitting
+
+### Variance
+- How much the predicted value (fhat) is inconsistent over different training sets
+- High variance lead to overfitting
+
+### Model Completxity
+- Sets the flexibility of the model function
+- e.g. Maximum tree depth, minimum samples per leaf
+
+### The Bias-Variance Tradeoff
+<img src="https://lh3.googleusercontent.com/proxy/oYwXEIwKUmsBBs89hqL5XitQ5TrFQbwvk7Y7B6FO6L6z_uUzQbSYwzcfaqgc3b9K4Qve83-HBOJoH-ayYKZSuysPaZiZQVQD-c70MFrm8OaJiMDsjQpwwlS9ovd1" height="300px">
+
+- find the model complexity with the lowest generalization error
+
+<img src="https://miro.medium.com/max/978/1*CgIdnlB6JK8orFKPXpc7Rg.png" height="300px">
