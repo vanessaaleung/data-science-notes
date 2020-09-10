@@ -96,6 +96,7 @@ _How much the model generalizes on unseen data_
 
 ```python
 #  Set n-jobs to -1 in order to exploit all CPU cores in computation
+# Multiplied by negative one since cross_val_score has only the option of evaluating the negative MSEs
 MSE_CV = -cross_val_score(dt,  X_train, y_train, cv=10, scoring='neg_mean_squared_error', n_jobs=-1
 
 print('CV MSE:', MSE_CV.mean())
