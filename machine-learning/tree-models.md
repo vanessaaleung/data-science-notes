@@ -206,7 +206,7 @@ plt.show()
 ```
 
 ## Boosting
-_An ensemble method in which many predictors are trained and each predictor learns from the errors of its predecessor_
+_An ensemble method in which many predictors are trained and each predictor learns from the **errors** of its predecessor_
 
 - Train an ensemble of predictors sequentially
 - Each predictor tries to correct its predecessor
