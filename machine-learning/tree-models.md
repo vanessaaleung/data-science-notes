@@ -273,7 +273,7 @@ _Prediction of each tree in the ensemble is shirnked after it is multiplied by a
 - `subsample=0.8`: each tree to sample 80% of the data for training
 - `max_features=0.2`: each tree uses 20% of available features to perform the best-split
 ```python
-sgby = GradientBoostingRegressor(max_depth=1,
+sgb = GradientBoostingRegressor(max_depth=1,
                                 subsample=0.8,
                                 max_features=0.2,
                                 n_estimators=300,
