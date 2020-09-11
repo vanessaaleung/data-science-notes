@@ -257,9 +257,12 @@ _Shrink the coefficient alpha of a trained predictor_
 
 #### Shrinkage
 _Prediction of each tree in the ensemble is shirnked after it is multiplied by a learning rate_
-<img src="shrinkage.png" height="300px">
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;y_{pred}=y_1&plus;\eta&space;r_1&plus;...&plus;\eta&space;r_N" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;y_{pred}=y_1&plus;\eta&space;r_1&plus;...&plus;\eta&space;r_N" title="y_{pred}=y_1+\eta r_1+...+\eta r_N" /></a>
+|GB|AdaBoost|
+|---|---|
+|<img src="shrinkage.png" height="300px">|<img src="learning-rate.png" height="300px">|
+
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;y_{pred}=y_1&plus;\eta&space;r_1&plus;...&plus;\eta&space;r_N" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;y_{pred}=y_1&plus;\eta&space;r_1&plus;...&plus;\eta&space;r_N" title="y_{pred}=y_1+\eta r_1+...+\eta r_N" /></a>
 
 - `GradientBoostingRegressor`, `GraidentBoostingClassifier`
 
@@ -268,7 +271,9 @@ _Prediction of each tree in the ensemble is shirnked after it is multiplied by a
 - Each tree is trained on a random subset **(sampled without replacement)** of rows of the training data
 - Features are sampled without replacement
 
-<img src="sgb.png" height="300px">
+|SGB|Random Forest|
+|---|---|
+|<img src="sgb.png" height="300px">|<img src="random-forest.png" height="300px">|
 
 - `subsample=0.8`: each tree to sample 80% of the data for training
 - `max_features=0.2`: each tree uses 20% of available features to perform the best-split
