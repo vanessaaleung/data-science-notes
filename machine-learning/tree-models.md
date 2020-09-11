@@ -108,3 +108,27 @@ print('Test MSE:', MSE(y_test, y_predict_test))
   - Remedy: decrease model complexity  - decrease max depth, increase min samples per leaf, gather more data
 - Diagnose Bias problems: CV error is approximately equals to training set error, but much greater than the desired error
   - Remedy: increase complexity - gather more features data
+
+### Ensemble Learning
+- Advantages of CARTs (Classification and Regression Trees) : simple to understand and interpret
+- Limitations of CARTs
+  - sensitive to small variations in the training set
+  - Classification: only produce orthogonal decision boundaries
+  - High variance: may overfit
+- Train different models/classifiers on the same dataset, let each model make its predictions
+- Meta-model: Aggregates predictions of individual models
+- More robust, less prone to errors: if some models make predictions that are way off, the other models should compensate these errors
+
+<img src="ensemble-learning.png" height="300px">
+
+```python
+from sklearn.ensemble import VotingClassifier
+# Define a list that contains (classifier_name, classifier)
+classifiers = [('Logistic Regression', lr),
+                ('K Nearest Neighbours', knn)]
+# Instantiate a Voting Classifier 'vc'
+vc = VotingClassifier(estimators=classfiers)
+vc.fit(X_train, y_train)
+y_pred = vc.predict(X_test)
+```
+
