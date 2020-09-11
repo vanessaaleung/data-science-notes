@@ -5,6 +5,7 @@ _Infer class labels, Capture non-linear relationships between features and label
 1. [Decision Tree](#decision-tree)
 2. [The Bias-Variance Tradeoff](#the-bias-variance-tradeoff)
     - [Ensemble Learning](#ensemble-learning)
+3. [Bagging and Random Forest](#bagging-and-random-forest)
 
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
@@ -111,13 +112,15 @@ print('Test MSE:', MSE(y_test, y_predict_test))
   - Remedy: increase complexity - gather more features data
 
 ### Ensemble Learning
-_Train different classifiers and aggregate the predictions_
+_Train different classfiers on the same training set, aggregate the predictions_
 
 - Advantages of CARTs (Classification and Regression Trees) : simple to understand and interpret
 - Limitations of CARTs
   - sensitive to small variations in the training set
   - Classification: only produce orthogonal decision boundaries
   - High variance: may overfit
+  
+#### Voting Classifier
 - Train different models/classifiers on the same dataset, let each model make its predictions
 - Meta-model: Aggregates predictions of individual models
 - More robust, less prone to errors: if some models make predictions that are way off, the other models should compensate these errors
@@ -133,5 +136,22 @@ classifiers = [('Logistic Regression', lr),
 vc = VotingClassifier(estimators=classfiers)
 vc.fit(X_train, y_train)
 y_pred = vc.predict(X_test)
+```
+
+## Bagging and Random Forest
+### Ensemble Methods
+- Voting Classifier: different algorithms on the same training data
+- Bagging: one algorithm on different subsets of training data
+
+### Bagging
+_One algorithm trained on different subset of the training set, Bootstrap Aggregation_
+- Bootstrap: Draw sample from the set with replacement
+- Classification problem: aggregates predictions by majority voting, `BaggingClassifier`
+- Regression problem: aggregates predictions through averaging, `BaggingRegressor`
+
+- n_estimators: number of classification trees
+```python
+from sklearn.ensemble import BaggingClassifier
+bc = BaggingClassifier(base_estimator=dt, n_estimators=300, n_jobs=-1)
 ```
 
