@@ -10,7 +10,9 @@ _Infer class labels, Capture non-linear relationships between features and label
     - [Random Forest](#random-forest)
 4. [Boosting](#boosting)
     - [AdaBoost](#adaboost)
-    - [Gradient Boosting](#gradient-boosting)
+    - [Gradient Boosting](#gradient-boosting-gb)
+    - [Stochastic Gradient Boosting](#stochastic-gradient-boosting)
+5. [Model Tuning](#model-tuning)
 
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
@@ -284,4 +286,43 @@ sgb = GradientBoostingRegressor(max_depth=1,
                                 n_estimators=300,
                                 random_state=SEED)
 ```
+
+## Model Tuning
+_Find a set of optimal hyperparameters that results in an optimal model_
+
+- Parameters: learned from data, e.g. split-point of a node
+- Hyperparameters: not learned from data, set prior to training
+- Approaches
+    - Grid Search
+    - Random Search
+    - Bayesian Optimization
+    - Genetic Algorithms
+- For each set of hyperparameters, evaluate each model's CV score
+
+### Grid Search Cross Validation
+_Manually set a grid of discrete hyperparameter values_
+
+```python
+from sklearn.model_selection import GridSearchCV
+# Define the grid of hyperparameters
+params_dt = {
+            'max_depth': [3, 4, 5, 6],
+            'min_samples_leaf': [0.04, 0.06, 0.08],
+            'max_features': [0.2, 0.4, 0.6, 0.8]
+            }
+```
+```python
+# Instantiate a 10-fold CV grid search object
+grid_dt = GridSearchCV(estimator=dt,
+                        param_grid=params_dt,
+                        scoring='accuracy',
+                        cv=10,
+                        n_jobs=-1)
+```
+```python
+# Extract best params
+grid_dt.best_params_
+```
+
+
 
