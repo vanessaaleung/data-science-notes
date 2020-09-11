@@ -6,6 +6,9 @@ _Infer class labels, Capture non-linear relationships between features and label
 2. [The Bias-Variance Tradeoff](#the-bias-variance-tradeoff)
     - [Ensemble Learning](#ensemble-learning)
 3. [Bagging and Random Forest](#bagging-and-random-forest)
+    - [Bagging](#bagging)
+    - [Random Forest](#random-forest)
+4. [Boosting](#boosting)
 
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
@@ -199,3 +202,46 @@ sorted_importance_rf = importance_rf.sort_values()
 sorted_importances_rf.plot(kind='barh', color='lightgreen')
 plt.show()
 ```
+
+## Boosting
+_An ensemble method in which many predictors are trained and each predictor learns from the errors of its predecessor_
+
+- Train an ensemble of predictors sequentially
+- Each predictor tries to correct its predecessor
+- Combine several weak learners to form a strong learner
+- Weak learner: model doing slightly better than random guessing
+- Most popular boosting methods
+    - AdaBoost
+    - Gradient Boosting
+
+### AdaBoost
+- Adaptive Boosting
+- Each predictors pays more attention to the instances wrongly predicted by its predecessor by **changing the weights of training instances**
+- Each predictor is assigned to a coefficient alpha, which depends on the predictor's training error
+
+<img src="adaboost.png" height="300px">
+
+- alpha 1 is used to determine the weight 2 for predictor 2
+- Incorrectly predicted instasnces acquire higher weights, shown in green
+- Prediction: `AdaBoostClassifier` for classification, `AdaBoostRegressor` for regression
+- Predictors need NOT to be CARTs, but CARTs are used most of the time
+
+```python
+from sklearn.ensemble imiport AdaBoostClassifier
+adb_clf = AdaBoostClassifier(base_estimator=dt, n_estimators=100)
+
+# Predict the test set probabilities of positive class
+y_pred_proba = adb_clf.predict_proba(X_test)[:, 1]
+
+adb_clf_roc_auc_score = roc_auc_score(y_test, y_pred_proba)
+```
+
+#### Learning Rate
+_Shrink the coefficient alpha of a trained predictor_
+
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;0&space;<&space;\eta&space;\leq&space;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;0&space;<&space;\eta&space;\leq&space;1" title="0 < \eta \leq 1" /></a>
+
+<img src="learning-rate.png" height="300px">
+
+- Tradeoff between the learning rate and the number of estimators
+    - A small learning rate should be compensated by a greater number of estimators
