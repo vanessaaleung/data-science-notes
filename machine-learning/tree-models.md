@@ -218,7 +218,7 @@ _An ensemble method in which many predictors are trained and each predictor lear
 
 ### AdaBoost
 - Adaptive Boosting
-- Each predictors pays more attention to the instances wrongly predicted by its predecessor by **changing the weights of training instances**
+- Each predictors **pays more attention to the instances wrongly predicted by its predecessor** by **changing the weights of training instances**
 - Each predictor is assigned to a coefficient alpha, which depends on the predictor's training error
 
 <img src="adaboost.png" height="300px">
@@ -249,7 +249,7 @@ _Shrink the coefficient alpha of a trained predictor_
     - A small learning rate should be compensated by a greater number of estimators
 
 ### Gradient Boosting (GB)
-- Does not tweak the weights of training instances
+- **Does not tweak the weights** of training instances
 - Each predictor is trained using the residual errors of its predecessor as labels
 - Base learner: CART
 
@@ -267,4 +267,16 @@ _Prediction of each tree in the ensemble is shirnked after it is multiplied by a
 - GB involves an exhaustive search procedure
 - Each tree is trained on a random subset **(sampled without replacement)** of rows of the training data
 - Features are sampled without replacement
+
+<img src="sgb.png" height="300px">
+
+- `subsample=0.8`: each tree to sample 80% of the data for training
+- `max_features=0.2`: each tree uses 20% of available features to perform the best-split
+```python
+sgby = GradientBoostingRegressor(max_depth=1,
+                                subsample=0.8,
+                                max_features=0.2,
+                                n_estimators=300,
+                                random_state=SEED)
+```
 
