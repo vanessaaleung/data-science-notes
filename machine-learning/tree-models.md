@@ -156,6 +156,8 @@ bc = BaggingClassifier(base_estimator=dt, n_estimators=300, n_jobs=-1)
 ```
 
 ### Out Of Bag Evaluation
+_Obtain the performance of a bagged-ensemble on unseen data without performing cross-validation_
+
 - OOB instsances: training instances that are not sampled, used to estimate the performance
 - Each model is trained on bootstrap samples and evaluated on the OOB instances
 
