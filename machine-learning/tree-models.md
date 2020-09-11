@@ -170,5 +170,32 @@ bc = BaggingClassifier(base_estimator=dt, n_estimators=300, oob_score=True, n_jo
 oob_accuracy = bc.oob_score_
 ```
 
+### Random Forests
+- Base estimator: Decision Tree
+- Each estimator is trained on a different bootstrap sample
+- further randomization in the training of individual trees
+- At each node, d features are sampled without replacement (d < total number of features)
+    - in scikit-learn, d defaults = the square-root of the number of features
+- The node is split using the sampled feature that maximized information gain
+- Final prediction
+    - Majority voting for classification, `RandomForestClassifier`
+    - Averaging for regression, `RandomForestRegressor`
 
+<img src="random-forest.png" height="300px">
 
+```python
+rf = RandomeForestRegressor(n_estimator=...)
+```
+
+#### Feature Importance
+- in `sklearn`: how much the tree nodes use a particular feature (weighted average) to reduce impurity
+- Is expressed as a percentage indicating the weight of that feature in training and prediction
+
+```python
+importances_rf = pd.Series(rf.feature_importances_, index=X.columns)
+sorted_importance_rf = importance_rf.sort_values()
+
+# Make a horizontal bar plot
+sorted_importances_rf.plot(kind='barh', color='lightgreen')
+plt.show()
+```
