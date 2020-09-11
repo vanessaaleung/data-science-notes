@@ -155,3 +155,18 @@ from sklearn.ensemble import BaggingClassifier
 bc = BaggingClassifier(base_estimator=dt, n_estimators=300, n_jobs=-1)
 ```
 
+### Out Of Bag Evaluation
+- OOB instsances: training instances that are not sampled, used to estimate the performance
+- Each model is trained on bootstrap samples and evaluated on the OOB instances
+
+<img src="oob-evaluation.png" height="300px">
+
+- Corresponds to accuracy score for classifiers, and r-squared score for regressors
+
+```python
+bc = BaggingClassifier(base_estimator=dt, n_estimators=300, oob_score=True, n_jobs=-1)
+oob_accuracy = bc.oob_score_
+```
+
+
+
