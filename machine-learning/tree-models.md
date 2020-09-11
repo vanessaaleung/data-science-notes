@@ -9,6 +9,8 @@ _Infer class labels, Capture non-linear relationships between features and label
     - [Bagging](#bagging)
     - [Random Forest](#random-forest)
 4. [Boosting](#boosting)
+    - [AdaBoost](#adaboost)
+    - [Gradient Boosting](#gradient-boosting)
 
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
@@ -245,3 +247,24 @@ _Shrink the coefficient alpha of a trained predictor_
 
 - Tradeoff between the learning rate and the number of estimators
     - A small learning rate should be compensated by a greater number of estimators
+
+### Gradient Boosting (GB)
+- Does not tweak the weights of training instances
+- Each predictor is trained using the residual errors of its predecessor as labels
+- Base learner: CART
+
+<img src="gradient-boosted.png" height="300px">
+
+#### Shrinkage
+_Prediction of each tree in the ensemble is shirnked after it is multiplied by a learning rate_
+<img src="shrinkage.png" height="300px">
+
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;y_{pred}=y_1&plus;\eta&space;r_1&plus;...&plus;\eta&space;r_N" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;y_{pred}=y_1&plus;\eta&space;r_1&plus;...&plus;\eta&space;r_N" title="y_{pred}=y_1+\eta r_1+...+\eta r_N" /></a>
+
+- `GradientBoostingRegressor`, `GraidentBoostingClassifier`
+
+### Stochastic Gradient Boosting (SGB)
+- GB involves an exhaustive search procedure
+- Each tree is trained on a random subset **(sampled without replacement)** of rows of the training data
+- Features are sampled without replacement
+
