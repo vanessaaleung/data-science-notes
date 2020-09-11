@@ -4,6 +4,7 @@ _Infer class labels, Capture non-linear relationships between features and label
 
 1. [Decision Tree](#decision-tree)
 2. [The Bias-Variance Tradeoff](#the-bias-variance-tradeoff)
+    - [Ensemble Learning](#ensemble-learning)
 
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
@@ -110,6 +111,8 @@ print('Test MSE:', MSE(y_test, y_predict_test))
   - Remedy: increase complexity - gather more features data
 
 ### Ensemble Learning
+_Train different classifiers and aggregate the predictions_
+
 - Advantages of CARTs (Classification and Regression Trees) : simple to understand and interpret
 - Limitations of CARTs
   - sensitive to small variations in the training set
