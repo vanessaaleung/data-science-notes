@@ -298,6 +298,7 @@ _Find a set of optimal hyperparameters that results in an optimal model_
     - Bayesian Optimization
     - Genetic Algorithms
 - For each set of hyperparameters, evaluate each model's CV score
+- Computationally expensive
 
 ### Grid Search Cross Validation
 _Manually set a grid of discrete hyperparameter values_
@@ -324,5 +325,13 @@ grid_dt = GridSearchCV(estimator=dt,
 grid_dt.best_params_
 ```
 
-
+- Tuning a RF's hyperparameters
+    - `verbose`: the higher its value, the more messages are printed during fitting
+    - 
+    ```python
+    grid_rf = GridSearchCV(estimator=rf,
+                            param_grid=params_rf,
+                            verbose=1
+                            )
+    ```
 
