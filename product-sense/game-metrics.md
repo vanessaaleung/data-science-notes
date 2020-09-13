@@ -24,17 +24,16 @@
   - Measures how often users engage with an app on average - Stickiness
   - DAU/MAU = 0.3, users use the app for 0.3 * 30 days = 9 days each month on average
 
-
 ## User Retention Metrics
 1. Retention
   - seperate users into cohorts based on the day of acquisition
   - monitor how they interact with the game on day 1, 3, 7, and 30
 2. Engagement Score
   - Segmenting and identifying feature of each cohort
-  - <img src="https://www.cooladata.com/wp-content/uploads/2017/11/Segmenting-Analyzing-User-Behavior.png">
-  - # of Friends Added
-  - # Games Played
-  - # of Forum posts
+  - <img src="https://www.cooladata.com/wp-content/uploads/2017/11/Segmenting-Analyzing-User-Behavior.png">  
+  - number of Friends Added
+  - number of Games Played
+  - number of Forum posts
 3. Number of sessions per user
 4. Drop-off rates
   - Ensure users get through all of the steps of the game
