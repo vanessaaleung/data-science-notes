@@ -77,3 +77,6 @@ _Return the first non-null value in a list_
 ### LAG
 _Fetch the data of a preceding row from the present row_
 - Example: `LAG(mau) OVER (ORDER BY month)`: will return the previous month's mau
+
+### Running Total
+- `SUM(mau) OVER (ORDER BY month)`
