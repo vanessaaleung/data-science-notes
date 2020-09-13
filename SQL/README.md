@@ -76,6 +76,8 @@ _Return the first non-null value in a list_
 
 ### LAG
 _Fetch the data of a preceding row from the present row_
+- `LAG(column, number of rows back) OVER (PARTITION BY ... ORDER BY ...)`
+- Default number of rows back = 1
 - Example: `LAG(mau) OVER (ORDER BY month)`: will return the previous month's mau
 
 ### Running Total
