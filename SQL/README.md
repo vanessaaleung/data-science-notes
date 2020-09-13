@@ -82,3 +82,7 @@ _Fetch the data of a preceding row from the present row_
 
 ### Running Total
 - `SUM(mau) OVER (ORDER BY month)`
+
+### Greatest
+_Used to avoid dividing by zero_
+- Example: `GREATEST(value, 1)`
