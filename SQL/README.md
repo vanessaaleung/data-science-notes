@@ -68,3 +68,12 @@ _Returns the first day of the date nearest to the date part_
 
 ### EXTRACT
 - `EXTRACT (MONTH FROM DATE)`
+
+### COALESCE
+_Return the first non-null value in a list_
+
+- Example: `COALESCE(NULL, 'test1', NULL, 'test2')` will return 'test1'
+
+### LAG
+_Fetch the data of a preceding row from the present row_
+- Example: `LAG(mau) OVER (ORDER BY month)`: will return the previous month's mau
