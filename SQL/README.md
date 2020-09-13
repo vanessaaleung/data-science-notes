@@ -90,3 +90,17 @@ _Used to avoid dividing by zero_
 ### INTERVAL
 _Calculate date_
 - Example: `date - INTERVAL '1 month'`
+
+- Example: Calculating retention rate
+```sql
+SELECT
+  previous.delivr_month,
+  ROUND(
+    COUNT(DISTINCT current.user_id) :: NUMERIC /
+    GREATEST(COUNT(DISTINCT previous.user_id), 1),
+  2) AS retention_rate
+FROM user_monthly_activity AS previous
+LEFT JOIN user_monthly_activity AS current
+ON previous.user_id = current.user_id
+AND previous.delivr_month = current.delivr_month - INTERVAL '1 month'
+```
