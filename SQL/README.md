@@ -1,4 +1,8 @@
 # SQL
+- [Window Functions](#window-functions)
+- [Optimization](#optimization)
+- [Other Functions](#other-functions)
+
 ## Window Functions
 - Performs calculation across a set of rows that are somehow related to the current row
 - Does not cause rows to become grouped
@@ -53,3 +57,14 @@ _Makes columns faster to query by creating pointers to where data is stored with
 
 ### Use EXPLAIN
 To get a sens of how long the query will take
+
+## Other Functions
+### DATE_TRUNC
+_Returns the first day of the date nearest to the date part_
+- `DATE_TRUNC(date_part, date)`
+- Example: 
+       - `DATE_TRUNC('week', '2018-06-12')` returns `'2018-06-11'`
+       - `DATE_TRUNC('month', '2018-06-12')` returns `'2018-06-01'`
+
+### EXTRACT
+- `EXTRACT (MONTH FROM DATE)`
