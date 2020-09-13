@@ -3,17 +3,24 @@
 - User Retention Metrics
 
 ## User Acquisition Metrics
-1. New users
+### New users
   - Number of daily, weekly, and monthly new user sign-ups
   - Metrics by user acquisition channel
-2. Daily Active Users (DAU)
-  - Number of unique users that participate in at least one session of the game 
-3. K-factor
+### Daily Active Users (DAU)
+  - Number of unique users that participate in at least one session of the game
+### MAU
+  - Pitfalls
+    - Doesn't distinguish between different activity patterns
+      - users register and active for one month only
+      - 100 users register for the first month, only these users are active every month
+  - Breakdown to new users, retained users (stay active), resurrected users (weren't active, return to active)
+### K-factor
   - summarize the effectiveness of the referral growth strategy
   - (Amount of invites sent by each customer of the app) * (conversion of each invite)
-4. Number of invites sent / DAU
+### Number of invites sent / DAU
   - How well the referral program is retaining the users
-5. DAU/MAU
+
+### DAU/MAU
   - Measures how often users engage with an app on average - Stickiness
   - DAU/MAU = 0.3, users use the app for 0.3 * 30 days = 9 days each month on average
 
