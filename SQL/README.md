@@ -59,35 +59,25 @@ _Makes columns faster to query by creating pointers to where data is stored with
 To get a sens of how long the query will take
 
 ## Other Functions
-### DATE_TRUNC
+### DEALING WITH DATES
+#### DATE_TRUNC
 _Returns the first day of the date nearest to the date part_
 - `DATE_TRUNC(date_part, date)`
 - Example: 
        - `DATE_TRUNC('week', '2018-06-12')` returns `'2018-06-11'`
        - `DATE_TRUNC('month', '2018-06-12')` returns `'2018-06-01'`
 
-### EXTRACT
+#### EXTRACT
 - `EXTRACT (MONTH FROM DATE)`
 
-### COALESCE
-_Return the first non-null value in a list_
+#### TO_CHAR
+-  `TO_CHAR(DATE, FORMAT DATE STRING)`
+- Example: `TO_CHAR('2018-08-13', 'FMDay DD, FMMonth YYYY')` returns `'Friday 13, August 2018'`
+- `Dy`: Abbreviated, e.g. Mon, Tues, etc.
+- `DD`: Day number 01-31
+- `FMDay`: Full day name, Monday, Tuesday, etc.
 
-- Example: `COALESCE(NULL, 'test1', NULL, 'test2')` will return 'test1'
-
-### LAG
-_Fetch the data of a preceding row from the present row_
-- `LAG(column, number of rows back) OVER (PARTITION BY ... ORDER BY ...)`
-- Default number of rows back = 1
-- Example: `LAG(mau) OVER (ORDER BY month)`: will return the previous month's mau
-
-### Running Total
-- `SUM(mau) OVER (ORDER BY month)`
-
-### Greatest
-_Used to avoid dividing by zero_
-- Example: `GREATEST(value, 1)`
-
-### INTERVAL
+#### INTERVAL
 _Calculate date_
 - Example: `date - INTERVAL '1 month'`
 
@@ -104,3 +94,46 @@ LEFT JOIN user_monthly_activity AS current
 ON previous.user_id = current.user_id
 AND previous.delivr_month = current.delivr_month - INTERVAL '1 month'
 ```
+
+### COALESCE
+_Return the first non-null value in a list_
+- Example: `COALESCE(NULL, 'test1', NULL, 'test2')` will return 'test1'
+
+### LAG
+_Fetch the data of a preceding row from the present row_
+- `LAG(column, number of rows back) OVER (PARTITION BY ... ORDER BY ...)`
+- Default number of rows back = 1
+- Example: `LAG(mau) OVER (ORDER BY month)`: will return the previous month's mau
+
+### RANK
+- Assigns a rank to each row based on that row's position in a sorted order
+
+### Running Total
+- `SUM(mau) OVER (ORDER BY month)`
+
+### Greatest
+_Used to avoid dividing by zero_
+- Example: `GREATEST(value, 1)`
+
+### CASE
+```sql
+CASE
+       WHEN price < 5 THEN '...'
+       WHEN price < 10 THEN '...'
+       ELSE '...'
+END AS price_category
+```
+              
+
+### CROSSTAB() - POSTGRE SQL
+- import like in Python
+`CREATE  EXTENSION IF NOT EXISTS tablefunc;`
+-  
+```SQL
+SELECT * FROM CROSSTAB($$
+       SELECT QUERY
+$$)
+AS ct(column 1 INT,
+       column 2 INT);
+```
+       
