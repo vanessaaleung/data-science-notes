@@ -86,3 +86,7 @@ _Fetch the data of a preceding row from the present row_
 ### Greatest
 _Used to avoid dividing by zero_
 - Example: `GREATEST(value, 1)`
+
+### INTERVAL
+_Calculate date_
+- Example: `date - INTERVAL '1 month'`
