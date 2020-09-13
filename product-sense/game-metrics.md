@@ -13,6 +13,10 @@
   - (Amount of invites sent by each customer of the app) * (conversion of each invite)
 4. Number of invites sent / DAU
   - How well the referral program is retaining the users
+5. DAU/MAU
+  - Measures how often users engage with an app on average - Stickiness
+  - DAU/MAU = 0.3, users use the app for 0.3 * 30 days = 9 days each month on average
+
 
 ## User Retention Metrics
 1. Retention
