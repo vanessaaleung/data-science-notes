@@ -43,12 +43,27 @@ _Who this dashboard is for and what metrics matter to them_
 #### Limited Variety
 - The average viewership peaks when six different types of charts are used
 
+#### Review
+- Gather documents stating the goal, decisions, and metrics
+
 ### 3. Build
 - Find the Data
   - Do we have the data available
   - Where is the data stored
   - Is the data messy
-
+- Messy data
+  - Missing values: ignore, delete, impute
+  - Wrong values
+    - Fake phone number
+    - Fake names
+    - Fake birthday: too young, too old
+  - Potentially Wrong values
+    - Outliers: IQR = Q3 - Q1, [Q1 - 1.5 * IQR, Q3 + 1.5 * IQR]
+    - Various capitalization
+    - Misspellings
+- No data
+  - Track new data points
+  - Proxy metrics: that give similar information
 ### 4. Deploy
 - Sharing
   - Provide enough training to the audience
