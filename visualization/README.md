@@ -18,8 +18,19 @@ _Who this dashboard is for and what metrics matter to them_
   - The audience
   - The point person (the member of audience who has the most experience)
   - The Data Gatekeeper (the member of the data team who will help withh the database)
-
+- Define the Decisions
+  - Worst Case Scenario: how did this happen? What decisions led to this outcome? Waht decisions were made with a lack of data?
+  - Prioritize decisions
+- Define the Metrics
+  - What data would help inform that decision?
+  - What other data might be useful to add context?
+  - How else could we improve this decision’s quality?
+  - <img src="https://dataschool.com/assets/images/Screen%20Shot%202020-02-10%20at%201.58.58%20PM.png" height="200px">
+  
 ### 2. Prototype
+- Selecting Visualizations
+  - <img src="https://dataschool.com/assets/images/Decision%20Tree%206.png" height="500px">
+  - Consider limiting the number of categories by using an “Other” bucket, color the Other column grey to deemphasize this category, since it is a grouping of multiple categories
 
 ### 3. Build
 - Find the Data
