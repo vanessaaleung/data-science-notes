@@ -60,6 +60,9 @@ To get a sens of how long the query will take
 
 ## Other Functions
 ### DEALING WITH DATES
+#### DATEDIFF
+- `DATEDIFF(DATE1, DATE2)`, returns Date1 - Date2
+
 #### DATE_TRUNC
 _Returns the first day of the date nearest to the date part_
 - `DATE_TRUNC(date_part, date)`
