@@ -9,3 +9,4 @@
 7. [Marketing Analytics](https://github.com/vanessaaleung/DS-notes/tree/master/marketing-analytics)
 8. [Product Sense](https://github.com/vanessaaleung/DS-notes/tree/master/product-sense)
 9. [Machine Learning](https://github.com/vanessaaleung/DS-notes/tree/master/machine-learning)
+10. [Visualization](https://github.com/vanessaaleung/DS-notes/tree/master/visualization)
