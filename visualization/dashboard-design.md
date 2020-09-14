@@ -46,30 +46,59 @@ _Who this dashboard is for and what metrics matter to them_
 - Gather documents stating the goal, decisions, and metrics
 
 ## 3. Build
-- Find the Data
-  - Do we have the data available
-  - Where is the data stored
-  - Is the data messy
-- Messy data
-  - Missing values: ignore, delete, impute
-  - Wrong values
-    - Fake phone number
-    - Fake names
-    - Fake birthday: too young, too old
-  - Potentially Wrong values
-    - Outliers: IQR = Q3 - Q1, [Q1 - 1.5 * IQR, Q3 + 1.5 * IQR]
-    - Various capitalization
-    - Misspellings
-- No data
-  - Track new data points
-  - Proxy metrics: that give similar information
+### Find the Data
+- Do we have the data available
+- Where is the data stored
+- Is the data messy
+
+### Messy data
+- Missing values: ignore, delete, impute
+- Wrong values
+  - Fake phone number
+  - Fake names
+  - Fake birthday: too young, too old
+- Potentially Wrong values
+  - Outliers: IQR = Q3 - Q1, [Q1 - 1.5 * IQR, Q3 + 1.5 * IQR]
+  - Various capitalization
+  - Misspellings
+  
+### No data
+- Track new data points
+- Proxy metrics: that give similar information
   
 ## 4. Deploy
-- Sharing
-  - Provide enough training to the audience
-- Scaling
-  - Adding links, interactivity, and documentation
-  - Optimizing queries
-- Maintenance
-  - Setting up scheduled times to review
-  - Providing a way for audience to provide feedback
+- Context
+- Medium
+- Scheduling
+
+### Context
+- Descriptive chart titles
+- Label axes
+- Provide a legend
+- Add Definitions: Adding a short description beneath the metric clarifies the information that is represented and its limitations
+
+###  Medium
+- Email
+  - Can this dashboard be shared externally?
+  - What level of access do people need to view the dashboard?
+  - How frequently should I send out the data so that people don’t ignore it? (align the schedule with the frequency of decisions being made from the dashboard)
+  
+### Scheduling
+- Scheduling should mimic the pace at which decisions need to be made
+- If people do not need to view the dashboard to make a decision unless a metric changes dramatically, set up an alert
+
+###  Scaling
+- Adding links, interactivity, and documentation
+- Optimizing queries
+  - go to the Data Gatekeeper to discuss creating a pre-aggregated table that you can query from
+- Removing unused dashboards
+- Documentation
+
+### Maintenance
+- Setting up scheduled times to review
+  - Total dashboard views
+  - Repeat dashboard views
+  - Unique dashboard viewers
+  - Do queries produce expected results?
+  - Have the underlying data sources or data models for this dashboard changed?
+- Providing a way for audience to provide feedback
