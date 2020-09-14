@@ -70,6 +70,9 @@ _Returns the first day of the date nearest to the date part_
        - `DATE_TRUNC('week', '2018-06-12')` returns `'2018-06-11'`
        - `DATE_TRUNC('month', '2018-06-12')` returns `'2018-06-01'`
 
+#### STR_TO_DATE
+- `STR_TO_DATE(str,fmt)`
+
 #### EXTRACT
 - `EXTRACT (MONTH FROM DATE)`
 
@@ -78,7 +81,7 @@ _Returns the first day of the date nearest to the date part_
 - Example: `TO_CHAR('2018-08-13', 'FMDay DD, FMMonth YYYY')` returns `'Friday 13, August 2018'`
 - `Dy`: Abbreviated, e.g. Mon, Tues, etc.
 - `DD`: Day number 01-31
-- `FMDay`: Full day name, Monday, Tuesday, etc.
+- `FMDay`: Full day name, Monday, Tuesday, etc
 
 #### INTERVAL
 _Calculate date_
