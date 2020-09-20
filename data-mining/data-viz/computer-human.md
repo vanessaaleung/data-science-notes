@@ -1,7 +1,7 @@
 # The Computer and the Human
 
 ## Graphics, Drawing, and Photorealism
-1. [2-D Graphics](#2d-graphics)
+1. [2-D Graphics](#2-d-graphics)
 2. [SVG example]()
 3. [2-D Drawing]()
 4. [3-D Graphics]()
