@@ -4,8 +4,11 @@
 1. [2-D Graphics](#2-d-graphics)
 2. [2-D Drawing](#2-d-drawing)
 4. [3-D Graphics](#3-d-graphics)
-5. [Photorealism]()
-6. [Non-Photorealism]()
+5. [Photorealism](#photorealism)
+6. [Non-Photorealism](#non-photorealism)
+
+## Humans and Visualization
+1. [Reasoning](#reasoning]
 
 ### 2-D Graphics
 
@@ -89,11 +92,17 @@ _Describes visual cues that tell our perceptual system that when it see a two-di
 - Stereopsis: rendering from two different viewpoints, one for each eye, useful when other cues are unavailable
 
 ### Non-Photorealism
+<img src="images/non-photorealism.png" height="300px>
+                                          
 - focuses on the psychology of perception, emphasizes the outlines, the visual contours
 - photorealistic: focuses on the physics of light
+
 ## Humans and Visualization
+### Reasoning
+- Deductive reasoning: if A then B, draw a conclusion
+- Inductive reasoning: if true for x, then true for x+1, make a generalization
+- Abductive reasoning: ask questions, try to predict how an event happened
 
-
-
+### Human Retina
 
 
