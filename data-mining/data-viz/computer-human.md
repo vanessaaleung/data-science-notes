@@ -3,7 +3,7 @@
 ## Graphics, Drawing, and Photorealism
 1. [2-D Graphics](#2-d-graphics)
 2. [2-D Drawing](#2-d-drawing)
-4. [3-D Graphics]()
+4. [3-D Graphics](#3-d-graphics)
 5. [Photorealism]()
 6. [Non-Photorealism]()
 
@@ -68,7 +68,29 @@ _Format specification for describing 2-D graphics_
   - `M`: move to a new position without drawing a line
   - `L`: move to a new position while drawing a line
   - `Z`: close the path
-  
+
+### 3-D Graphics
+_Displays objects that are made out of triangle meshes_
+
+#### 3-D Graphics Pipeline
+<img src="images/3d-pipeline.png" height="300px>
+                                          
+- Vertex Processing: taking vertices of triangles and projecting them onto an image plane
+- Rasterization: taking two-dimensional triangles and converting them into pixels
+- Pixel Processing: taking pixel regions and figures out what colors hould be on their interior
+
+### Photorealism
+_Describes visual cues that tell our perceptual system that when it see a two-dimensional image, it's seeing a depiction of a three dimensional scene_
+- Cues: occlusion, shadowing, perspecitve, stereopsis, focus, lighting, texturing, attenuation
+- Occlusion: most objects are opaque and hide objects behind them, strongest cue
+- Illumination: cues the orientation of a surface
+- Shadowing: cuces object relative positions
+- Perspective: farther things appear smaller
+- Stereopsis: rendering from two different viewpoints, one for each eye, useful when other cues are unavailable
+
+### Non-Photorealism
+- focuses on the psychology of perception, emphasizes the outlines, the visual contours
+- photorealistic: focuses on the physics of light
 ## Humans and Visualization
 
 
