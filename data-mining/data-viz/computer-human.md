@@ -2,8 +2,7 @@
 
 ## Graphics, Drawing, and Photorealism
 1. [2-D Graphics](#2-d-graphics)
-2. [SVG example]()
-3. [2-D Drawing]()
+2. [2-D Drawing](#2-d-drawing)
 4. [3-D Graphics]()
 5. [Photorealism]()
 6. [Non-Photorealism]()
@@ -41,4 +40,37 @@ _2D graphics plotting on canvas can be automatically resized and repositioned an
 
 - Can use same coordinates for both canvas and screen coordinates, results in non-scalable resolution dependent output, not recommended
 
+### 2-D Drawing
+#### SVG (Scalable Vector Graphics)
+_Format specification for describing 2-D graphics_
+- Embedded in HTML with <svg> tag
+   ```html
+  <svg width=pw height=ph viewbox="x y w h"></svg>
+  ```
+  - viewbox: creates a drawing canvas x, y are the upper left corner
+- Example:
+  ```html
+  <svg width=... height=... viewbox="0 0 1 1">
+    <svg x="10%" y="10%" width="80%" height="80% viewbox="0 0 1 1">
+ ```
+ <img src="images/svg-coordinates.png" height="300px">
+
+#### Path
+- Example
+   ```html
+  <path d="M 0.2 0.1
+           L 0.2 0.3
+           L 0.4 0.3
+           Z"
+        fill = blue />
+  ```
+  - `M`: move to a new position without drawing a line
+  - `L`: move to a new position while drawing a line
+  - `Z`: close the path
+  
 ## Humans and Visualization
+
+
+
+
+
