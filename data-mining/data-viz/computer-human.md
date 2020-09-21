@@ -44,7 +44,7 @@ _2D graphics plotting on canvas can be automatically resized and repositioned an
 #### SVG (Scalable Vector Graphics)
 _Format specification for describing 2-D graphics_
 - Embedded in HTML with <svg> tag
-   ```html
+  ```html
   <svg width=pw height=ph viewbox="x y w h"></svg>
   ```
   - viewbox: creates a drawing canvas x, y are the upper left corner
@@ -52,8 +52,9 @@ _Format specification for describing 2-D graphics_
   ```html
   <svg width=... height=... viewbox="0 0 1 1">
     <svg x="10%" y="10%" width="80%" height="80% viewbox="0 0 1 1">
- ```
- <img src="images/svg-coordinates.png" height="300px">
+  ```
+
+  <img src="images/svg-coordinates.png" height="300px">
 
 #### Path
 - Example
