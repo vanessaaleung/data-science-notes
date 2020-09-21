@@ -1,4 +1,6 @@
 # The Computer and the Human
+1. Graphics, Drawing, and Photorealism
+2. [Humans and Visualization](#humans-and-visualization)
 
 ## Graphics, Drawing, and Photorealism
 1. [2-D Graphics](#2-d-graphics)
@@ -6,9 +8,6 @@
 4. [3-D Graphics](#3-d-graphics)
 5. [Photorealism](#photorealism)
 6. [Non-Photorealism](#non-photorealism)
-
-## Humans and Visualization
-1. [Reasoning](#reasoning]
 
 ### 2-D Graphics
 
@@ -98,6 +97,9 @@ _Describes visual cues that tell our perceptual system that when it see a two-di
 - photorealistic: focuses on the physics of light
 
 ## Humans and Visualization
+1. [Reasoning](#reasoning]
+
+
 ### Reasoning
 - Deductive reasoning: if A then B, draw a conclusion
 - Inductive reasoning: if true for x, then true for x+1, make a generalization
