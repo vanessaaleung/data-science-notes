@@ -97,8 +97,7 @@ _Describes visual cues that tell our perceptual system that when it see a two-di
 - photorealistic: focuses on the physics of light
 
 ## Humans and Visualization
-1. [Reasoning](#reasoning]
-
+1. [Reasoning](#reasoning)
 
 ### Reasoning
 - Deductive reasoning: if A then B, draw a conclusion
@@ -106,5 +105,7 @@ _Describes visual cues that tell our perceptual system that when it see a two-di
 - Abductive reasoning: ask questions, try to predict how an event happened
 
 ### Human Retina
-
+- Photoreceptors
+  - rods: brightness
+  - cones: colors (red, green, blue)
 
