@@ -13,7 +13,15 @@ _Lay out the orthogonal axes in the Cartesian coordinate system in parallel_
 
 - Collinearity: convergence in parallel coordinates
 
-## Using Color
+## Tufte's Design Rules and Using Color
+### Tufte's Design Rules
+- Let the Data Speak: avoid summaries and aggregations
+- Annotation: label the axes
+- Chartjunk: prettier charts are often less effective at communication
+- Data-Ink ratio: don't waste ink on elements not associated with data
+- Multiples: consistent design
+- Narrative: tell a story
+
 ### Hue, Saturation and Value
 
 <img src="images/colors.png" height="200px">
