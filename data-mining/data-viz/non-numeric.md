@@ -2,7 +2,7 @@
 - [Graphs and Networks](#graphs-and-networks)
 - [Embedding Planar Graphs](#embedding-planar-graphs)
 - [Graph Visualization](#graph-visualization)
-- [Principal Component Analysis](#principal-component-analysis)
+- [Dimensionality Reduction](#dimensionality-reduction)
 
 ## Graphs and Networks
 ### Graphs
@@ -86,5 +86,23 @@ _Aggregate "similar" edges into "wire bundles" to simplify presentation_
 - Remove edges in order of decreasing Between Centrality
 - As higher BC edges merge lower-level communities
 
-## Principal Component Analysis
+## Dimensionality Reduction
+_Better perceive the high dimensional data_
+
+### Principal Component Analysis
+_Find the dimension the data varies a lot_
+- Compute a covariance matrix
+- Eigenvalue: how ellipsoid is stretched and squashed
+- Eigenvector: what direction the stretching and squashing occur in 
+- Principal Component Analysis: keeps only the eigenvectors corresponding to largest magnitude eigenvalues
+
+<img src="images/mandible.png" height="200px">
+
+### Mutidimensional Scaling
+_Preserve the distance between data when displaying them in lower dimension_
+
+- Given distances <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;d_{ij}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;d_{ij}" title="d_{ij}" /></a> between i and j
+- Find positions <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;(x_i,&space;y_i)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;(x_i,&space;y_i)" title="(x_i, y_i)" /></a> 
+- that minimize a stress function <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sum_{j=1...N-1}^{}\sum_{i=i&plus;1...j}(\left&space;\|&space;(x_i,&space;y_i)-(x_j,&space;y_j)&space;\right&space;\|-d_{ij})^2" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sum_{j=1...N-1}^{}\sum_{i=i&plus;1...j}(\left&space;\|&space;(x_i,&space;y_i)-(x_j,&space;y_j)&space;\right&space;\|-d_{ij})^2" title="\sum_{j=1...N-1}^{}\sum_{i=i+1...j}(\left \| (x_i, y_i)-(x_j, y_j) \right \|-d_{ij})^2" /></a>
+
 
