@@ -1,4 +1,8 @@
 # Visualization of Non-Numeric Data
+- [Graphs and Networks](#graphs-and-networks)
+- [Embedding Planar Graphs](#embedding-planar-graphs)
+- [Graph Visualization](#graph-visualization)
+- [Principal Component Analysis](#principal-component-analysis)
 
 ## Graphs and Networks
 ### Graphs
@@ -51,4 +55,36 @@ _Edges connecting the nodes don't cross_
   - Solve <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Ay=B_y" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Ay=B_y" title="Ay=B_y" /></a> for y coordinates
 
   <img src="images/linear-systems.png" height="200px">
-  
+  <img src="images/linear-systems-2.png" height="200px">
+
+## Graph Visualization
+### GEM Force Directed Layout
+- Edges exert spring force on their nodes
+  - Spring force diminished by node degree, making higher degree nodes "heavier"
+- Nodes mutually repel each other
+  - strength ~ 1/distance
+- All nodes experience global forces
+  - Gravitational force toward center
+
+### Centralities
+_A way of analyzing where a node should be positioned in a layout_
+- Node degree: high degree appears in the center, low degree appears on the boundary
+  - e.g. PageRank: sum of PageRanks of incoming links
+- Isolation metric: total distance to all other nodes
+  - Distance: the shorted number of edges to get from one node to another node
+  - Closeness centrality = 1/ isolation metric
+  - Graph centrality = 1/ distance to the farthest node
+- Betweeness centrality
+  - portion of all shortest paths between any two nodes that pass through the given node
+
+### Edge Bundles
+_Aggregate "similar" edges into "wire bundles" to simplify presentation_
+
+<img src="images/edge-bundles.png" height="200px">
+
+### Community Discovery
+- Remove edges in order of decreasing Between Centrality
+- As higher BC edges merge lower-level communities
+
+## Principal Component Analysis
+
