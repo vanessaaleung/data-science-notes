@@ -25,7 +25,7 @@ _= Number of edges_
 ### Adjacency Matrix
 _Matrix representation of a graph_
 
-<img src="images/adjacency-matrix.png" height="300px">
+<img src="images/adjacency-matrix.png" height="200px">
 
 - Square matrix: # of rows & columns = # of nodes
 - [i, j] is set to 1 if edge connects i and j
@@ -36,7 +36,7 @@ _Matrix representation of a graph_
 ### Planar Embedding
 _Edges connecting the nodes don't cross_
 
-<img src="images/planar-graph.png" height="300px">
+<img src="images/planar-graph.png" height="200px">
 
 ### Graph Embedding
 - Create the graphc Laplacian Matrix: Adjacency matrix with elements <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;L_{ij}=\frac{1}{degree(i)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;L_{ij}=\frac{1}{degree(i)}" title="L_{ij}=\frac{1}{degree(i)}" /></a> for an edge between i and j
