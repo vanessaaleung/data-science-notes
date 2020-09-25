@@ -1,7 +1,10 @@
 # Overview
 
-# Guiding Questions
-- **What does a computer have to do in order to understand a natural language sentence?**
+## Guiding Questions
+- **What does a computer have to do in order to understand a natural language sentence?** 
+
+  <img src="images/nlp-example.png" height="300px">
+  
   1. Lexical analysis (part-of-speech tagging): tag Noun, Verb, Prep, etc.
   2. Syntactic analysis (parsing): some words go together first, and then go with other wordsantic analysis  - know the structure of the sentence
   3. Semantic analysis: use symbols to denote objects and relationship - know the meaning of the sentence
@@ -25,9 +28,16 @@
   
 - **What are the two modes of text information access? Which mode does a web search engine such as Google support?**
   - Pull (search engines): users take initiative, ad hoc information
+    - Querying: user enters a query, system returns relevant document
+    - Browsing: user navigates into relevant information by following a path enabled by the structures on the documents
+    - Want to combine the two way
   - Push (recommender systems): systems take initiative, stable information need
+  - Combine the two in sophisticated information system
   
-- When is browsing more useful than querying to help a user find relevant information?
+- **When is browsing more useful than querying to help a user find relevant information?**
+  - Querying: works well whn the user knows what keywords to use
+  - Browsing: works well when user wants to explore information
+  
 - Why is a text retrieval task defined as a ranking task?
 - What is a retrieval model?
 - What are the two assumptions made by the Probability Ranking Principle?
@@ -35,7 +45,7 @@
 - How do we define the dimensions of the Vector Space Model? What does “bag of words” representation mean?
 - What does the retrieval function intuitively capture when we instantiate a vector space model with bag of words representation and bit representation for documents and queries?
 
-# Key Phrases and Concepts
+## Key Phrases and Concepts
 1. Part of speech tagging, syntactic analysis, semantic analysis, and ambiguity
 2. “Bag of words” representation
 3. Push, pull, querying, browsing
