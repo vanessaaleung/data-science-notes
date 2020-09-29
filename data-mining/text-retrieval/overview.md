@@ -103,12 +103,14 @@ _The system would respond to a user's query with relevant documents_
   - Problems
     - Over-constrained (no relevant) / Under-constrained (over delivery), hard to find the position between two extremes
     - All relevant documents are not equally relevant, prioritization is needed
+  - Number of outcomes is N!
   
 2. Document ranking
   - <img src="images/document-ranking.svg">
   - <img src="images/relevance-measure.svg"> is a relevance measure function, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\theta" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\theta" title="\theta" /></a> is a cutoff determined by the user
   - Relative relevance: sytem only needs to decide is one doc is more likely relevant than another
   - Easier to determine
+  - Number of outcomes is 2^N
 
 ### Probability Ranking Principle
 Returning a ranked list of documents in descending order of probability that a document is relevant to the query is the optimal strategy under the two assumptions:
