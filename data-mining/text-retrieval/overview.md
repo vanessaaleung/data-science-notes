@@ -143,3 +143,17 @@ Returning a ranked list of documents in descending order of probability that a d
 - Similarity Instantiation: Dot Product
   <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" title="Sim(q,d)=q.d=x_1y_1+...+x_Ny_N=\sum_{i=1}^{N}x_iy_i" /></a>
 - VSM = Bit-Vector + Dot-Product + BOW
+
+## TF-IDF
+_Reflect how important a word is to a document in a collection_
+- term frequency–inverse document frequency
+- increases proportionally to the number of times a word appears in the document
+- decreases by the number of documents in the corpus that contain the word
+
+## Similarity Measures
+<img src="images/euclidean-cosine.png" height="250px">
+
+- Cosine similarity: generally used as a metric for measuring distance when the magnitude of the vectors does not matter
+- Euclidean distance
+- While cosine looks at the angle between vectors (thus not taking into regard their weight or magnitude), euclidean distance is similar to using a ruler to actually measure the distance
+- We could assume that when a word (e.g. science) occurs more frequent in document 1 than it does in document 2, that document 1 is more related to the topic of science. However, it could also be the case that we are working with documents of uneven lengths (Wikipedia articles for example). Then, science probably occurred more in document 1 just because it was way longer than document 2. Cosine similarity corrects for this.
