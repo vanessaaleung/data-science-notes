@@ -1,7 +1,7 @@
 # Overview
 
 ## Guiding Questions
-- **What does a computer have to do in order to understand a natural language sentence?** 
+### What does a computer have to do in order to understand a natural language sentence?
 
   <img src="images/nlp-example.png" height="300px">
   
@@ -11,7 +11,7 @@
   4. Inference
   5. Pragmatic analysis (speech act): the goal of the sentence
   
-- **What is ambiguity?**
+### What is ambiguity?
   - Word-level ambiguity: design can be a noun or a verb
   - Syntactic ambiguity
     - Modification: "natural language processing"
@@ -19,14 +19,14 @@
   - Anaphora resolution: "John persuaded Bill to buy a TV for *himself*"
   - Presupposition: "He has quit smoking" implies he smoked before
   
-- **Why is natural language processing (NLP) difficult for computers?**
+### Why is natural language processing (NLP) difficult for computers?
   - Natural language is designed for human, we omit a lot of "common sense" knowledge, keep a lot of ambiguities
   
-- **What is bag-of-words representation? Why do modern search engines use this simple representation of text?**
+### What is bag-of-words representation? Why do modern search engines use this simple representation of text?
   - Keep individual words, but ignore the orders of words
   - When searching, related words often appear together which helps understand, e.g. "Java applet" and "Java coffee"
   
-- **What are the two modes of text information access? Which mode does a web search engine such as Google support?**
+### What are the two modes of text information access? Which mode does a web search engine such as Google support?
   - Pull (search engines): users take initiative, ad hoc information
     - Querying: user enters a query, system returns relevant document
     - Browsing: user navigates into relevant information by following a path enabled by the structures on the documents
@@ -34,25 +34,25 @@
   - Push (recommender systems): systems take initiative, stable information need
   - Combine the two in sophisticated information system
   
-- **When is browsing more useful than querying to help a user find relevant information?**
+### When is browsing more useful than querying to help a user find relevant information?
   - Querying: works well when the user knows what keywords to use
   - Browsing: works well when user wants to explore information
   
-- **Why is a text retrieval task defined as a ranking task?**
+### Why is a text retrieval task defined as a ranking task?
   - The problem of Selection
     - Over-constrained (no relevant) / Under-constrained (over delivery), hard to find the position between two extremes
     - All relevant documents are not equally relevant, prioritization is needed
     
-- **What is a retrieval model?**
+### What is a retrieval model?
   - Formalization of relevance (give a computational definition  of relevance)
 
-- **What are the two assumptions made by the Probability Ranking Principle?**
+### What are the two assumptions made by the Probability Ranking Principle?
   1. The utility of a document (to a user) is independent of the utility of any other document
     - Not really true when a user has already seen a similar/duplicated document before, or multiple documents are only userful to users when they are put together
   2. A user would browse the results sequentially
     - Evidence shows that users don't always just go strictly sequentially through the entire list
 
-- **What is the Vector Space Retrieval Model? How does it work?**
+### What is the Vector Space Retrieval Model? How does it work?
   - Assumes relevance is roughly similarity between the document and the query
   - In a high dimensional space, each dimension corresponds to a term (word/phrase), N terms define an N-dimensional space
   - Represent a doc/query by a term vector
@@ -62,17 +62,22 @@
   - How to place docs and query in the space? How to assign term weights?
   - How to define the similarity measure?
   
-- **How do we define the dimensions of the Vector Space Model? What does “bag of words” representation mean?**
+### How do we define the dimensions of the Vector Space Model? What does “bag of words” representation mean?
   - Each dimension corresponds to a term/word, N terms define an N-dimensional space
   - Bag of words: keep individual words, but ignore the orders of words
 
-- **What does the retrieval function intuitively capture when we instantiate a vector space model with bag of words representation and bit representation for documents and queries?**
+### What does the retrieval function intuitively capture when we instantiate a vector space model with bag of words representation and bit representation for documents and queries?
   - Bit representation
     <img src="images/bit-vector.png" height="200px"> 
   - Similarity Instantiation: Dot Product
     <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" title="Sim(q,d)=q.d=x_1y_1+...+x_Ny_N=\sum_{i=1}^{N}x_iy_i" /></a>
   - VSM = Bit-Vector + Dot-Product + BOW
-
+    - Simplest VSM
+      - Dimension = word
+      - Vector = 0-1 bit vector (Word presence/absence)
+      - Similarity: dot-product
+      - f(q,d): number of unique query terms matched in each document
+    
 ## Text Retrieval Problem
 _The system would respond to a user's query with relevant documents_
 - Implement the pull mode of information access
