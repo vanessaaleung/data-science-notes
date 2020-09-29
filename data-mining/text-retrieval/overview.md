@@ -67,6 +67,11 @@
   - Bag of words: keep individual words, but ignore the orders of words
 
 - **What does the retrieval function intuitively capture when we instantiate a vector space model with bag of words representation and bit representation for documents and queries?**
+  - Bit representation
+    <img src="images/bit-vector.png" height="200px"> 
+  - Similarity Instantiation: Dot Product
+    <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" title="Sim(q,d)=q.d=x_1y_1+...+x_Ny_N=\sum_{i=1}^{N}x_iy_i" /></a>
+  - VSM = Bit-Vector + Dot-Product + BOW
 
 ## Text Retrieval Problem
 _The system would respond to a user's query with relevant documents_
@@ -127,6 +132,9 @@ Returning a ranked list of documents in descending order of probability that a d
   - Document Frequency: how often the word appears in a collection of documents, matching a rare word will get a higher score
 
 ## Vector Space Model
+- Bit representation
 
-## Vector Space Retrieval Model
-
+  <img src="images/bit-vector.png" height="200px"> 
+- Similarity Instantiation: Dot Product
+  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Sim(q,d)=q.d=x_1y_1&plus;...&plus;x_Ny_N=\sum_{i=1}^{N}x_iy_i" title="Sim(q,d)=q.d=x_1y_1+...+x_Ny_N=\sum_{i=1}^{N}x_iy_i" /></a>
+- VSM = Bit-Vector + Dot-Product + BOW
