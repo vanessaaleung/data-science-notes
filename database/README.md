@@ -1,6 +1,7 @@
 # Database
 
 ## SQL
+[Link](https://github.com/vanessaaleung/DS-notes/tree/master/database/SQL)
 
 ## Relational vs Non-Relational Databases
 
