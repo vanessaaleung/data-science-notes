@@ -4,7 +4,7 @@
 2. [Statistics](https://github.com/vanessaaleung/DS-notes/tree/master/statistics)
 3. [Probabilities](https://github.com/vanessaaleung/DS-notes/tree/master/probability)
 4. [Neural Network](https://github.com/vanessaaleung/DS-notes/tree/master/neural-networks)
-5. [SQL](https://github.com/vanessaaleung/DS-notes/tree/master/SQL)
+5. [Database](https://github.com/vanessaaleung/DS-notes/tree/master/database)
 6. [Financial Modeling](https://github.com/vanessaaleung/DS-notes/tree/master/financial-modeling)
 7. [Marketing Analytics](https://github.com/vanessaaleung/DS-notes/tree/master/marketing-analytics)
 8. [Product Sense](https://github.com/vanessaaleung/DS-notes/tree/master/product-sense)
