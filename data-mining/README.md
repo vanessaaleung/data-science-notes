@@ -3,3 +3,4 @@
 2. [Text  Retrieval and Search Engines](https://github.com/vanessaaleung/DS-notes/tree/master/data-mining/text-retrieval)
 3. [Text Mining and Analytics]()
 4. [Pattern Discovery in Data Mining]()
+5. [Text Mining in Python](https://github.com/vanessaaleung/DS-notes/tree/master/data-mining/text-mining-python)
