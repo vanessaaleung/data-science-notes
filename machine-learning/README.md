@@ -185,7 +185,7 @@ _Obtain the values of betas, the parameters, which maximize the log-likelihood f
 ### Coefficients
 - Regression coefficients are obtained by the maximum likelihood estimation
 - Linear
-  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mu=-0.114&plus;0.32\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\mu=-0.114&plus;0.32\times&space;weight" title="\mu=-0.114+0.32\times weight" /></a>
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\mu&space;=&space;-0.114&space;&plus;&space;0.32&space;\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\mu&space;=&space;-0.114&space;&plus;&space;0.32&space;\times&space;weight" title="\mu = -0.114 + 0.32 \times weight" /></a>
 
 - Logistic
   - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;log(odds)=-3.69&plus;1.8\times&space;weight" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;log(odds)=-3.69&plus;1.8\times&space;weight" title="log(odds)=-3.69+1.8\times weight" /></a>
@@ -228,13 +228,15 @@ r2 = lm.score(X, y)
 #### Mean squared error (MSE)
 _Sum of the residuals squared over the number of points_
 - scaling exponentially
-
+- penalize more when the prediction is way off
 ```python
 mse = mean_squared_error(y, preds)
 ```
+- Root mean squared error (RMSE): <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\sum_{i=1}^{n}(y_i&space;-&space;x_i)^2}{n}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\sum_{i=1}^{n}(y_i&space;-&space;x_i)^2}{n}" title="\frac{\sum_{i=1}^{n}(y_i - x_i)^2}{n}" /></a>
 
 #### Mean absolute error (MAE)
 _Sum of the absolute residuals over the number of points_
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\frac{\sum_{i=1}^{n}\left&space;|&space;y_i&space;-&space;x_i&space;\right&space;|}{n}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\frac{\sum_{i=1}^{n}\left&space;|&space;y_i&space;-&space;x_i&space;\right&space;|}{n}" title="\frac{\sum_{i=1}^{n}\left | y_i - x_i \right |}{n}" /></a>
 - scaling linearly
 
 <img src="https://miro.medium.com/max/2100/1*JTC4ReFwSeAt3kvTLq1YoA.png" height="200px">
