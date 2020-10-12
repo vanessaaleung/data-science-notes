@@ -9,3 +9,11 @@
 - Cumulative hit rate (cHR): throws away predicted rating under a threshold, shouldn't get credit for recommending movies that users won't actually enjoy
 - Rating Hit Rate (rHR): break down the hit rate by rating
 - Recommender systems can be good with poor RMSE scores
+- Coverage: % of <user, item> pairs that can be predicted
+- Diversity
+  - (1-S): S = avg similarity between recommendation pairs
+  - How various the items recommended by the system
+- Novelty: mean popularity rank of recommended items
+- Churn: how often do recommendations change
+- Responsiveness: how quickly does new user behavior influence your recommendations
+- Perceived quality: let users rate the recommendation
