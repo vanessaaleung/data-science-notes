@@ -90,3 +90,7 @@ for tree in trees:
 from nltk.corpus import treebank
 text = treebank.parsed_sent('wsj.mrg')[0]
 ```
+
+## Spelling Recommender
+- Jaccard distance: comparing set-similarity
+- edit distance: the number of characters that need to be substituted, inserted, or deleted, to transform s1 into s2
