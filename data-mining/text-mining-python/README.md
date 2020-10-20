@@ -50,6 +50,10 @@ _Industry standard for encoding and representing text_
 - UTF-32: one 32-bit code unit
 
 ## Basic NLP tasks with NLTK
+- Frequency of words
+```python
+dist = FreqDist(text)
+```
 - Stemming
 - Lemmatization: stemming, but resulting stems are all valid words
 - Tokenization: built-in tokenizer
