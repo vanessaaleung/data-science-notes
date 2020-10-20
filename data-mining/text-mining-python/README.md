@@ -48,3 +48,41 @@ _Industry standard for encoding and representing text_
   - Unicode Transformational Format - 8-bits
 - UTF-16: one or two 16-bit code units
 - UTF-32: one 32-bit code unit
+
+## Basic NLP tasks with NLTK
+- Stemming
+- Lemmatization: stemming, but resulting stems are all valid words
+- Tokenization: built-in tokenizer
+```python
+nltk.word_tokenize(text)
+```
+- Sentence Splitting
+```python
+nltk.sent_tokenize(text)
+```
+- Part-of-speech (POS) Tagging
+```python
+nltk.help.upenn_tagset('MD')
+nltk.pos_tag(text)
+```
+- Parsing Sentence Structure
+```python
+grammar = nltk.CFG.fromstring("""
+  S -> NP VP
+  VP -> V NP
+  NP -> 'Alice' | 'Bob'
+"""
+grammar = nltk.data.load('grammar.cfg')
+)
+```
+```python
+parser = nltk.ChartParser(grammar)
+trees = parser.parse_all(text)
+for tree in trees:
+  print(tree)
+```
+- Parse Tree Collection
+```python
+from nltk.corpus import treebank
+text = treebank.parsed_sent('wsj.mrg')[0]
+```
