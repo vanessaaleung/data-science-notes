@@ -43,12 +43,28 @@ _Makes columns faster to query by creating pointers to where data is stored with
   - Slower to query than clustered indexes
   - Can create many non-clustered indexes
   
-- B-tree: for equality and range queries, most commonly used
+- B-tree: 
+       - for equality and range queries, most commonly used
        - High cardinality: a large number of possible values in a column
        - Time to access depends on the depth of the tree
-- Hash indexed: for equality, look up values in a key, value form 
-- Bitmap: for inclusion, for columns with few distinct values
+- Hash indexed: 
+       - for equality only, no range values
+       - look up values in a key, value form
+       - mapping arbitrary length data to a fixed-size string
+       - No ordering preserving
+       - Smaller size than B-tree
+- Bitmap: 
+       - for inclusion
+       - Low cardinality: for columns with few distinct values
+       - fast with bitwise operations, e.g. AND, OR, NOT
+       - Time to access based on the execution time of the bitwise operation
+       - Read-intensive use cases, few writes like data warehouses
+       - Create by postgres on the fly when it thinks it's helpful
 - Specialized indexes: geo-spatial/user-defined indexing strategies
+       - GIST: Generalized Search Tree, framework for implementing custom indexes
+       - SP-GIST: Space-partitioned GIST
+       - GIN: for text indexign, lookups are faster, builds are slower
+       - BRIN: block range indexing, keeps min and max values
 
 ### Sort Merge Joins
 - Sort both tables, compare rows like loop join
