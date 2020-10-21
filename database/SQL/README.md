@@ -27,7 +27,7 @@ SELECT start_terminal,
 ## Optimization
 ### Indexing
 _Makes columns faster to query by creating pointers to where data is stored within a database_
-
+- Reduce full table scan
 - stored and searched as **B-trees**, creates a tree-like structure that sorts data for quick searching in logarithmic time
 - use an optimal search method known as binary search
 - All queries would start at the top node and work their way down the tree. If the target entry is less than the current node, the left path is followed, if greater, the right path is followed
@@ -43,6 +43,17 @@ _Makes columns faster to query by creating pointers to where data is stored with
   - Slower to query than clustered indexes
   - Can create many non-clustered indexes
   
+- B-tree: for equality and range queries, most commonly used
+       - High cardinality: a large number of possible values in a column
+       - Time to access depends on the depth of the tree
+- Hash indexed: for equality, look up values in a key, value form 
+- Bitmap: for inclusion, for columns with few distinct values
+- Specialized indexes: geo-spatial/user-defined indexing strategies
+
+### Sort Merge Joins
+- Sort both tables, compare rows like loop join
+- Stop when it is not possible to find a match later because of the order
+
 ### Join with INNER JOIN instead of WHERE
 - In some databases, WHERE creates a Cartesian Join
 - Example
@@ -54,6 +65,10 @@ _Makes columns faster to query by creating pointers to where data is stored with
   - If we had 1,000 customers with 1,000 total sales, the query would first generate 1,000,000 results, then filter for the 1,000 records where CustomerID is correctly joined
 
 ### Filter Early
+
+### Partition
+- Break big table into partitions
+- Use a partition key, e.g. based on time
 
 ### Use EXPLAIN
 To get a sens of how long the query will take
