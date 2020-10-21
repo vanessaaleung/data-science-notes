@@ -25,6 +25,9 @@ SELECT start_terminal,
 - `DENSE_RANK()` would still give all the identical rows a rank of 2, but the following row would be 3 — no ranks would be skipped.
 
 ## Optimization
+- Indexing
+- JOINs
+
 ### Indexing
 _Makes columns faster to query by creating pointers to where data is stored within a database_
 - Reduce full table scan
