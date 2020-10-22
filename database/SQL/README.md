@@ -89,13 +89,13 @@ _Makes columns faster to query by creating pointers to where data is stored with
 ### Partitioning
 - Break big table into partitions
 - Vertical Partitioning
-       - Global indexes for each partition
+  - Global indexes for each partition
 - Horizontal Partitioning
-       - Local indexes for each partition
-       - Range Partioning: Use a partition key, e.g. based on time
-              - query latest data
-              - report within range, comparative queries
-              - drop data after a period of time
+  - Local indexes for each partition
+  - Range Partioning: Use a partition key, e.g. based on time
+    - query latest data
+    - report within range, comparative queries
+    - drop data after a period of time
        ```sql
        CREATE TABLE iot_measurement
        ( ... )
@@ -106,7 +106,7 @@ _Makes columns faster to query by creating pointers to where data is stored with
        PARTITION OF iot_measurement
        FOR VALUES FROM ('2019-01-01') TO ('2019-01-08');
        ```
-       - Partition by List: data logicalaly groups into subgroups, often query within subgroups
+  - Partition by List: data logicalaly groups into subgroups, often query within subgroups
        ```sql
        CREATE TABLE products
        ( ... )
@@ -117,10 +117,10 @@ _Makes columns faster to query by creating pointers to where data is stored with
        PARTITION OF products
        FOR VALUES IN ('casual_clothing', 'business_attire', 'formal_clothing');
        ```
-       - Hash Partitioning: data not logically group into subgroups
-              - want even distributions of data across partitions
-              - no need for subgroup-specifi operations such as drop a partition
-              - Modulus: number of partitions
+  - Hash Partitioning: data not logically group into subgroups
+       - want even distributions of data across partitions
+       - no need for subgroup-specifi operations such as drop a partition
+       - Modulus: number of partitions
 
 ### Filter Early
 
