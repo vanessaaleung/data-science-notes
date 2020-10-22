@@ -28,6 +28,7 @@ SELECT start_terminal,
 - [Indexing](#indexing)
 - [JOINs](#joins)
 - [Partitioning](#partitioning)
+- [Materialized Views](#materialized-views)
 
 ### Indexing
 _Makes columns faster to query by creating pointers to where data is stored within a database_
@@ -121,6 +122,33 @@ _Makes columns faster to query by creating pointers to where data is stored with
        - want even distributions of data across partitions
        - no need for subgroup-specifi operations such as drop a partition
        - Modulus: number of partitions
+       ```sql
+       CREATE TABLE customer_interactions
+       ( ... )
+       PARTITION BY HASH(ci_id);
+       ```
+       ```sql
+       CREATE TABLE customer_interactions_1
+       PARTITION OF customer_interactions
+       FOR VALUES WITH (MODULUS 5, REMAINDER 0);
+
+       CREATE TABLE customer_interactions_2
+       PARTITION OF customer_interactions
+       FOR VALUES WITH (MODULUS 5, REMAINDER 1);
+       ```
+
+### Materialized Views
+- Store results of precomputed queries
+- Time is more important than space
+- Can tolerate inconsistencies
+```sql
+CREATE MATERIALIZED VIEW mv_staff AS
+    SELECT ...
+    FROM staff s
+```
+```sql
+REFRESH MATERIALIZED VIEW mv_staff;
+```
 
 ### Filter Early
 
