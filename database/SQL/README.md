@@ -77,6 +77,12 @@ _Makes columns faster to query by creating pointers to where data is stored with
 - Stop when it is not possible to find a match later because of the order
 - Use when equality only
 
+#### SET command
+```sql
+SET enable_hashjoin=FALSE;
+SET enable_nestloop=TRUE;
+```
+
 #### Join with INNER JOIN instead of WHERE
 - In some databases, WHERE creates a Cartesian Join
 - Example
