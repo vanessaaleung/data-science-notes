@@ -25,8 +25,9 @@ SELECT start_terminal,
 - `DENSE_RANK()` would still give all the identical rows a rank of 2, but the following row would be 3 — no ranks would be skipped.
 
 ## Optimization
-- Indexing
-- JOINs
+- [Indexing](#indexing)
+- [JOINs](#joins)
+- [Partitioning](#partitioning)
 
 ### Indexing
 _Makes columns faster to query by creating pointers to where data is stored within a database_
@@ -69,11 +70,13 @@ _Makes columns faster to query by creating pointers to where data is stored with
        - GIN: for text indexign, lookups are faster, builds are slower
        - BRIN: block range indexing, keeps min and max values
 
-### Sort Merge Joins
+### JOINS
+#### Sort Merge Joins
 - Sort both tables, compare rows like loop join
 - Stop when it is not possible to find a match later because of the order
+- Use when equality only
 
-### Join with INNER JOIN instead of WHERE
+#### Join with INNER JOIN instead of WHERE
 - In some databases, WHERE creates a Cartesian Join
 - Example
   ```sql
@@ -82,15 +85,19 @@ _Makes columns faster to query by creating pointers to where data is stored with
   WHERE Customers.CustomerID = Sales.CustomerID
   ```
   - If we had 1,000 customers with 1,000 total sales, the query would first generate 1,000,000 results, then filter for the 1,000 records where CustomerID is correctly joined
-
-### Filter Early
-
+  
 ### Partition
 - Break big table into partitions
-- Use a partition key, e.g. based on time
+- Vertical Partitioning
+       - Global indexes for each partition
+- Horizontal Partitioning
+       - Range Partioning: Use a partition key, e.g. based on time
+              - query latest data
+              - report within range, comparative queries
+              - drop data after a period of time
+       - Local indexes for each partition
 
-### Use EXPLAIN
-To get a sens of how long the query will take
+### Filter Early
 
 ## Other Functions
 ### DEALING WITH DATES
