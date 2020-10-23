@@ -18,6 +18,10 @@
 3. [Data Generating Process](#data-generating-process)
 
 ## Probability Basics
+### Frequentist vs Bayesian
+- Frequentist: the rate at which an event will occur if we repeat the experiment
+- Bayesian: the degree of belief that something is true
+
 ### Sample Space
 _S: Set of all possible outcomes_
 <p align="center">
