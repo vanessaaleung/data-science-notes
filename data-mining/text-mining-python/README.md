@@ -1,4 +1,8 @@
 # Text Mining in Python
+- Regex
+- Non-ASCII Characters
+- Spelling Recommender
+
 ## Regex
 ### Character matches
   - `.`: wildcard, matches a single character
@@ -94,3 +98,11 @@ text = treebank.parsed_sent('wsj.mrg')[0]
 ## Spelling Recommender
 - Jaccard distance: comparing set-similarity
 - edit distance: the number of characters that need to be substituted, inserted, or deleted, to transform s1 into s2
+
+## Naive Bayes Classifiers
+- Update the likelihood of the class given new information
+  - Prior probability: P(Python|Zoology)
+  - Posterior probability: P(Entertainment|Python)
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(x|y)=\frac{P(x)\times&space;P(y|x)}{P(y)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x|y)=\frac{P(x)\times&space;P(y|x)}{P(y)}" title="P(x|y)=\frac{P(x)\times P(y|x)}{P(y)}" /></a>
+- Assumption: features are assumed to be independent of each other
+
