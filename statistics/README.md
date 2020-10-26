@@ -8,13 +8,12 @@
     - [R-squared](#r-squared)
     - [Adjusted R-squared](#adjusted-r-squared)
     - [Standard Error (SE)](#standard-error-se)
-    - [Confidence Interval](#confidence-interval)
     - [P-value](#p-value)
     - [Statistical Significance](#statistical-significance)
-    - [Statistical Power](#statistical-power)
 6. [Type 1 and Type 2 Errors](#type-1-and-type-2-errors)
+    - [Statistical Power](#statistical-power)
+7. [Confidence Interval](#confidence-interval)
   
-
 ## Linear Regression Assumptions
 1. Linearity
 2. No/Little Multicollinearity
@@ -134,31 +133,6 @@ _As the **size of a sample is increased**, the **estimate of the sample mean** w
 ### Sampling
 - A sample is a collection of data from a certain population that is meant to represent the whole
 
-### Confidence Intervals
-_A range of values that we are fairly sure includes the true value of an unknown population parameter_
-- Has an associated confidence level that represents the frequency in which the interval will contain this value
-- Mean: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bar{X}\pm&space;Z_{\frac{\alpha}{2}}\frac{\sigma&space;}{\sqrt{n}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\bar{X}\pm&space;Z_{\frac{\alpha}{2}}\frac{\sigma&space;}{\sqrt{n}}" title="\bar{X}\pm Z_{\frac{\alpha}{2}}\frac{\sigma }{\sqrt{n}}" /></a>
-- Proportions: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{p}&space;\pm&space;Z_{\frac{\alpha}{2}}&space;\sqrt{&space;\frac{\hat{p}(1-\hat{p})}&space;{n}&space;}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{p}&space;\pm&space;Z_{\frac{\alpha}{2}}&space;\sqrt{&space;\frac{\hat{p}(1-\hat{p})}&space;{n}&space;}" title="\hat{p} \pm Z_{\frac{\alpha}{2}} \sqrt{ \frac{\hat{p}(1-\hat{p})} {n} }" /></a>
-- Margin of error: the part after the <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\pm" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\pm" title="\pm" /></a> sign, <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;=\text{Standard&space;Error}\times&space;\text{z-score}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;=\text{Standard&space;Error}\times&space;\text{z-score}" title="=\text{Standard Error}\times \text{z-score}" /></a>
-
-```python
-from scipy.stats import sem, t
-data = [1, 2, 3, 4, 5]
-confidence = 0.95
-
-# Compute the standard error and margin of error
-std_err = sem(data)
-margin_error = std_err * z_score
-
-# Compute and print the lower threshold
-lower = sample_mean - margin_error
-print(lower)
-
-# Compute and print the upper threshold
-upper = sample_mean + margin_error
-print(upper)
-```
-
 ## Nonparametric
 _Data that does not fit a known or well-understood distribution_
 - Data
@@ -221,14 +195,6 @@ _The number of standard deviations from the mean a data point is_
 
 - The higher/lower the z-score, the **less** likely the result is happen by chance
 
-### Confidence Interval
-_How likely the result is robust and repeatable_
-
-Example: A 95% confidence interval
-
-If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time.
-95% of intervals constructed contain the true mean.
-
 ### Significance Level
 _Probability of rejecting the null hypothesis when it is true_
 - A significance level of 0.05 indicates a 5% risk of concluding that a difference exists when there is no actual difference
@@ -250,11 +216,7 @@ _Whether the difference of the data from the null hypothesis matters for practic
 
 e.g. test statistic is Pearson correlation, p-value is the fraction of replicates that have the correlation at least as large as observed
 
-The lower the p-value, the less likely the results are due purely to chance.
-
-### Statistical Power
-_The probability of rejecting the null hypothesis when the alternative is true_
-- P(Avoiding Type II error) = P(Avoiding not accepting a false null hypothesis) 
+The lower the p-value, the less likely the results are due purely to chance. 
 
 ## Type 1 and Type 2 Errors
 <img src="images/type_1_2_errors.png" height="250px">
@@ -263,14 +225,34 @@ _The probability of rejecting the null hypothesis when the alternative is true_
 - Type II Error (beta) : failed to reject a false hypothesis
 - True Negative (1-alpha)
 - Power (1-beta) : the ability of the test to correctly reject a false null hypothesis
-    - <img src="images/power.png" height="250px">
-    - How is power affected when
-        - standard deviation increases: power decreases
-        - number of observations increases: more confident about the sample mean -> the distribution gets skinny -> less overlap -> power increases
-        - the difference (between H0 and H1 stats) increases: less overlap -> power increases
 
+### Statistical Power
+_The ability of the test to correctly reject a false null hypothesis_
+- <img src="images/power.png" height="250px">
+- How is power affected when
+    - standard deviation increases: power decreases
+    - number of observations increases: more confident about the sample mean -> the distribution gets skinny -> less overlap -> power increases
+    - the difference (between H0 and H1 stats) increases: less overlap -> power increases
 
+## Confidence Interval
+_How likely the result is robust and repeatable_
+- Calculation
+    - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bar{x}&space;\pm&space;t&space;(\frac{s}{\sqrt{n}})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\bar{x}&space;\pm&space;t&space;(\frac{s}{\sqrt{n}})" title="\bar{x} \pm t (\frac{s}{\sqrt{n}})" /></a>
+        - s: sample standard deviation, the spread of the sample data, the more uncertainty of the sample -> the more uncertainty in the confidence interval
+        - n: number of observations, more samples -> more likely the sample mean approximates the population mean
+    - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;p&space;\pm&space;z&space;\sqrt{\frac{p(1-p)}{n}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;p&space;\pm&space;z&space;\sqrt{\frac{p(1-p)}{n}}" title="p \pm z \sqrt{\frac{p(1-p)}{n}}" /></a>
 
+- Frequentist vs Bayesian
+
+    <img src="images/frequentist_bayesian.png" height="300px">
+
+    - Frequentist: confidence interval, theta is fixed, sample is random
+    - Bayesian: credible interval, theta is random, sample is fixed
+                                                                          
+- Interpretation
+    - Example: A 95% confidence interval
+        - If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time.
+        - 95% of intervals constructed contain the true mean
 
 
 
