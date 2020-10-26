@@ -1,11 +1,10 @@
 # Statistics
 
-1. [Resampling Methods]()
-2. [Linear Regression Assumptions](#linear-regression-assumptions)
-3. [Central Limit Theorem (CLT)](#central-limit-theorem-clt)
-4. [Law of Large Numbers](#law-of-large-numbers)
-5. [Nonparametric](#nonparametric)
-6. [Other Terminology](#other-terminology)
+1. [Linear Regression Assumptions](#linear-regression-assumptions)
+2. [Central Limit Theorem (CLT)](#central-limit-theorem-clt)
+3. [Law of Large Numbers](#law-of-large-numbers)
+4. [Nonparametric](#nonparametric)
+5. [Other Terminology](#other-terminology)
     - [R-squared](#r-squared)
     - [Adjusted R-squared](#adjusted-r-squared)
     - [Standard Error (SE)](#standard-error-se)
@@ -13,6 +12,7 @@
     - [P-value](#p-value)
     - [Statistical Significance](#statistical-significance)
     - [Statistical Power](#statistical-power)
+6. [Type 1 and Type 2 Errors](#type-1-and-type-2-errors)
   
 
 ## Linear Regression Assumptions
@@ -255,3 +255,25 @@ The lower the p-value, the less likely the results are due purely to chance.
 ### Statistical Power
 _The probability of rejecting the null hypothesis when the alternative is true_
 - P(Avoiding Type II error) = P(Avoiding not accepting a false null hypothesis) 
+
+## Type 1 and Type 2 Errors
+<img src="images/type_1_2_errors.png" height="250px">
+
+- Type I Error (alpha) : incorrectly rejecting a true hypothesis, level of significance (usually 5%)
+- Type II Error (beta) : failed to reject a false hypothesis
+- True Negative (1-alpha)
+- Power (1-beta) : the ability of the test to correctly reject a false null hypothesis
+    - <img src="images/power.png" height="250px">
+    - How is power affected when
+        - standard deviation increases: power decreases
+        - number of observations increases: more confident about the sample mean -> the distribution gets skinny -> less overlap -> power increases
+        - the difference (between H0 and H1 stats) increases: less overlap -> power increases
+
+
+
+
+
+
+
+
+
