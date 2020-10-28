@@ -13,6 +13,7 @@
 6. [Type 1 and Type 2 Errors](#type-1-and-type-2-errors)
     - [Statistical Power](#statistical-power)
 7. [Confidence Interval](#confidence-interval)
+8. [Covariance and Correlation](#covariance-and-correlation)
   
 ## Linear Regression Assumptions
 1. Linearity
@@ -253,6 +254,21 @@ _How likely the result is robust and repeatable_
     - Example: A 95% confidence interval
         - If we repeat the experiment over and over again, we would expect the interval to cover the true value in the population 95% of the time.
         - 95% of intervals constructed contain the true mean
+
+## Covariance and Correlation
+_Describe the relationship between two numerical variables_
+
+### Covariance
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;cov(x,y)=\sigma_{xy}=\frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{n-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;cov(x,y)=\sigma_{xy}=\frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{n-1}" title="cov(x,y)=\sigma_{xy}=\frac{\sum(x_i-\bar{x})(y_i-\bar{y})}{n-1}" /></a>
+- n - 1: can't calculate covariance when there's only one observation
+- can't tell the strength of the relationship
+
+- Variance: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;VAR(x)=\sigma_x^2=\frac{\sum(x_i-\bar{x})(x_i-\bar{x})}{n-1}=\frac{\sum(x_i-\bar{x})^2}{n-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;VAR(x)=\sigma_x^2=\frac{\sum(x_i-\bar{x})(x_i-\bar{x})}{n-1}=\frac{\sum(x_i-\bar{x})^2}{n-1}" title="VAR(x)=\sigma_x^2=\frac{\sum(x_i-\bar{x})(x_i-\bar{x})}{n-1}=\frac{\sum(x_i-\bar{x})^2}{n-1}" /></a>
+
+### Correlation
+_Give the measure of strength_
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;CORR(x,y)=\rho&space;_{xy}=\frac{\sigma_{xy}}{\sigma_x&space;\sigma_y}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;CORR(x,y)=\rho&space;_{xy}=\frac{\sigma_{xy}}{\sigma_x&space;\sigma_y}" title="CORR(x,y)=\rho _{xy}=\frac{\sigma_{xy}}{\sigma_x \sigma_y}" /></a>
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;-1&space;\leq&space;\rho&space;\leq&space;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;-1&space;\leq&space;\rho&space;\leq&space;1" title="-1 \leq \rho \leq 1" /></a>
 
 
 
