@@ -5,7 +5,7 @@ _Infer class labels, Capture non-linear relationships between features and label
 1. [Decision Tree](#decision-tree)
 2. [The Bias-Variance Tradeoff](#the-bias-variance-tradeoff)
     - [Ensemble Learning](#ensemble-learning)
-3. [Bagging and Random Forest](#bagging-and-random-forest)
+3. [Ensemble Methods](#ensemble-methods)
     - [Bagging](#bagging)
     - [Random Forest](#random-forest)
 4. [Boosting](#boosting)
@@ -31,6 +31,15 @@ _Data structure consisting of a hierarchy of nodes_
   - Leaf: one parent node, no children nodes  -> prediction
 - Maximum depth: the number of branches separating from the top to the extreme end
 
+```python
+from sklearn import tree
+>>> X = [[0, 0], [1, 1]]
+>>> Y = [0, 1]
+>>> clf = tree.DecisionTreeClassifier()
+>>> clf = clf.fit(X, Y)
+clf.predict_proba([[2., 2.]])
+```
+
 ### Advantages
 - easy to interpret and visualize
 - the cost is logarithmicc in the number of data points used in training
@@ -49,8 +58,6 @@ _Data structure consisting of a hierarchy of nodes_
 ### Logistic regression vs classification tree
 - A classification tree divides the feature space into rectangular regions. 
 - A linear model such as logistic regression produces only a single linear decision boundary dividing the feature space into two decision regions
-
-<img src="logreg_tree.svg" height="300px">
 
 ### Information Gain
 - Every node contains information and aims at maximizing Information Gain obtained after each split
@@ -153,8 +160,11 @@ vc.fit(X_train, y_train)
 y_pred = vc.predict(X_test)
 ```
 
-## Bagging and Random Forest
-### Ensemble Methods
+## Ensemble Methods
+_Combine predictions of several base estimators to improve generalizability_
+- Averaging methods: build several estimators and average the predictions, variance is reduced
+- Boosting methods: base estimators are built sequentially and one tries to reduce the bias of the combined estimator, combine several weak models to produce a powerful one
+
 - Voting Classifier: different algorithms on the same training data
 - Bagging: one algorithm on different subsets of training data
 
@@ -186,11 +196,13 @@ oob_accuracy = bc.oob_score_
 ```
 
 ### Random Forests
+- [scikit-learn documentation](https://scikit-learn.org/stable/modules/ensemble.html#forest)
 - Base estimator: Decision Tree
-- Each estimator is trained on a different bootstrap sample
-- further randomization in the training of individual trees
-- At each node, d features are sampled without replacement (d < total number of features)
-    - in scikit-learn, d defaults = the square-root of the number of features
+- Randomness: decrease the variance of the estimator
+    - Each tree is built from a sample drawn with replacement (i.e., a bootstrap sample) from the training set
+    - further randomization in the training of individual trees
+    - When splitting each node during the construction of a tree, the best split is found either from all input features or a random subset (d features, without placement) of size max_features
+        - in scikit-learn, d defaults = the square-root of the number of features
 - The node is split using the sampled feature that maximized information gain
 - Final prediction
     - Majority voting for classification, `RandomForestClassifier`
@@ -203,6 +215,7 @@ rf = RandomeForestRegressor(n_estimator=...)
 ```
 
 #### Feature Importance
+- features used at the top of the tree contribute of a larger fraction
 - in `sklearn`: how much the tree nodes use a particular feature (weighted average) to reduce impurity
 - Is expressed as a percentage indicating the weight of that feature in training and prediction
 
@@ -215,7 +228,7 @@ sorted_importances_rf.plot(kind='barh', color='lightgreen')
 plt.show()
 ```
 
-## Boosting
+### Boosting
 _An ensemble method in which many predictors are trained and each predictor learns from the **errors** of its predecessor_
 
 - Train an ensemble of predictors sequentially
@@ -226,7 +239,7 @@ _An ensemble method in which many predictors are trained and each predictor lear
     - AdaBoost
     - Gradient Boosting
 
-### AdaBoost
+#### AdaBoost
 - Adaptive Boosting
 - Each predictors **pays more attention to the instances wrongly predicted by its predecessor** by **changing the weights of training instances**
 - Each predictor is assigned to a coefficient alpha, which depends on the predictor's training error
@@ -248,7 +261,7 @@ y_pred_proba = adb_clf.predict_proba(X_test)[:, 1]
 adb_clf_roc_auc_score = roc_auc_score(y_test, y_pred_proba)
 ```
 
-#### Learning Rate
+##### Learning Rate
 _Shrink the coefficient alpha of a trained predictor_
 
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;0&space;<&space;\eta&space;\leq&space;1" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;0&space;<&space;\eta&space;\leq&space;1" title="0 < \eta \leq 1" /></a>
@@ -258,7 +271,7 @@ _Shrink the coefficient alpha of a trained predictor_
 - Tradeoff between the learning rate and the number of estimators
     - A small learning rate should be compensated by a greater number of estimators
 
-### Gradient Boosting (GB)
+#### Gradient Boosting (GB)
 - **Does not tweak the weights** of training instances
 - Each predictor is trained using the residual errors of its predecessor as labels
 - Base learner: CART
