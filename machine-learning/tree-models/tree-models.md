@@ -16,6 +16,7 @@ _Infer class labels, Capture non-linear relationships between features and label
 
 ## Decision Tree
 _Data structure consisting of a hierarchy of nodes_
+- [scikit-learn documentation](https://scikit-learn.org/stable/modules/tree.html)
 
 <img src="https://scalar.usc.edu/works/c2c-digital-magazine-fall-2017--winter-2018/media/GolfDecisionTree.jpg" height="300px">
 
@@ -30,13 +31,20 @@ _Data structure consisting of a hierarchy of nodes_
   - Leaf: one parent node, no children nodes  -> prediction
 - Maximum depth: the number of branches separating from the top to the extreme end
 
-```python
-from sklearn.tree import DecisionTreeClassfier
+### Advantages
+- easy to interpret and visualize
+- the cost is logarithmicc in the number of data points used in training
+- requires little data preparation
+- **does not support missing values**
 
-dt = DecisionTreeClassfier(max_depth=2, random_state=1)
-dt.fit(X_train, y_train)
-y_pred = dt.predict(X_test)
-```
+### Disadvantages
+- overfitting
+    - setting the minimum number of samples required at a leaf node
+    - pruning
+    - setting the maximum depth of the tree
+- unstable: small variations in the data might result in a different tree being generated
+- create biased trees if some classes dominate
+    - balance the dataset before fitting the tree
 
 ### Logistic regression vs classification tree
 - A classification tree divides the feature space into rectangular regions. 
