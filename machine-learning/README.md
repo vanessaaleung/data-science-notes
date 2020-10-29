@@ -1,10 +1,12 @@
 # Machine Learning
 _Giving computers the ability to learn, to make decisions from data without being explicitly programmed_
 
-- [Machine Learning Types](#)
-- [Tree-based Models](https://github.com/vanessaaleung/DS-notes/blob/master/machine-learning/tree-models.md)
-- [Classfication](#classfication)
+- [Machine Learning Types](#machine-learning-types)
+- [Families of ML algorithms](#families-of-ml-algorithms)
+    - [Linear](#linear)
+    - [Tree-based Models](https://github.com/vanessaaleung/DS-notes/blob/master/machine-learning/tree-models/tree-models.md)
     - [k-Nearest Neighbors (kNN)](#k-nearest-neighbors-knn)
+    - Neural Networks
 - [Regression Models](#regression-models)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistic-regression)
@@ -39,9 +41,29 @@ _Uncovering hidden patterns from unlabeled data_
 _Learn how to optimize behavior given a system of rewards and punishments_
 - Application: AlphaGo
 
-## Classification
+## Families of ML algorithms
+- the most powerful methods are Gradient Boosted Decision Trees and Neural Networks
+### Linear
+_Separate objects with a plane which divides space into two parts_
+- Good for sparse, high-dimensional data
+- Examples
+    - Logistic Regression
+    - Support Vector Machines
+
+### Tree-based
+- [Link](https://github.com/vanessaaleung/DS-notes/blob/master/machine-learning/tree-models/tree-models.md)
+- Good for tabular data, hard to capture linear dependencies
+- Examples
+    - Decision Tree: Use divide-and-conquer approach to recur sub-split spaces into sub-spaces
+    - Random Forest
+    - GBDT
+- ExtraTrees: randomized trees, always tests random splits over fraction of features (Random forest tests all possible splits over fraction of features)
+
 ### k-Nearest Neighbors (kNN)
-_Predict the label of data by looking at the K closest labeled data points and getting them vote the majority_
+_Find k-nearest objects and select the label by majority vote_
+- classification method
+- Assume points close to each other are likely to have similar labels
+- Heavily rely on how to measure "closeness"
 ```python
 from sklearn.neighbors import KNeighborsClassifier
 knn= KNeighborsClassifier(n_neighbor=6)
