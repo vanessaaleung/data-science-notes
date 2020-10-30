@@ -16,10 +16,12 @@
   df.dropna(inplace=True)
   ```
 - Impute missing values
-  - constant value
+  - constant value: -99, -1, etc.
   - randomly selected record
   - mean, median, or mode
   - use another model to predict the value
+- XGBoost can handle NaN
+- Avoid filling nans before feature generation
 
 ## Numeric features
 ### Outliers
