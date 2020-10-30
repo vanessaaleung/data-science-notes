@@ -4,7 +4,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
 - [Machine Learning Types](#machine-learning-types)
 - [Families of ML algorithms](#families-of-ml-algorithms)
     - [Linear](#linear)
-    - [Tree-based Models](https://github.com/vanessaaleung/DS-notes/blob/master/machine-learning/tree-models/tree-models.md)
+    - [Tree-based Models](https://github.com/vanessaaleung/DS-notes/tree/master/machine-learning/tree-models)
     - [k-Nearest Neighbors (kNN)](#k-nearest-neighbors-knn)
     - Neural Networks
     
