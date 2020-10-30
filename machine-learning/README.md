@@ -31,6 +31,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
     - [Deviance](#deviance)
     
 - [Preprocessing](#preprocessing)
+    - [Missing Data](#handling-missing-data)
     - [Numeric Features](#numeric-features)
         - Outliers
         - Centering and Scaling
@@ -39,7 +40,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
         - Frequency Encoding
         - One-hot Encoding
         - Interactions of Categorical Features
-    - [Missing Data](#handling-missing-data)
+    - [Datetime and Coordinates](#datetime-and-coordinates)
         
 - [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
@@ -406,6 +407,18 @@ titanic['enc'] = titanic.Embarked.map(encoding)
 
 #### Interactions of Categorical Features
 - can help linear models and KNN
+
+### Datetime and Coordinates
+#### Datetime Feature Generation
+- Periodicity: day number in week, month, season, year, etc.
+- Time since: number of days left until next holidays/ time passed after last holiday
+- Difference between dates
+
+#### Coordinates Feature Generation
+- interesting places and add distance to the places
+- center of clusters
+- aggregated statistics: mean realty prices
+- high/low price district
 
 ## Bias-Variance Tradeoff
 ### Types of error
