@@ -7,6 +7,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
     - [Tree-based Models](https://github.com/vanessaaleung/DS-notes/blob/master/machine-learning/tree-models/tree-models.md)
     - [k-Nearest Neighbors (kNN)](#k-nearest-neighbors-knn)
     - Neural Networks
+    
 - [Regression Models](#regression-models)
     - [Linear Regression](#linear-regression)
     - [Logistic Regression](#logistic-regression)
@@ -14,20 +15,27 @@ _Giving computers the ability to learn, to make decisions from data without bein
     - [Cross Validation](#cross-validation)
     - [Regularized Regression](#regularized-regression)
     - [Interaction Terms](#interaction-terms)
+    
 - [Interpreting Models](#interpreting-models)
     - [Coefficients](#coefficients)
     - [Significance Testing](#significance-testing)
     - [Confidence Intervals](#confidence-intervals)
+    
 - [Evaluating Models](#evaluating-models)
     - [Recall](#recall)
     - [Precision](#precision)
     - [Confusion Matrix](#confusion-matrix)
+    
 - [Comparing Models](#comparing-models)
     - [Goodness of Fit](#goodness-of-fit)
     - [Deviance](#deviance)
+    
 - [Preprocessing](#preprocessing)
-    - [Handling Missing Data and Outliers](#handling-missing-data-and-outliers)
-    - [Centering and Scaling](#centering-and-scaling)
+    - [Numeric Features](#numeric-features)
+        - [Outliers](#outliers)
+        - [Centering and Scaling](#centering-and-scaling)
+    - [Missing Data](#handling-missing-data)
+        
 - [Bias-Variance Tradeoff](#bias-variance-tradeoff)
 
 ## Machine Learning Types
@@ -334,8 +342,9 @@ model.deviance
 _The number of parameters_
 - A lower deviance does not necessarily mean a better fit, may be overfitting and has worse fit on new data
 
+## Preprocessing
+- Tree-based models don't depend on scaling
 
-## Handling Missing Data and Outliers
 ### Missing Data
 - Dropping row: could lose a significant portion of information 
   ```python
@@ -347,22 +356,26 @@ _The number of parameters_
   - mean, median, or mode
   - use another model to predict the value
 
-### Outliers
+### Numeric features
+#### Outliers
 - Standard deviations/z-score
   - Falls outside of 3 standard deviations of the mean is deemed an outlier
 - Interquartile range (IQR)
   - Subtracting the first quartile from the third quartile
   <img src="https://naysan.ca/wp-content/uploads/2020/06/box_plot_ref_needed.png" height="200px">
-
-### Centering and Scaling
+  
+#### Centering and Scaling
 - Scaling = Normalizing = Centering
 - Why scaling
     - Features on larger scales can influence the model
     - e.g. kNN uses distance when making predictions
 - Ways
-    -  Standardization: subtract the mean and divide by variance - center around 0 with variance 1
-    - Min-Max: subtract the minimum and divide by the range - range will be [0, 1]
+    - Standardization: subtract the mean and divide by variance - center around 0 with variance 1
+    - Min-Max: subtract the minimum and divide by the range - range will be [0, 1], distribution won't change
     - Normalize:  [-1, 1]
+    - Rank: better with outliers situation, will move outliers closer, set space between sorted values to be equal
+    - Log transformation: np.log(1+x)
+    - Raising to the power < 1: np.sqrt(x + 2/3)
 
 ## Bias-Variance Tradeoff
 ### Types of error
