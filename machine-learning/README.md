@@ -32,8 +32,13 @@ _Giving computers the ability to learn, to make decisions from data without bein
     
 - [Preprocessing](#preprocessing)
     - [Numeric Features](#numeric-features)
-        - [Outliers](#outliers)
-        - [Centering and Scaling](#centering-and-scaling)
+        - Outliers
+        - Centering and Scaling
+    - [Categorical and Ordinal Features](#categorial-and-ordinal-features)
+        - Label Encoding
+        - Frequency Encoding
+        - One-hot Encoding
+        - Interactions of Categorical Features
     - [Missing Data](#handling-missing-data)
         
 - [Bias-Variance Tradeoff](#bias-variance-tradeoff)
@@ -376,6 +381,31 @@ _The number of parameters_
     - Rank: better with outliers situation, will move outliers closer, set space between sorted values to be equal
     - Log transformation: np.log(1+x)
     - Raising to the power < 1: np.sqrt(x + 2/3)
+
+### Categorical and Ordinal Features
+#### Label Encoding
+_Works fine with tree-methods_
+- Alphabetical (sorted): [S,C,Q] -> [2,1,3],  ```python sklearn.preprocessing.LabelEncoder```
+- Order of Appearance: [S,C,Q] -> [1,2,3], ```python pandas.factorize```
+
+#### Frequency Encoding
+- can help for non-tree based models, will reserve information about values distribution
+- [S,C,Q] -> [0.5, 0.3, 0.2]
+```python
+encoding = titanic.groupby('Embarked').size()
+encoding = encoding/len(titanic)
+titanic['enc'] = titanic.Embarked.map(encoding)
+```
+
+#### One-hot Encoding
+- often used for non-tree-based models, tree-models will slow down
+    - if the categorical features have too many unique values, will add too many new columns with a few non-zero values
+- ```python sklearn.preprocessing.OneHotEncoder```
+- ```python pandas.get_dummies```
+- **Sparse Matrices**: useful when work with categorical features/text data, only store non-zero values
+
+#### Interactions of Categorical Features
+- can help linear models and KNN
 
 ## Bias-Variance Tradeoff
 ### Types of error
