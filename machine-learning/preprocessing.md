@@ -3,7 +3,7 @@
 - [Numeric Features](#numeric-features)
     - Outliers
     - Centering and Scaling
-- [Categorical and Ordinal Features](#categorial-and-ordinal-features)
+- [Categorical and Ordinal Features](#categorical-and-ordinal-features)
     - Label Encoding
     - Frequency Encoding
     - One-hot Encoding
@@ -38,7 +38,11 @@
     - Features on larger scales can influence the model
     - e.g. kNN uses distance when making predictions
 - Ways
-    - Standardization: subtract the mean and divide by variance - center around 0 with variance 1
+    - Standardization: subtract the mean and divide by variance - center around 0 mean with variance 1
+    ```python 
+    from sklearn import preprocessing
+    preprocessing.scale(X_train)
+    ```
     - Min-Max: subtract the minimum and divide by the range - range will be [0, 1], distribution won't change
     - Normalize:  [-1, 1]
     - Rank: better with outliers situation, will move outliers closer, set space between sorted values to be equal
@@ -48,8 +52,14 @@
 ## Categorical and Ordinal Features
 ### Label Encoding
 _Works fine with tree-methods_
-- Alphabetical (sorted): [S,C,Q] -> [2,1,3],  ```python sklearn.preprocessing.LabelEncoder```
-- Order of Appearance: [S,C,Q] -> [1,2,3], ```python pandas.factorize```
+- Alphabetical (sorted): [S,C,Q] -> [2,1,3],  
+```python 
+sklearn.preprocessing.LabelEncoder
+```
+- Order of Appearance: [S,C,Q] -> [1,2,3], 
+```python 
+pandas.factorize
+```
 
 ### Frequency Encoding
 - can help for non-tree based models, will reserve information about values distribution
@@ -63,8 +73,12 @@ titanic['enc'] = titanic.Embarked.map(encoding)
 ### One-hot Encoding
 - often used for non-tree-based models, tree-models will slow down
     - if the categorical features have too many unique values, will add too many new columns with a few non-zero values
-- ```python sklearn.preprocessing.OneHotEncoder```
-- ```python pandas.get_dummies```
+- ```python 
+    sklearn.preprocessing.OneHotEncoder
+    ```
+- ```python 
+    pandas.get_dummies
+    ```
 - **Sparse Matrices**: useful when work with categorical features/text data, only store non-zero values
 
 ### Interactions of Categorical Features
