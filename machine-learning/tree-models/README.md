@@ -59,6 +59,8 @@ clf.predict_proba([[2., 2.]])
 - A classification tree divides the feature space into rectangular regions. 
 - A linear model such as logistic regression produces only a single linear decision boundary dividing the feature space into two decision regions
 
+<img src="logreg_tree.svg" height="300px">
+
 ### Information Gain
 - Every node contains information and aims at maximizing Information Gain obtained after each split
 - At each node, split data based on feature f and split-point sp to maximize IG(node)
