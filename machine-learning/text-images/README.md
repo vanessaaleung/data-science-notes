@@ -11,6 +11,7 @@
 - Count the number of occurences via `CountVectorizer`
 - Ngrams: each column is a group of several consecutive words/chars, can include interaction between words
 - TFiDF: make the values more comparable, `TfidfVectorizer`
+  - IDF: decrease importance of most frequent words
 
 #### Preprocessing
 - Lowercase
