@@ -3,6 +3,7 @@
 - Non-ASCII Characters
 - Spelling Recommender
 - [Naive Bayes Classifiers](#naive-bayes-classifiers)
+- [Naive Bayes Variants](#naive-bayes-variants)
 
 ## Regex
 ### Character matches
@@ -115,4 +116,12 @@ _Probabilistic model_
   - Laplace/Additive smoothing: add a dummy count, e.g. add count of one to every word in every class
   - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(x_i|y)=(k&plus;1)/(p&plus;n),&space;n=&space;\text{number&space;of&space;features}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x_i|y)=(k&plus;1)/(p&plus;n),&space;n=&space;\text{number&space;of&space;features}" title="P(x_i|y)=(k+1)/(p+n), n= \text{number of features}" /></a>
   
-  
+## Naive Bayes Variants
+- Multinomial Naive Bayes
+  - Data follows multinomial distribution
+  - Number of times a word occurs is important
+  - Each feature value is a count
+  - Very common
+- Bernoulli Naive Bayes
+  - Data follows a multivariate Bernoulli distribution
+  - Each feature is binary (word present/absent), count doesn't matter
