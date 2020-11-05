@@ -2,6 +2,7 @@
 - Regex
 - Non-ASCII Characters
 - Spelling Recommender
+- [Naive Bayes Classifiers](#naive-bayes-classifiers)
 
 ## Regex
 ### Character matches
