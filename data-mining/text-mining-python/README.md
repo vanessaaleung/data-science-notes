@@ -100,9 +100,18 @@ text = treebank.parsed_sent('wsj.mrg')[0]
 - edit distance: the number of characters that need to be substituted, inserted, or deleted, to transform s1 into s2
 
 ## Naive Bayes Classifiers
+_Probabilistic model_
+- Assumption: (why called naive) features are assumed to be independent of each other, given the class label
+- Provides baseline for text classification problems
 - Update the likelihood of the class given new information
-  - Prior probability: P(Python|Zoology)
-  - Posterior probability: P(Entertainment|Python)
-  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(x|y)=\frac{P(x)\times&space;P(y|x)}{P(y)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x|y)=\frac{P(x)\times&space;P(y|x)}{P(y)}" title="P(x|y)=\frac{P(x)\times P(y|x)}{P(y)}" /></a>
-- Assumption: features are assumed to be independent of each other
-
+- Parameters:
+  - Prior probability: P(y) for all y in Y, e.g. P(Zoology)
+  - Likelihood: probability of seeing a particular feature in y, e.g. P(Python|Zoology)
+    - Count how many times feature xi appears in class y
+- Posterior probability: P(Entertainment|Python)
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(x|y)=\frac{P(x)\times&space;P(y|x)}{P(y)}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x|y)=\frac{P(x)\times&space;P(y|x)}{P(y)}" title="P(x|y)=\frac{P(x)\times P(y|x)}{P(y)}" /></a>
+- Smoothing: if feature xi never occurs in class y, P(xi|y) = 0
+  - Laplace/Additive smoothing: add a dummy count, e.g. add count of one to every word in every class
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;P(x_i|y)=(k&plus;1)/(p&plus;n),&space;n=&space;\text{number&space;of&space;features}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;P(x_i|y)=(k&plus;1)/(p&plus;n),&space;n=&space;\text{number&space;of&space;features}" title="P(x_i|y)=(k+1)/(p+n), n= \text{number of features}" /></a>
+  
+  
