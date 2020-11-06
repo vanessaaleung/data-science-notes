@@ -4,6 +4,7 @@
 - Spelling Recommender
 - [Naive Bayes Classifiers](#naive-bayes-classifiers)
 - [Naive Bayes Variants](#naive-bayes-variants)
+- [Support Vector Machines](#support-vector-machines)
 
 ## Regex
 ### Character matches
@@ -125,3 +126,28 @@ _Probabilistic model_
 - Bernoulli Naive Bayes
   - Data follows a multivariate Bernoulli distribution
   - Each feature is binary (word present/absent), count doesn't matter
+
+## Support Vector Machines
+_Linear classifiers sthat find a hyperplane to separate two classes of data_
+- Pros
+  - Tend to be most accurate in high-dimensional data
+- Cons
+  - Handles only numeric features, need normalization
+  - Hyperplane is hard to interpret
+- Decision Boundaries
+  - Linear: easy to find/evaluate, more generalizable
+    - perceptron
+    - linear discriminative analysis
+    - linear least squares
+  - A resonable boundary: maximize margin, find the thickest band that seperates the positive and negative points
+- SVM is a Maximum-margin Classifiers, work only for binary classification problems
+- Multi-class
+  - One vs Rest, n classfiers learn n class
+  - One vs One, C(n, 2) classifiers
+- Parameters
+  - Regularization: how much importance should give individual data points
+    - More regularization: more tolerant to errors on individual data points, more generalized
+  - Regularization parameter c: the larger c, less regularization
+  - **Linear kernels work best for text data**
+  - multi_class: ovr (one-vs-rest)
+  - class_weight: different classes can get different weights
