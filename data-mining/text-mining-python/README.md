@@ -151,3 +151,32 @@ _Linear classifiers sthat find a hyperplane to separate two classes of data_
   - **Linear kernels work best for text data**
   - multi_class: ovr (one-vs-rest)
   - class_weight: different classes can get different weights
+
+## Text Classifiers
+- NaiveBayesClassifier
+```python
+from sklearn import naive_bayes
+clfrNB = naive_bates.MultinomialNB()
+clfrNB.fit(train_data, train_labels)
+predicted_labels = clfrNB.predict(test_data)
+metrics.f1_score(test_labels, predicted_labels, average='micro')
+```
+
+- SVM classifier
+```python
+from sklearn import svm
+clfrSVM = svm.SVC(kernel='linear', C=0.1)
+clfrSVM.fit(train_data, train_labels)
+predicted_labels = clfrSVM.predicT(test_data)
+```
+
+- Model Selection
+  - Hold out data
+  ```python
+  from sklearn import model_selection
+  X_train, X_test, y_train, y_test = model_selection.train_test_split(train_data, train_labels, test_size=0.333, random_state=0)
+  ```
+  - Cross-validation: average the result
+  ```python
+  predicted_labels = model_selection.cross_val_predict(clfrSVM, train_data, train_labels, cv=5)
+  ```
