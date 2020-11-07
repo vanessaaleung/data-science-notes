@@ -5,6 +5,7 @@
 - [Naive Bayes Classifiers](#naive-bayes-classifiers)
 - [Naive Bayes Variants](#naive-bayes-variants)
 - [Support Vector Machines](#support-vector-machines)
+- [Text Classifiers in Python](#test-classifier-in-python)
 
 ## Regex
 ### Character matches
@@ -152,7 +153,7 @@ _Linear classifiers sthat find a hyperplane to separate two classes of data_
   - multi_class: ovr (one-vs-rest)
   - class_weight: different classes can get different weights
 
-## Text Classifiers
+## Text Classifiers in Python
 - NaiveBayesClassifier
 ```python
 from sklearn import naive_bayes
@@ -179,4 +180,27 @@ predicted_labels = clfrSVM.predicT(test_data)
   - Cross-validation: average the result
   ```python
   predicted_labels = model_selection.cross_val_predict(clfrSVM, train_data, train_labels, cv=5)
+  ```
+
+- TFIDF
+  - `min_df`: remove words appear in fewer than 5 documents
+  ```python
+  from sklearn.feature_extraction.text import TfidfVectorizer
+  vect = TfidfVectorizer(min_df=5).fit(X_train)
+  X_train_vectorized = vect.transform(X_train)
+  model = LogisticRegression()
+  model.fit(X_train_vectorized, y_train)
+  predictions = model.predict(vect.transform(X_test))
+  ```
+  - Largest tf-idf contains words appeared frequently a review, but not frequent in all reviews
+  ```python
+  feature_names = np.array(vect.get_feature_names())
+  sorted_tfidf_index = X_train_vectorized.max(0).toarray()[0].argsort()
+  smallest_tfidf = feature_names[sorted_tfidf_index[:10]]
+  ```
+- n-grams: add word context
+  - `ngram_range=(1,2)`: will add single and also 2-gram words
+  ```python
+  vect = CountVectorizer(min_df=5, ngram_range=(1,2)).fit(X_train)
+  X_train_vectorized = vect.transform(X_train)
   ```
