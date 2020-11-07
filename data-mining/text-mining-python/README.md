@@ -192,12 +192,7 @@ predicted_labels = clfrSVM.predicT(test_data)
   model.fit(X_train_vectorized, y_train)
   predictions = model.predict(vect.transform(X_test))
   ```
-  - Largest tf-idf contains words appeared frequently a review, but not frequent in all reviews
-  ```python
-  feature_names = np.array(vect.get_feature_names())
-  sorted_tfidf_index = X_train_vectorized.max(0).toarray()[0].argsort()
-  smallest_tfidf = feature_names[sorted_tfidf_index[:10]]
-  ```
+  
 - n-grams: add word context
   - `ngram_range=(1,2)`: will add single and also 2-gram words
   ```python
