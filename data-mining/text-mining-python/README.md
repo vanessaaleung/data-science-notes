@@ -5,7 +5,7 @@
 - [Naive Bayes Classifiers](#naive-bayes-classifiers)
 - [Naive Bayes Variants](#naive-bayes-variants)
 - [Support Vector Machines](#support-vector-machines)
-- [Text Classifiers in Python](#test-classifier-in-python)
+- [Text Classifiers in Python](#text-classifiers-in-python)
 
 ## Regex
 ### Character matches
