@@ -249,3 +249,13 @@ _Text clustering problem_
   - Latent Dirichlet Allocation (LDA)
   
 ### Generative Models and LDA
+- LDA
+  - Choose length of document d
+  - Choose a mixture of topics for d
+  - Use a topic's multinomial distribution to output words to fill that topic's quota
+- Preprocessing text: tokenize, normalize (lowercase), stop word removal, stemming
+- Convert tokenized documents to a document-term matrix
+```python
+
+
+
