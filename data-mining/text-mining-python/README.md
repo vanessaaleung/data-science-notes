@@ -239,3 +239,13 @@ predicted_labels = clfrSVM.predicT(test_data)
   ```
   
 ### Topic Modeling
+_Text clustering problem_
+- topics are represented as a word distribution, each word has a probability of occuring in the topic
+- a document is assumed with a mixture of topics
+- Known: # of topics, text collection
+- Not known: the actual topic, topic distribution
+- Approaches
+  - Probabilistic Latent Semantic Analysis (PLSA)
+  - Latent Dirichlet Allocation (LDA)
+  
+### Generative Models and LDA
