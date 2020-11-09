@@ -6,6 +6,7 @@
 - [Naive Bayes Variants](#naive-bayes-variants)
 - [Support Vector Machines](#support-vector-machines)
 - [Text Classifiers in Python](#text-classifiers-in-python)
+- [Topic Modeling](#topic-modeling)
 
 ## Regex
 ### Character matches
@@ -199,3 +200,42 @@ predicted_labels = clfrSVM.predicT(test_data)
   vect = CountVectorizer(min_df=5, ngram_range=(1,2)).fit(X_train)
   X_train_vectorized = vect.transform(X_train)
   ```
+
+## Topic Modeling
+### Semantic Similarity
+- Wordnet
+  - semantic dictionary of English words, interlinked by semantic relations
+  - includes linguistic information: part of speech, word senses, synonyms, etc.
+  - organize information in a hhierarchy
+  - `deer.n.01`: noun, the first meaning of that
+  ```python
+  import nltk
+  from nltk.corpus import wordnet as wn
+  deer = wn.synset('deer.n.01')
+  ```
+- Path similarity: find the shortest path between two concepts
+  ```python
+  deer.path_similarity(horse)
+  ```
+- Lowest Common Subsumer (LCS): find the closest ancestor to both concepts
+- Lin SimilaritY: based on the information contained in the LCS of the two conecpts
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;LinSim(u,&space;v)=2&space;\times&space;log&space;P(LCS(u,&space;v))&space;/&space;(log&space;P(u)&plus;log&space;P(v))" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;LinSim(u,&space;v)=2&space;\times&space;log&space;P(LCS(u,&space;v))&space;/&space;(log&space;P(u)&plus;log&space;P(v))" title="LinSim(u, v)=2 \times log P(LCS(u, v)) / (log P(u)+log P(v))" /></a>
+  - P(u) is given by the information content learnt over a large corpus
+  ```python
+  from nltk.corpus import wordnet_ic
+  brown_ic = wordnet_ic.ic('ic-brown.dat')
+  deer.lin_simliary(horse, brown_ic)
+  ```
+- Collocations and Distributional similarity
+  - two words that frequently appears in similiar contexts are more likely to be sematically related
+  - distributional similarity: context, words before, after, within a small window
+  - **Pointwise Mutual Information**: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;PMI(w,&space;c)=log[P(w,c)/P(w)P(c)]" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;PMI(w,&space;c)=log[P(w,c)/P(w)P(c)]" title="PMI(w, c)=log[P(w,c)/P(w)P(c)]" /></a>
+  ```python
+  from nltk.collocations import *
+  bigram_measures = nltk.collocations.BigramAssocMeasures()
+  finder = BigramCollocationFinder.from_words(text)
+  finder.nbest(bigram_measures.pmi, 10) # get the top 10 pairs
+  finder.find_freq_filter(10)
+  ```
+  
+### Topic Modeling
