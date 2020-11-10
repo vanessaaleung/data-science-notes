@@ -256,6 +256,16 @@ _Text clustering problem_
 - Preprocessing text: tokenize, normalize (lowercase), stop word removal, stemming
 - Convert tokenized documents to a document-term matrix
 ```python
+doc_set: set of pre-processed text documents
+import gensim
+from gensim import corpora, models
+dictionary = corpora.Dictionary(doc_set) # map id-word
+corpus = [dictionary.doc2bow(doc) for doc in doc_set]  # create document-term matrix
+ldamodel = gensim.models.ldamodel.LdaModel(corpus, num_topics=4, id2word=dictionary, passes=50)
+print(ldamodel.print_topics(num_topics=4, num_words=5))
+```
+- Can be used for feature extraction to filter features coming from a specific topic
+
 
 
 
