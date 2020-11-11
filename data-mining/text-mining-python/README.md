@@ -214,6 +214,10 @@ predicted_labels = clfrSVM.predicT(test_data)
   deer = wn.synset('deer.n.01')
   ```
 - Path similarity: find the shortest path between two concepts
+  - pathlen(c1, c2)  = 1 + number of  edges in the shortest path between two nodes
+  - range from 0-1
+  - simpath(c1, c2) = 1 \ pathlen(c1, c2)
+  - wordsim(w1, w2) = max  sim(c1, c2)
   ```python
   deer.path_similarity(horse)
   ```
