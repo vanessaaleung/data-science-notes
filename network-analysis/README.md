@@ -1,6 +1,8 @@
 # Network Analysis
+- [Network Basics](#network-basics)
 
-## Network Definition
+## Network Basics
+### Definition
 - Network/Graph: A representation of connections among a set of items
   - connections: edges
   - items: nodes
