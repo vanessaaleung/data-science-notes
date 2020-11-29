@@ -36,7 +36,7 @@ _Giving computers the ability to learn, to make decisions from data without bein
 
 ## Machine Learning Types
 ### Supervised
-_Use labeld data_
+_Use labeled data_
 
 ### Unsupervised
 _Uncovering hidden patterns from unlabeled data_
