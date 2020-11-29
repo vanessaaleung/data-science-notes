@@ -284,7 +284,9 @@ mae = mean_absolute_error(y, preds)
 - Friction of correct predictions
 
 #### Precision
-_Percentage of observation you correctly guessed, linked to Type I error_
+_Proportion of positive identifications was actually correct_
+- linked to Type I error
+
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Precision}=\frac{\text{True&space;Positive}}{\text{True&space;Positive}&plus;\text{False&space;Positive}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Precision}=\frac{\text{True&space;Positive}}{\text{True&space;Positive}&plus;\text{False&space;Positive}}" title="\text{Precision}=\frac{\text{True Positive}}{\text{True Positive}+\text{False Positive}}" /></a>
 
 ```python
@@ -293,7 +295,9 @@ precision = precision_score(y_test, preds)
 - e.g. high precision: not many real emails predicted as spam
 
 #### Recall
-_Linked to Type II error_
+_Proportion of actual positives identified correctly_
+
+- Linked to Type II error
 
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Recall}=\frac{\text{True&space;Positive}}{\text{True&space;Positive}&plus;\text{False&space;Negative}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Recall}=\frac{\text{True&space;Positive}}{\text{True&space;Positive}&plus;\text{False&space;Negative}}" title="\text{Recall}=\frac{\text{True Positive}}{\text{True Positive}+\text{False Negative}}" /></a>
 
@@ -301,6 +305,8 @@ _Linked to Type II error_
 recall = recall_score(y_test, preds)
 ```
 - predicted most spam emails correctly
+
+<img src="https://miro.medium.com/max/942/0*MvoEw2m0KTIQlYmD.png">
 
 #### F1 Score
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;2\times\frac{precision\times&space;recall}{precision&space;&plus;&space;recall}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;2\times\frac{precision\times&space;recall}{precision&space;&plus;&space;recall}" title="2\times\frac{precision\times recall}{precision + recall}" /></a>
