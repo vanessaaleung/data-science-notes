@@ -22,6 +22,8 @@ _Giving computers the ability to learn, to make decisions from data without bein
     - [Confidence Intervals](#confidence-intervals)
     
 - [Evaluating Models](#evaluating-models)
+    - [R-squared](#r-squared)
+    - [Adjusted R-squared](#adjusted-r-squared)
     - [Recall](#recall)
     - [Precision](#precision)
     - [Confusion Matrix](#confusion-matrix)
@@ -243,13 +245,17 @@ _Uncertainty of the estimates_
 - Mean squared error (MSE)
 
 #### R-squared
-_Proportionn of variance of the dependent variable that is explained by the regression model_
+_Proportion of variance of the dependent variable that is explained by the regression model_
 
 <img src="https://miro.medium.com/max/930/1*1e3R1SFu1kU9GdWXEKPPjg.png" height="200px">
 
 ```python
 r2 = lm.score(X, y)
 ```
+
+#### Adjusted R-squared
+- Why: every additional independent variable added to a model always increases the R-squared value
+- Adjusted R-squared only increases if each given variable improves the model above what is possible by probability
 
 #### Mean squared error (MSE)
 _Sum of the residuals squared over the number of points_
