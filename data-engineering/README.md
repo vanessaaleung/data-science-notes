@@ -17,6 +17,7 @@ _A open-source standard/specification for writing scripts that move data_
 _A Google Cloud Platform ETL tool_
 
 - [MapReduce](#mapreduce)
+- [Process vs Thread](#process-vs-thread)
 
 
 ## MapReduce
@@ -30,3 +31,7 @@ _A Google Cloud Platform ETL tool_
   
 - The total number of partitions is the same as the number of reduce tasks for the job
 - Users can control which keys (and hence records) go to which Reducer by implementing a custom Partitioner
+
+## Process vs Thread
+- Process: an executing program. An application consists of one or more processes
+- Thread: One or more threads run in the context of the process. A thread is the basic unit to which the operating system allocates processor time
