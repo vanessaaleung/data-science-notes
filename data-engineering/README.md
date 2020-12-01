@@ -20,5 +20,13 @@ _A Google Cloud Platform ETL tool_
 
 
 ## MapReduce
-- splits the input data-set into independent chunks which are processed by the map tasks in a completely parallel manner
-- sorts the outputs of the maps, which are then input to the reduce tasks
+1. splits the input data-set into independent chunks which are processed by the map tasks in a completely **parallel** manner
+2. **sorts** the outputs of the maps, which are then input to the reduce tasks
+
+- Why:
+  - for applications which process vast amounts of data (multi-terabyte data-sets) 
+  - in-parallel on large clusters (thousands of nodes)
+  - fault-tolerant
+  
+- The total number of partitions is the same as the number of reduce tasks for the job
+- Users can control which keys (and hence records) go to which Reducer by implementing a custom Partitioner
