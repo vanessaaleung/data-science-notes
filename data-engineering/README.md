@@ -15,3 +15,10 @@ _A open-source standard/specification for writing scripts that move data_
 
 - [Dataflow](https://github.com/vanessaaleung/DS-notes/tree/master/data-engineering/dataflow)
 _A Google Cloud Platform ETL tool_
+
+- [MapReduce](#mapreduce)
+
+
+## MapReduce
+- splits the input data-set into independent chunks which are processed by the map tasks in a completely parallel manner
+- sorts the outputs of the maps, which are then input to the reduce tasks
