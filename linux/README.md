@@ -103,3 +103,17 @@
   sudo shutdown -r
   ```
 
+- Execution permission
+  ```bash
+  chmod +x ab.sh
+  ```
+  - only for user
+  ```bash
+  chmod u+x ab.sh
+  ```
+
+## Shell Script
+- shebang line
+  ```shell
+  #!/bin/bash -i
+  ```
