@@ -38,6 +38,9 @@
   ```bash
   which mongod
   ```
+  ```bash
+  which $SHELL
+  ```
 
 - last 500 commands
   ```bash
