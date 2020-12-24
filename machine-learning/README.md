@@ -2,6 +2,7 @@
 _Giving computers the ability to learn, to make decisions from data without being explicitly programmed_
 
 - [Machine Learning Types](#machine-learning-types)
+    - [Parametric vs Nonparametric](#parametric-vs-nonparametric)
 - [Families of ML algorithms](#families-of-ml-algorithms)
     - [Linear](#linear)
     - [Tree-based Models](https://github.com/vanessaaleung/DS-notes/tree/master/machine-learning/tree-models)
@@ -46,6 +47,13 @@ _Uncovering hidden patterns from unlabeled data_
 ### Reinforcement Learning
 _Learn how to optimize behavior given a system of rewards and punishments_
 - Application: AlphaGo
+
+### Parametric vs Nonparametric
+- Parametric: a model that summarizes data with a set of parametrers of fixed size (independent of # of training examples)
+    - simpler, faster, less data
+- Nonparametric: do not make strong assumptions about the form of the mapping function
+    - good when have a lot of data, no prior knowledge
+    - e.g. K-nearest neighbors, Decision trees, Support Vector Machines
 
 ## Families of ML algorithms
 - the most powerful methods are Gradient Boosted Decision Trees and Neural Networks
