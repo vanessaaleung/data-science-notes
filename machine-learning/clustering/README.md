@@ -25,7 +25,7 @@ _How internally coherent clusters are_
 ### 3 Steps
 1. Choose initial centroids
   - random data points, highly volatile
-  - 
+  - k-means++: randomly select first centroid, choose the subsequent ones fbased on a probability proportional to the squared distance away from a given point's nearest existing centroid
 2. Looping between:
     1. Assigns each sample to its nearest centroid
     2. Creates new centroids by taking the mean value of all samples in each previous centroid
