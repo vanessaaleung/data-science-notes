@@ -68,13 +68,19 @@ from sklearn import tree
 ### Information Gain
 - Every node contains information and aims at maximizing Information Gain obtained after each split
 - At each node, split data based on feature f and split-point sp to maximize IG(node)
-- Meaure impurity of a node I
-  - gini index
-  - entropy
+- Meaure Impurity of Classification
+    - If a target is a classification outcome taking on values 0,1,…,K-1, for node m, let <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;p_{mk}&space;=&space;1/&space;N_m&space;\sum_{y&space;\in&space;Q_m}&space;I(y&space;=&space;k)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;p_{mk}&space;=&space;1/&space;N_m&space;\sum_{y&space;\in&space;Q_m}&space;I(y&space;=&space;k)" title="p_{mk} = 1/ N_m \sum_{y \in Q_m} I(y = k)" /></a> be the proportion of class k observations in node 
+  - gini index:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;H(Q_m)&space;=&space;\sum_k&space;p_{mk}&space;(1&space;-&space;p_{mk})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;H(Q_m)&space;=&space;\sum_k&space;p_{mk}&space;(1&space;-&space;p_{mk})" title="H(Q_m) = \sum_k p_{mk} (1 - p_{mk})" /></a>
+    ```python
+    dt = DecisionTreeClassfier(criterion='gini', random_state=1)
+    ```
+  - entropy:  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;H(Q_m)&space;=&space;-&space;\sum_k&space;p_{mk}&space;\log(p_{mk})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;H(Q_m)&space;=&space;-&space;\sum_k&space;p_{mk}&space;\log(p_{mk})" title="H(Q_m) = - \sum_k p_{mk} \log(p_{mk})" /></a>
+  - missclassification: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;H(Q_m)&space;=&space;1&space;-&space;\max(p_{mk})" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;H(Q_m)&space;=&space;1&space;-&space;\max(p_{mk})" title="H(Q_m) = 1 - \max(p_{mk})" /></a>
   
-```python
-dt = DecisionTreeClassfier(criterion='gini', random_state=1)
-```
+- Meaure Impurity of Regression
+    - Mean Squared Error
+    - Mean Absolute Error
+    - Half Poisson Deviance
 
 ### Decision Tree for Regression
 _Capture the non-linear relationship_
