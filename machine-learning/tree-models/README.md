@@ -15,7 +15,7 @@ _Infer class labels, Capture non-linear relationships between features and label
 5. [Model Tuning](#model-tuning)
 
 ## Decision Tree
-_Data structure consisting of a hierarchy of nodes_
+_Predicting target variable by learning simple decision rules_
 - [scikit-learn documentation](https://scikit-learn.org/stable/modules/tree.html)
 
 <img src="https://scalar.usc.edu/works/c2c-digital-magazine-fall-2017--winter-2018/media/GolfDecisionTree.jpg" height="300px">
@@ -43,7 +43,7 @@ clf.predict_proba([[2., 2.]])
 ### Advantages
 - easy to interpret and visualize
 - the cost is logarithmicc in the number of data points used in training
-- requires little data preparation
+- requires little data preparation - no need for data normalization, fillna, etc. (but scikit-learn does not support missing values)
 - **does not support missing values**
 
 ### Disadvantages
