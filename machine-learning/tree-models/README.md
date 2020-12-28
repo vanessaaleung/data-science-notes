@@ -37,23 +37,27 @@ from sklearn import tree
 >>> Y = [0, 1]
 >>> clf = tree.DecisionTreeClassifier()
 >>> clf = clf.fit(X, Y)
-clf.predict_proba([[2., 2.]])
+>>> clf.predict_proba([[2., 2.]])
+>>> tree.plot_tree(clf)
 ```
 
 ### Advantages
 - easy to interpret and visualize
 - the cost is logarithmicc in the number of data points used in training
 - requires little data preparation - no need for data normalization, fillna, etc. (but scikit-learn does not support missing values)
-- **does not support missing values**
 
 ### Disadvantages
-- overfitting
+- Overfitting
     - setting the minimum number of samples required at a leaf node
     - pruning
     - setting the maximum depth of the tree
-- unstable: small variations in the data might result in a different tree being generated
-- create biased trees if some classes dominate
-    - balance the dataset before fitting the tree
+    - perform dimensionality reduction (e.g. PCA) beforehand
+- Unstable: small variations in the data might result in a different tree being generated
+    - solution: using decision tress within an ensemble
+- Create biased trees if some classes dominate
+    - solution: **balance the dataset before fitting the tree**
+- Learning an optimal decision tree is NP-complete: cannot guarantee to return the globally optimal decision tree
+    - solution: training multiple trees in an ensemble learner, where the features and smaples are randomly sampled with replacement
 
 ### Logistic regression vs classification tree
 - A classification tree divides the feature space into rectangular regions. 
