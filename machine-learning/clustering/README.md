@@ -23,8 +23,15 @@ _How internally coherent clusters are_
     - Solution: run dimensionality reduction (e.g. PCA) before clustering
 
 ### 3 Steps
-  1. Choose initial centroids
-  2. Looping between:
-      1. Assigns each sample to its nearest centroid
-      2. Creates new centroids by taking the mean value of all samples in each previous centroid
-    until difference between the old and new centroids is less than a threshold
+1. Choose initial centroids
+  - random data points, highly volatile
+  - 
+2. Looping between:
+    1. Assigns each sample to its nearest centroid
+    2. Creates new centroids by taking the mean value of all samples in each previous centroid
+  until difference between the old and new centroids is less than a threshold
+
+- Average complexitiy: O(k n T), n: number of samples, T: number of iterations
+
+### MiniBatchMeans
+_Incremental updates of centers positions using mini-batches_
