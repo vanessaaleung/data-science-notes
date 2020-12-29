@@ -1,6 +1,9 @@
 # Regression Models
 _How much the response variable y changes on average for a unit increase in x_
 
+- [Linear Regression](#linear-regression)
+- [Logistic Regression](#logistic-regression)
+
 ## GLM
 _A generalization of linear models, a unified framework for different data distributions_
 ```python
@@ -19,7 +22,8 @@ from statsmodels.formula.api import ols
 model = ols(formula='y ~ X',  data=my_data).fit()
 ```
 
-### Linear Regression
+## Linear Regression
+_Fits a linear model with coefficients to minimize the residual sum of squares between the targets and the predicted values by linear approximation_
 <img src="https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png" height="200px">
 
 ```python
