@@ -97,7 +97,7 @@ _Obtain the values of betas, the parameters, which maximize the log-likelihood f
 ### Significance Testing
 _Whether constraining the parameter values to zero would reduce the model fit_
 - z-statistic
-  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;z=\hat{\beta}/SE" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;z=\hat{\beta}/SE" title="z=\hat{\beta}/SE" /></a>
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;z&space;=&space;\frac{\hat{\beta}}{SE}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;z&space;=&space;\frac{\hat{\beta}}{SE}" title="z = \frac{\hat{\beta}}{SE}" /></a>
   - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\hat{\beta}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\hat{\beta}" title="\hat{\beta}" /></a>: estimated coefficient
   - rule of thumb: if > 2 is statistically significant
   - z large -> coefficient <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\neq" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\neq" title="\neq" /></a> 0 -> variable significant
