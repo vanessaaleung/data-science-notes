@@ -134,6 +134,7 @@ r2 = lm.score(X, y)
 #### Adjusted R-squared
 - Why: every additional independent variable added to a model always increases the R-squared value
 - Adjusted R-squared only increases if each given variable improves the model above what is possible by probability
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\bar{R}^2&space;=&space;1&space;-&space;(1&space;-&space;R^2)&space;\frac{n-1}{n-p-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\bar{R}^2&space;=&space;1&space;-&space;(1&space;-&space;R^2)&space;\frac{n-1}{n-p-1}" title="\bar{R}^2 = 1 - (1 - R^2) \frac{n-1}{n-p-1}" /></a>, p: # of explanatory variables in the model, n: sample size
 
 #### Mean squared error (MSE)
 _Sum of the residuals squared over the number of points_
