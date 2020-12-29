@@ -46,3 +46,6 @@ _Events are organized and stored in topics, simliar to a folder_
   <img src="https://kafka.apache.org/images/streams-and-tables-p1_p4.png" height="300px">
 - Can be **replicated** across regions/datacenters
   - Common production setting is a replication factor of 3: three copies of data
+
+## Kafka Connect
+_Ingest data from external systems into Kafka, vice versa_
