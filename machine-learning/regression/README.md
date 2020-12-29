@@ -24,6 +24,7 @@ model = ols(formula='y ~ X',  data=my_data).fit()
 
 ## Linear Regression
 _Fits a linear model with coefficients to minimize the residual sum of squares between the targets and the predicted values by linear approximation_
+
 <img src="https://miro.medium.com/max/2872/1*k2bLmeYIG7z7dCyxADedhQ.png" height="200px">
 
 ```python
