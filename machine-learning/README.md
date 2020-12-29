@@ -123,7 +123,9 @@ _Uncertainty of the estimates_
 #### R-squared
 _Proportion of variance of the dependent variable that is explained by the regression model_
 
-<img src="https://miro.medium.com/max/930/1*1e3R1SFu1kU9GdWXEKPPjg.png" height="200px">
+<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;1-\frac{\text{residual&space;sum&space;of&space;squares}}{\text{total&space;sum&space;of&space;squares}}&space;=&space;1-\frac{((y_{true}-&space;y_{pred})^2).sum()}{((y_{true}-y_{true}.mean())^2).sum()}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;1-\frac{\text{residual&space;sum&space;of&space;squares}}{\text{total&space;sum&space;of&space;squares}}&space;=&space;1-\frac{((y_{true}-&space;y_{pred})^2).sum()}{((y_{true}-y_{true}.mean())^2).sum()}" title="1-\frac{\text{residual sum of squares}}{\text{total sum of squares}} = 1-\frac{((y_{true}- y_{pred})^2).sum()}{((y_{true}-y_{true}.mean())^2).sum()}" /></a>
+
+<img src="https://www.riskprep.com/images/stories/miscimages/regressiongraph.png" height="300px">
 
 ```python
 r2 = lm.score(X, y)
