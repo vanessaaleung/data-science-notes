@@ -66,6 +66,7 @@ from sklearn import tree
 <img src="logreg_tree.svg" height="300px">
 
 ### Information Gain
+_Measures the reduction in entropy or surprise by splitting a dataset according to a given value of a random variable_
 - Every node contains information and aims at maximizing Information Gain obtained after each split
 - At each node, split data based on feature f and split-point sp to maximize IG(node)
 - Meaure Impurity of Classification
@@ -182,7 +183,7 @@ _Combine predictions of several base estimators to improve generalizability_
 
 ### Bagging
 _One algorithm trained on different subset of the training set, Bootstrap Aggregation_
-- Bootstrap: Draw sample from the set with replacement
+- Bootstrap: Draw sample from the set **with replacement**
 - Classification problem: aggregates predictions by majority voting, `BaggingClassifier`
 - Regression problem: aggregates predictions through averaging, `BaggingRegressor`
 
@@ -208,10 +209,11 @@ oob_accuracy = bc.oob_score_
 ```
 
 ### Random Forests
+_Fits a number of decision tree classifiers on various **sub-samples** of the dataset and uses **averaging** to improve the predictive accuracy and control over-fitting_
 - [scikit-learn documentation](https://scikit-learn.org/stable/modules/ensemble.html#forest)
 - Base estimator: Decision Tree
 - Randomness: decrease the variance of the estimator
-    - Each tree is built from a sample drawn with replacement (i.e., a bootstrap sample) from the training set
+    - Each tree is built from a sample drawn **with replacement** (i.e., a bootstrap sample) from the training set
     - further randomization in the training of individual trees
     - When splitting each node during the construction of a tree, the best split is found either from all input features or a random subset (d features, without placement) of size max_features
         - in scikit-learn, d defaults = the square-root of the number of features
