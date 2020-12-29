@@ -3,6 +3,7 @@ _How much the response variable y changes on average for a unit increase in x_
 
 - [Linear Regression](#linear-regression)
 - [Logistic Regression](#logistic-regression)
+- [Regularized Regression](#regularized-regression)
 
 ## GLM
 _A generalization of linear models, a unified framework for different data distributions_
@@ -114,9 +115,21 @@ _Penalizing large coefficients_
 ### Ridge Regression
 - L2 regularization
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\alpha_i^2" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\alpha_i^2" title="\text{Loss function}=\text{OLS loss function} + \alpha \times \sum_{i=1}^{n}\alpha_i^2" /></a>
-- Alpha: Parameter we need to choose, controls model complexity
+- <img src="https://scikit-learn.org/stable/_images/sphx_glr_plot_ridge_path_0011.png" height="200px">
+- Alpha: controls amount of shrinkage
     - Alpha = 0: get back OLS
     - High alpha: lead to underfitting
+
+```python
+>>> from sklearn import linear_model
+>>> reg = linear_model.Ridge(alpha=.5)
+>>> reg.fit([[0, 0], [0, 0], [1, 1]], [0, .1, 1])
+Ridge(alpha=0.5)
+>>> reg.coef_
+array([0.34545455, 0.34545455])
+>>> reg.intercept_
+0.13636...
+```
 
 ### Lasso Regression
 - L1 regularization
@@ -131,3 +144,4 @@ lasso_coef = lasso.fit(X, y).coef_
 
 ### Elastic Net
 _A linear regression model trained with both L1 and L2 regularization of the coefficients_
+- Useful when there are multiple features correlated with one another: Lasso is likely to pick one of those at random, while elastic-net is likely to pick both
