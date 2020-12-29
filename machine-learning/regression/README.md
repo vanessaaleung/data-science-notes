@@ -112,13 +112,15 @@ _Penalizing large coefficients_
 - Why: large coefficients can lead overfitting
 
 ### Ridge Regression
+- L2 regularization
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\alpha_i^2" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\alpha_i^2" title="\text{Loss function}=\text{OLS loss function} + \alpha \times \sum_{i=1}^{n}\alpha_i^2" /></a>
 - Alpha: Parameter we need to choose, controls model complexity
     - Alpha = 0: get back OLS
     - High alpha: lead to underfitting
 
 ### Lasso Regression
--  <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\mid&space;\alpha_i\mid" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Loss&space;function}=\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\mid&space;\alpha_i\mid" title="\text{Loss function}=\text{OLS loss function} + \alpha \times \sum_{i=1}^{n}\mid \alpha_i\mid" /></a>
+- L1 regularization
+- <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\text{Loss&space;function}&space;=&space;\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\mid&space;\alpha_i\mid" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\text{Loss&space;function}&space;=&space;\text{OLS&space;loss&space;function}&space;&plus;&space;\alpha&space;\times&space;\sum_{i=1}^{n}\mid&space;\alpha_i\mid" title="\text{Loss function} = \text{OLS loss function} + \alpha \times \sum_{i=1}^{n}\mid \alpha_i\mid" /></a>
 - Usage: select important features of a dataset, shrinks the coefficients of less important  features to exactly 0
 
 ```python
@@ -126,3 +128,6 @@ from sklearn.linear_model import Lasso
 lasso = Lasso(alpha=0.1)
 lasso_coef = lasso.fit(X, y).coef_
 ```
+
+### Elastic Net
+_A linear regression model trained with both L1 and L2 regularization of the coefficients_
