@@ -13,6 +13,7 @@
 - Each row represents a text, each column represents a unique word
 - Count the number of occurences via `CountVectorizer`
 - Ngrams: each column is a group of several consecutive words/chars, can include interaction between words
+  - are typically sparse
 - TFiDF: make the values more comparable, `TfidfVectorizer`
   - IDF: decrease importance of most frequent words
 
@@ -35,6 +36,7 @@ _Get vector representation for text_
 - Bag of Words
   1. very large vectors
   2. meaning of each value in vector is known
+  3. Ngrams can help to use local context
 - Word2vec
   1. relatively small vectors
   2. values in vector can be interpreted only in some cases
@@ -43,6 +45,13 @@ _Get vector representation for text_
 ## Images
 - use pre-trained neural networks to extract features
 - finetune pre-trained models
+
+1. Descriptors
+  - Output of inner layers
+  - Descriptors from early layers have more text independent information
+2. Trainn network from scratch
+3. Finetuning: refine pretrained models: VGG, ResNet, etc.
+
 
 ### Augmentation
 _Increase the amount of trained data_
