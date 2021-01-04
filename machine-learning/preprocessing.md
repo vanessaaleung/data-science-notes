@@ -37,7 +37,7 @@
 - Why scaling
     - Features on larger scales can influence the model
     - e.g. kNN uses distance when making predictions
-- Ways
+- Methods
     - Standardization: subtract the mean and divide by variance - center around 0 mean with variance 1
     ```python 
     from sklearn import preprocessing
@@ -45,9 +45,25 @@
     ```
     - Min-Max: subtract the minimum and divide by the range - range will be [0, 1], distribution won't change
     - Normalize:  [-1, 1]
-    - Rank: better with outliers situation, will move outliers closer, set space between sorted values to be equal
-    - Log transformation: np.log(1+x)
+    - Rank transform: better with outliers situation, will move outliers closer, set space between sorted values to be equal
+    - Log transformation: np.log(1+x), move outliers relatively closer to each other
+    - np.sqrt(x): move outliers relatively closer to each other
     - Raising to the power < 1: np.sqrt(x + 2/3)
+    - Winsorization: remove outliers by setting all outliers to a specified percentile of the data
+        - Example:
+        
+        Consider the data set consisting of:
+
+        {92, 19, 101, 58, 1053, 91, 26, 78, 10, 13, −40, 101, 86, 85, 15, 89, 89, 28, −5, 41}       (N = 20, mean = 101.5)
+        The data below the 5th percentile lies between −40 and −5, while the data above the 95th percentile lies between 101 and 1053. (Values shown in bold.) Then a 90% winsorization would result in the following:
+
+        {92, 19, 101, 58, 101, 91, 26, 78, 10, 13, −5, 101, 86, 85, 15, 89, 89, 28, −5, 41}       (N = 20, mean = 55.65)
+        
+        ```python
+        from scipy.stats.mstats import winsorize
+        winsorize([92, 19, 101, 58, 1053, 91, 26, 78, 10, 13, -40, 101, 86, 85, 15, 89, 89, 28, -5, 41], limits=[0.05, 0.05])
+        ```
+- Decrease outliers' influence on non-tree models: Rank transform, np.log(1+x), np.sqrt(x), winsorization
 
 ## Categorical and Ordinal Features
 ### Label Encoding
