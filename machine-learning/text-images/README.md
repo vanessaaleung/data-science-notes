@@ -26,6 +26,7 @@
 ### Word2vec
 _Get vector representation for text_
 - Words often used in the same context will be close in the vector representation
+- Uses a **neural network model** to learn word associations from a large corpus of text
 
 ## Images
 - use pre-trained neural networks to extract features
