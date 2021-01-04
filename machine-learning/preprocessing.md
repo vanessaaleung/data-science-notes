@@ -55,9 +55,10 @@
         Consider the data set consisting of:
 
         {92, 19, 101, 58, 1053, 91, 26, 78, 10, 13, −40, 101, 86, 85, 15, 89, 89, 28, −5, 41}       (N = 20, mean = 101.5)
+        
         The data below the 5th percentile lies between −40 and −5, while the data above the 95th percentile lies between 101 and 1053. (Values shown in bold.) Then a 90% winsorization would result in the following:
 
-        {92, 19, 101, 58, 101, 91, 26, 78, 10, 13, −5, 101, 86, 85, 15, 89, 89, 28, −5, 41}       (N = 20, mean = 55.65)
+        {92, 19, 101, 58, **101**, 91, 26, 78, 10, 13, **−5**, 101, 86, 85, 15, 89, 89, 28, −5, 41}       (N = 20, mean = 55.65)
         
         ```python
         from scipy.stats.mstats import winsorize
@@ -88,7 +89,7 @@ titanic['enc'] = titanic.Embarked.map(encoding)
 
 ### One-hot Encoding
 - often used for non-tree-based models, tree-models will slow down
-    - if the categorical features have too many unique values, will add too many new columns with a few non-zero values
+    - if the categorical features have too many unique values, One-hot Encoding will add too many new columns with a few non-zero values
 - ```python 
     sklearn.preprocessing.OneHotEncoder
     ```
