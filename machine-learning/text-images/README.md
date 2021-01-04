@@ -1,5 +1,8 @@
 # Feature Extraction from Text and Images
 - [Text](#text)
+  - [Bag of Words](#bag-of-words)
+  - [Word2Vec](#word2vec)
+  - [BoW vs w2v](#bow-vs-w2v)
 - [Images](#images)
 ## Text
 1. Bag of Words
@@ -27,6 +30,15 @@
 _Get vector representation for text_
 - Words often used in the same context will be close in the vector representation
 - Uses a **neural network model** to learn word associations from a large corpus of text
+
+### BoW vs w2v
+- Bag of Words
+  1. very large vectors
+  2. meaning of each value in vector is known
+- Word2vec
+  1. relatively small vectors
+  2. values in vector can be interpreted only in some cases
+  3. words with  similar meaning often have similar embeddings
 
 ## Images
 - use pre-trained neural networks to extract features
