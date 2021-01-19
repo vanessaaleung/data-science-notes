@@ -6,6 +6,7 @@
 | DBSCAN  | neighborhood size  | Non-flat geometry, uneven cluster sizes | Distances between nearest points |
 
 - [KMeans](#kmeans)
+- [DBSCAN](#DBSCAN)
 
 ## KMeans
 _Clustering data by trying to separate samples in n groups of **equal variance**, minimizing inertia or within-cluster sum-of-squares_
@@ -36,3 +37,12 @@ _How internally coherent clusters are_
 
 ### MiniBatchMeans
 _Incremental updates of centers positions using mini-batches_
+
+## DBSCAN
+_Views clusters as areas of high density separated by areas of low density_
+- Density-Based Spatial Clustering of Applications with Noise
+- clusters found by DBSCAN can be any shape, as opposed to k-means which assumes that clusters are convex shaped
+- A cluster is a set of core samples
+  - core samples: samples that are in areas of high density
+- Deterministic: always generating the same clusters when given the same data in the same order
+- scikit-learn: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN
