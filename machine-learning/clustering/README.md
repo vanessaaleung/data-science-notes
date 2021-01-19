@@ -3,6 +3,7 @@
 | Method | Parameters | Usecase | Metric Used |
 | ---    |  ---       | ---     | ---         |
 | K-Means | Number of clusters | Gneral-purpose, even cluster size, not too many clusters | Distances between points |
+| DBSCAN  | neighborhood size  | Non-flat geometry, uneven cluster sizes | Distances between nearest points |
 
 - [KMeans](#kmeans)
 
