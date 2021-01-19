@@ -42,7 +42,10 @@ _Incremental updates of centers positions using mini-batches_
 _Views clusters as areas of high density separated by areas of low density_
 - Density-Based Spatial Clustering of Applications with Noise
 - clusters found by DBSCAN can be any shape, as opposed to k-means which assumes that clusters are convex shaped
+  - can find a cluster completely surrounded by another cluster
 - A cluster is a set of core samples
   - core samples: samples that are in areas of high density
 - Deterministic: always generating the same clusters when given the same data in the same order
+- Has a notion to noise: robust to outliers
+- Doesn't require specification of number of clusters
 - scikit-learn: https://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html#sklearn.cluster.DBSCAN
