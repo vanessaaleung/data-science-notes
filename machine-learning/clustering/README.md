@@ -15,6 +15,8 @@ _Clustering data by trying to separate samples in n groups of **equal variance**
 <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sum_{i=0}^{n}\min_{\mu_j&space;\in&space;C}(||x_i&space;-&space;\mu_j||^2)" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sum_{i=0}^{n}\min_{\mu_j&space;\in&space;C}(||x_i&space;-&space;\mu_j||^2)" title="\sum_{i=0}^{n}\min_{\mu_j \in C}(||x_i - \mu_j||^2)" /></a>
 </p>
 
+- non-overlapping clusters without any internal cluster structure
+
 ### Inertia
 _How internally coherent clusters are_
 
