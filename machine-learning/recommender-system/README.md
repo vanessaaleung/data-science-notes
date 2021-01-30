@@ -1,4 +1,17 @@
 # Recommender System
+## Collaborative Filtering
+- User-based
+  - Getting a user rating matrix
+  - Learning the similarity weights: e.g. calculate the similarity between users
+  - Creating the weighted ratings matrix
+- Item-based
+- Memory-based: uses the entire dataset to generate recommendation
+- Model-based: develops a model to learn users preference
+
+### Challenges
+- Data Sparsity: large dataset of user rate only a limited number of items
+- Cold Start
+- Scalability: performance drops when increase in users or items
 
 ## Evaluating of Top-N Recommenders Offline
 - Hit Rate: Hits/Users
