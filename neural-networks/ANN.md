@@ -9,7 +9,7 @@ _Finding the minimum of a function_
 ## Activation function
 _Decides whether a neuron should be activated or not -> whether the information the neurou receives is relevant or not_
 
-<img src="images/activation_function.png">
+<img src="images/activation_function.png" height="200px">
 
 - Enable non-linear transformation -> to perform more complex task
 - A neural network without activation function is just a linear regression model
@@ -17,17 +17,20 @@ _Decides whether a neuron should be activated or not -> whether the information 
 1. Binary step function
 2. Linear function
 3. Sigmoid funciton
-<img src="sigmoid_function.png">
+<img src="images/sigmoid_function.png" height="200px">
+
 - As the gradient approaches 0, the network doesn't really learn
 - are avoided due to the vanishing problem
 
 4. Hyperbolic Tangent Function
-<img src="hyperbolic_tangent_function.png">
+<img src="images/hyperbolic_tangent_function.png" height="200px">
+
 - a scaled function of the sigmoid function
 - are avoided due to the vanishing problem
 
 5. ReLU (Rectified Linear Unit)
-<img src="relu.png">
+<img src="images/relu.png" height="200px">
+
 - most widely used & only used in hidden layers
 - does not activate all the neurons at the same time, making the network sparse
 
@@ -42,20 +45,21 @@ _Decides whether a neuron should be activated or not -> whether the information 
 - the training process takes too long and the prediction accuracy is compromised
 
 ## Forward propagation
-<img src="images/forward_propagation.png">
+<img src="images/forward_propagation.png" height="200px">
+
 - The output of the first neuron will be passed as the input of the second neuron
 
 ## Backpropagation
-<img src="images/backpropagation.png">
+<img src="images/backpropagation.png" height="200px">
 
 1. Calculate network output using forward propagation
 2. Calculate the error E (mean squared error) between the ground truth and the estimated output
 3. Update weights and biases through backpropagation per the following equations:
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;w_i&space;\rightarrow&space;w_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;w_i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;w_i&space;\rightarrow&space;w_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;w_i}" title="w_i \rightarrow w_i - \eta \times \frac{\partial E}{\partial w_i}" /></a>
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;w_i&space;\rightarrow&space;w_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;w_i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;w_i&space;\rightarrow&space;w_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;w_i}" title="w_i \rightarrow w_i - \eta \times \frac{\partial E}{\partial w_i}" /></a>
 
-<a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;b_i&space;\rightarrow&space;b_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;b_i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;b_i&space;\rightarrow&space;b_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;b_i}" title="b_i \rightarrow b_i - \eta \times \frac{\partial E}{\partial b_i}" /></a>
+  - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;b_i&space;\rightarrow&space;b_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;b_i}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;b_i&space;\rightarrow&space;b_i&space;-&space;\eta&space;\times&space;\frac{\partial&space;E}{\partial&space;b_i}" title="b_i \rightarrow b_i - \eta \times \frac{\partial E}{\partial b_i}" /></a>
 
-<img src="images/updating_weights.png">
+<img src="images/updating_weights.png" height="200px">
 
 4. Repeat the above three steps until # of iterations/epochs is reached or error between group truth and predicted output is below a predefined threshold
