@@ -48,7 +48,8 @@ model.add(Dense(num_classes, activation='softmax'))  # convert output to probabi
 ```
 
 ## Recurrent Neural Networks (RNNs)
-<img src="images/rnns.png" height="300px">
+
+<img src="images/rnns.png" width="500px">
 
 - networks with loops
 - Don't just take a new input at a time, also take the output from the previous data point as the input
@@ -60,7 +61,8 @@ model.add(Dense(num_classes, activation='softmax'))  # convert output to probabi
 
 ## Autoencoders
 _Data compression algorithm_
-<img src="images/autoencoders.png" height="300px">
+
+<img src="images/autoencoders.png" width="500px">
 
 - Unsupervised
 - Compression and decompression functions are learned automatically from data
