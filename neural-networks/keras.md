@@ -1,6 +1,10 @@
 # Keras
 _For quick prototyping, easy to use API_
 
+## Model Classes
+- Sequantial model
+- Model class used with the functional API
+
 ## Regression Models
 ```python
 import keras
