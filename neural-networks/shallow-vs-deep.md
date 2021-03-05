@@ -1,6 +1,9 @@
 # Shallow Versus Deep Neural networks
 - Shallow: consists of one hidden layer
 - Deep: consists of more hidden layers and has a large number of neurons in each layer
+- Convolutional Neural Networks (CNNs)
+- Recurrent Neural Networks (RNNs)
+- Autoencoders
 
 ## Convolutional Neural Networks (CNNs)
 - Assumption: take inputs as images
@@ -44,4 +47,31 @@ model.add(Dense(100, activation='relu'))
 model.add(Dense(num_classes, activation='softmax'))  # convert output to probabilities
 ```
 
-## Supervised Learning Models
+## Recurrent Neural Networks (RNNs)
+<img src="images/rnns.png" height="300px">
+
+- networks with loops
+- Don't just take a new input at a time, also take the output from the previous data point as the input
+- Start with a normal neural network
+- Good at text, genomes, handwriting, stock markets, the algorithms take time and sequence into account
+
+### Long Short-Term Memeory model
+- Applications: image/handwriting regeneration, automatic captioning of images
+
+## Autoencoders
+_Data compression algorithm_
+<img src="images/autoencoders.png" height="300px">
+
+- Unsupervised
+- Compression and decompression functions are learned automatically from data
+- data-specific: only able to compress data similar to what they have been trained on
+- Applications: data denoising, dimensionality reduction
+
+### Restricted Boltzmann Machines (RBMs)
+- Application
+  - Fixing imbalanced datasets: learn the distribution of the minority class, generate more data points of that class
+  - Estimate missing values
+  - Automatic feature extraction
+
+
+
