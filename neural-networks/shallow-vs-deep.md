@@ -15,18 +15,21 @@
   - n * m * 1: for gray scaled images
   - n * m * 3 (red, green, blue): for colored images
 - Convolutional Layer
+  - Objective: without it, will end up with a massive number of parameters that will need to be optimized -> computationally expensive
   - create an empty matric to save the results of the process
   - sliding the filter over the images
   - computing the dot product between the filter and the overlapping pixel values
   - storing the result in the empty matrix
   - repeat the moving steps by one cell
-  <img src="images/cnn_layer.png" width="500px">
+  
+    <img src="images/cnn_layer.png" width="500px">
   - the more filter, the more we're able to preserve the spatial demension better
 - Pooling Layer
   - Objective
     - Reduce spatial demensions of data propagating through the network
     - Provides spatial variance which enables recognize objects in the image even if the object does not exactly resemble the original object
   - Max pooling: for each section of the output, keep the highest value
+  
     <img src="images/max_pooling.png" width="500px">
   - Average pooling: keep the average value of each area
 - Fully-connected Layer
@@ -64,7 +67,7 @@ _Data compression algorithm_
 
 <img src="images/autoencoders.png" width="500px">
 
-- Unsupervised
+- Unsupervised neural network model that uses backpropagation by setting the target variable to be the same as the input
 - Compression and decompression functions are learned automatically from data
 - data-specific: only able to compress data similar to what they have been trained on
 - Applications: data denoising, dimensionality reduction
