@@ -44,3 +44,11 @@ model.fit(predictors, target, epochs=10)
 predictions = model.predict(test_data) # output for each data point is an array of probabilities the outcome belongs to each class
 ```
 
+## Save Models
+```python
+model.save('classification_model.h5')
+
+from keras.model import load_model
+pretrained_model = load_model('classification_model.h5')
+```
+
