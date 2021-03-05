@@ -6,7 +6,7 @@
 - Assumption: take inputs as images
 - Usage: image recognition, object detection, other CV applications
 
-<img src="images/cnns.png" width="200px">
+<img src="images/cnns.png" width="500px">
 
 - Input
   - n * m * 1: for gray scaled images
@@ -17,17 +17,17 @@
   - computing the dot product between the filter and the overlapping pixel values
   - storing the result in the empty matrix
   - repeat the moving steps by one cell
-  - <img src="images/cnn_layer.png" width="200px">
+  <img src="images/cnn_layer.png" width="500px">
   - the more filter, the more we're able to preserve the spatial demension better
 - Pooling Layer
   - Objective
     - Reduce spatial demensions of data propagating through the network
     - Provides spatial variance which enables recognize objects in the image even if the object does not exactly resemble the original object
   - Max pooling: for each section of the output, keep the highest value
-    - <img src="images/max_pooling.png" width="200px">
+    <img src="images/max_pooling.png" width="500px">
   - Average pooling: keep the average value of each area
 - Fully-connected Layer
-  - <img src="images/fully_connected_layer.png" width="200px">
+  <img src="images/fully_connected_layer.png" height="300px">
   - Flatten the output of the last convolutional layer and connect every node of the current layer with every other node in the next layer
   - Output: n-dimensional vector (n: number of classes of the problem)
 
