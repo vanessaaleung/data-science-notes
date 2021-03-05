@@ -32,7 +32,7 @@ Repeat Part B but use 100 epochs this time for training.
 
 How does the mean of the mean squared errors compare to that from Step B?
 
-D. Increase the number of hidden layers (5 marks)
+## D. Increase the number of hidden layers (5 marks)
 
 Repeat part B but use a neural network with the following instead:
 
