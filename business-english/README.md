@@ -1,5 +1,10 @@
 # Business English Vocabulary
 - [Meetings](#meetings)
+  - [Successful Meetings](#successful-meetings)
+  - [Setting Up a Meeting](#setting-up-a-meeting)
+  - [Responding to Meeting Announcements](#responding-to-meeting-announcements)
+  - [Taking Part in Meetings](#taking-part-in-meetings)
+- 
 
 ## Meetings
 ### Successful Meetings
@@ -103,6 +108,116 @@
 
 #### Requesting/Informing of a Change 
 - Would it be possible to move it to Tuesday?
-- Is there any chance we could **push it back to** the following week?
+- Is there any chance we could &#127775;push it back to&#127775; the following week?
 - Could we maybe reschedule it for later in the week?
 - Unfortunately, we need to reschedule Monday’s team meeting.
+
+### Leading a Meeting
+#### Starting a Meeting
+- OK, let’s get started.
+- Shall we begin?
+
+#### Making Introductions
+- This is (Name) from (department/company).
+- &#127775;Let’s take a couple of minutes for people to introduce themselves.&#127775;
+
+#### Stating the objectives and referring to the agenda for the meeting
+- Today we need to …
+- By the end of this meeting, I hope we’ll …
+- This/Here is what’s on our agenda today.
+- &#127775;The first thing on our agenda is&#127775; the budget
+- First, we’re going to … and then…
+- &#127775;If we have time, we’ll also discuss…&#127775;
+- Any questions?
+
+#### Introducing the First Topic
+- So, let's start with…
+- Shall we start with…?
+- (Name), would you like to...
+- (Name) is going to show us…
+
+#### Managing the Discussion
+- (Name), what do you think?
+- OK, thanks (Name). You made a good point.
+- You raised an important issue. (raise an issue / a question / a concern)
+- I’m glad you brought that up. (bring up an idea / a topic)
+- Does anyone want to add anything?
+- Are there any questions?
+
+#### Managing Time
+- &#127775;Let’s move on to …&#127775;
+- Are you/we ready to make a decision?
+- We have … more minutes.
+- &#127775;We need to / We should watch the time here.&#127775;
+
+#### Keeping the Discussion on Track
+- &#127775;Let’s continue this in our next meeting or in email.
+- Maybe this discussion could happen at a later time / in another meeting.
+- How about postponing this discussion until …?
+
+#### Summarizing
+- So we’ve agreed/decided to (verb).
+- Good. We’ve agreed/decided on (noun).
+- Well, I think we have a good plan.
+
+#### Assigning Next Tasks
+- &#127775;Here are things we’re going to follow up on.&#127775;
+
+#### Closing
+- OK, &#127775;thanks for your input.&#127775;
+- All right. Thanks everyone.
+
+### Taking Part in Meetings
+#### Expressing Opinions
+- I (don’t) think that / I feel like … 
+
+#### Agree Completely
+- You’re/That’s right. 
+- That’s true. 
+- That’s a good idea. 
+- That makes sense. 
+- Good point. 
+- Yes, it’s great / very expensive. 
+
+#### Show understanding 
+- &#127775;I see what you mean.&#127775; 
+- &#127775;I understand your point.&#127775;
+- I understand how you feel.  
+
+#### Ask questions 
+- &#127775;Do you think it’s a good idea to&#127775; be so close to Godiva? 
+- What about the cost difference? 
+
+#### Make a suggestion 
+- Would it be a good idea to do some more research? 
+- What if we opened a smaller store? 
+- Maybe we could open a small store to test the market. 
+
+#### Express doubt 
+- Well, I don’t know. 
+- &#127775;I’m not sure that’s completely true.&#127775;
+- I’m wondering if we can compete with Godiva.  
+- Don’t you think we’ll lose customers to Godiva? 
+
+#### Remind 
+- It’s really important to (verb) 
+- Let’s not forget that (subject + verb) 
+- Don’t forget that (subject + verb) 
+
+#### Interrupting 
+- Ummm… / Uhh… 
+- But…  
+
+#### Express a negative opinion indirectly 
+- I don’t think it’s a great location. 
+- I don’t really agree. 
+
+#### Use vague expressions 
+- That’s a bit expensive. 
+- That’s kind of difficult. 
+- &#127775;I see a few problems with that idea.&#127775;
+- I don’t really agree. 
+
+#### Use may and might 
+- That may cost too much. 
+- They might not pay that much money.
