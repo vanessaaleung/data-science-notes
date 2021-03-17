@@ -114,7 +114,7 @@
 
 ### Leading a Meeting
 #### Starting a Meeting
-- OK, let’s get started.
+- &#127775;OK, let’s get started.&#127775;
 - Shall we begin?
 
 #### Making Introductions
@@ -185,16 +185,16 @@
 - I understand how you feel.  
 
 #### Ask questions 
-- &#127775;Do you think it’s a good idea to&#127775; be so close to Godiva? 
+- &#127775;Do you think it’s a good idea to &#127775; be so close to Godiva? 
 - What about the cost difference? 
 
 #### Make a suggestion 
 - Would it be a good idea to do some more research? 
 - What if we opened a smaller store? 
 - Maybe we could open a small store to test the market. 
+- Q: It’s a difficult decision. A: &#127775; Very difficult, but I have a suggestion. &#127775;
 
 #### Express doubt 
-- Well, I don’t know. 
 - &#127775;I’m not sure that’s completely true.&#127775;
 - I’m wondering if we can compete with Godiva.  
 - Don’t you think we’ll lose customers to Godiva? 
@@ -204,12 +204,7 @@
 - Let’s not forget that (subject + verb) 
 - Don’t forget that (subject + verb) 
 
-#### Interrupting 
-- Ummm… / Uhh… 
-- But…  
-
 #### Express a negative opinion indirectly 
-- I don’t think it’s a great location. 
 - I don’t really agree. 
 
 #### Use vague expressions 
@@ -221,3 +216,21 @@
 #### Use may and might 
 - That may cost too much. 
 - They might not pay that much money.
+
+### Teleconferencing
+- I’m online, but I can’t log on to the site.  
+- I can’t connect to / log on to the meeting / the site. 
+- &#127775;We’re having some technical problems here.&#127775;
+- &#127775;Is Neil on yet? &#127775; 
+- &#127775;Did we lose Karin? &#127775;
+- &#127775;You’re breaking up. &#127775;
+- Can everyone see the screen? 
+- Something happened with the site. 
+- OK, I’d like to get everyone’s input 
+- We have about one minute for each person. Could you start, Tina? 
+- Paul? Why don’t you go next? 
+- Karin, &#127775;did you want to add something? &#127775;
+- &#127775;This is Paul again. Could I add something? &#127775;
+- Sorry, this is Paul. &#127775;I didn’t catch that last part. &#127775;
+- Sorry to interrupt, &#127775;but could you say that again, please? &#127775;
+
