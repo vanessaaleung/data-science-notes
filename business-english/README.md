@@ -3,7 +3,10 @@
   - [Successful Meetings](#successful-meetings)
   - [Setting Up a Meeting](#setting-up-a-meeting)
   - [Responding to Meeting Announcements](#responding-to-meeting-announcements)
+  - [Leading a Meeting](#leading-a-meeting)
   - [Taking Part in Meetings](#taking-part-in-meetings)
+  - [Teleconferencing](#teleconferencing)
+  - [Brainstorming](#brainstorming)
 - 
 
 ## Meetings
@@ -233,4 +236,28 @@
 - &#127775;This is Paul again. Could I add something? &#127775;
 - Sorry, this is Paul. &#127775;I didn’t catch that last part. &#127775;
 - Sorry to interrupt, &#127775;but could you say that again, please? &#127775;
+
+### Brainstorming
+#### Asking for Ideas
+- Let’s hear your thoughts/ideas.
+- &#127775;What do you all think?&#127775;
+- Any ideas/suggestions?
+
+#### Encouraging
+- Anyone else?
+
+#### Clarifying
+- Could you explain a little more?
+
+#### Giving Ideas
+- I don’t know about this, but…
+- It might sound a little crazy, but…
+- &#127775;Building on (what Tina just said), … &#127775;
+- &#127775;Picking up on that, … &#127775;
+- &#127775;Adding to that, … &#127775;
+
+### Proposals
+- I would be happy to discuss this with you in more detail. 
+- &#127775;Please let me know if you would like to discuss this further. &#127775;
+- &#127775;Please let me know what you think. &#127775;
 
