@@ -107,3 +107,21 @@ object Quux {
   Bar.someMethod
 }
 ```
+
+# TAIL RECURSION
+- If a recursive function that calls itself as its last action, then it can reuse the stack frame of that function.
+- If the last action of a function consists of calling another function, maybe the same, maybe some other function, the stack frame could be reused for both functions. Such calls are called tail calls.
+```scala
+@tailrec
+def gcd(a: Int, b: Int): Int = …
+```
+```scala
+def factorial(n: Int): Int = {
+  @tailrec
+  def iter(x: Int, result: Int): Int =
+    if (x == 0) result
+    else iter(x - 1, result * x)
+
+  iter(n, 1)
+}
+```
