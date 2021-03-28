@@ -36,7 +36,8 @@ def factorial(n: Int): Int =
   else factorial(n - 1) * n
 ```
 
-# BLOCKS AND VISIBILITY
+# Lexical Scopes
+## BLOCKS AND VISIBILITY
 - The definitions inside a block are only visible from within the block
 ```scala
 val x = 0
@@ -48,7 +49,7 @@ val result = {
 ```
 - result should be 16
 
-# SEMICOLONS
+## SEMICOLONS
 - Semicolons are optional
 - Can have more than one statements on a line
 ```scala
@@ -65,7 +66,7 @@ someLongExpression +
   someOtherExpression
 ```
 
-# TOP-LEVEL DEFINITIONS
+## TOP-LEVEL DEFINITIONS
 - `def` and `val` definitions must be writen within a top-level object definition
 ```scala
 object MyExecutableProgram {
@@ -74,7 +75,7 @@ object MyExecutableProgram {
 }
 ```
 
-# PACKAGES AND IMPORTS
+## PACKAGES AND IMPORTS
 - Definitions located in a package are visible from other definitions located in the same package
 ```scala
 // file foo/Bar.scala
