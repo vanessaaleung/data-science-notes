@@ -125,3 +125,70 @@ def factorial(n: Int): Int = {
   iter(n, 1)
 }
 ```
+
+# Structuring Information
+## DEFINING ALTERNATIVES WITH SEALED TRAITS
+-  something that can be embodied by a fixed set of alternatives
+```scala
+sealed trait Symbol
+case class Note(name: String, duration: String, octave: Int) extends Symbol
+case class Rest(duration: String) extends Symbol
+```
+```scala
+val symbol1: Symbol = Note("C", "Quarter", 3)
+val symbol2: Symbol = Rest("Whole")
+```
+
+## PATTERN MATCHING
+```scala
+def symbolDuration(symbol: Symbol): String =
+  symbol match {
+    case Note(name, duration, octave) => duration
+    case Rest(duration) => duration
+  }
+```
+
+## Exhausitivity
+Having defined Symbol as a sealed trait gives us the guarantee that the possible case of symbols is fixed. The compiler can leverage this knowledge to warn us if we write code that does not handle all the cases:
+```scala
+def unexhaustive(): Unit = {
+  sealed trait Symbol
+  case class Note(name: String, duration: String, octave: Int) extends Symbol
+  case class Rest(duration: String) extends Symbol
+
+  def nonExhaustiveDuration(symbol: Symbol): String =
+    symbol match {
+      case Rest(duration) => duration
+    }
+}
+```
+```sbt
+[warn] /Users/eric/Documents/Vanessa/scala/example/src/main/scala/ExampleApp.scala:15:7: match may not be exhaustive.
+[warn] It would fail on the following input: Note(_, _, _)
+[warn]       symbol match {
+[warn]       ^
+```
+
+## ALGEBRAIC DATA TYPES
+An algebraic data type definition can be thought of as a set of possible values.
+
+```scala
+sealed trait Duration
+case object Whole extends Duration
+case object Half extends Duration
+case object Quarter extends Duration
+
+def fractionOfWhole(duration: Duration): Double =
+  duration match {
+    case Whole => 1.0
+    case Half => 
+0.5
+
+    case Quarter => 
+0.25
+
+  }
+
+fractionOfWhole(Half) shouldBe 0.5
+fractionOfWhole(Quarter) shouldBe 0.25
+```
