@@ -193,3 +193,12 @@ def fractionOfWhole(duration: Duration): Double =
 fractionOfWhole(Half) shouldBe 0.5
 fractionOfWhole(Quarter) shouldBe 0.25
 ```
+
+#  Higher-Order Functions
+- Functions that take other functions as parameters or that return functions as results
+
+## Anonymous Functions
+```scala
+println("abc")
+```
+
