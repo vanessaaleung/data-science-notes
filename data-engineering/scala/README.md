@@ -202,3 +202,17 @@ fractionOfWhole(Quarter) shouldBe 0.25
 println("abc")
 ```
 
+# Functional Programming
+## Programming Paradigms
+- imperative programming
+  - modifying mutable variables
+  - using assignments
+  - control structures such as if-then-else, loops, break, continue, return
+- functional programming
+  - programming without mutable variables, assignments, loops, and other imperative control strutures
+  - focusing on the functions
+- logic programming
+
+Orthogonal:
+- object-oriented programming
+
