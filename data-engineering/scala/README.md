@@ -217,4 +217,18 @@ Orthogonal:
 - object-oriented programming
 
 ## Read-Eval-Print Loop
-- an interactive shell, 
+- an interactive shell lets one write expressions and responds with results
+```sbt
+scala> 34+65
+res0: Int = 99
+```
+
+### Evaluation
+1. Take the leftmost operator
+2. Evaluate its operands (left before right)
+3. Apply the operator to the operands
+
+### Parameters and Return Types
+```scala
+def power(x: Double, y: Int): Double = ...
+```
