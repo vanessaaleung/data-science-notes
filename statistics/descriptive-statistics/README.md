@@ -1,7 +1,10 @@
 # Descriptive Statistics
+<img src="https://luminousmen.com/media/descriptive-and-inferential-statistics.jpeg" width="500px">
+
 - [Mean](#Mean)
 - [Median](#Median)
 - [Variance](#Variance)
+
 ## Mean
 
 ## Median
