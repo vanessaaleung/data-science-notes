@@ -1,7 +1,7 @@
 # Descriptive Statistics
 - [Mean](#Mean)
 - [Median](#Median)
-- [Variance + STD DEV](#Variance-STD-DEV)
+- [Variance + STD DEV](#Variance-+-STD-DEV)
 ## Mean
 
 ## Median
