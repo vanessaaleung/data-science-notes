@@ -1,7 +1,7 @@
 # Descriptive Statistics
-- [Mean](#mean)
-- [Median](#median)
-- [Variance + STD DEV](#variance-+-STD-DEV)
+- [Mean](#Mean)
+- [Median](#Median)
+- [Variance + STD DEV](#Variance-STD-DEV)
 ## Mean
 
 ## Median
@@ -33,6 +33,7 @@ _Describe the spread of the data_
   - at any other position, the sum of squares would be larger
   - using n-1 instead of n would adjust the variance estimate upwards
 - Degree of Freedom
+  - <img src="images/degree_of_freedom.png">
   - Population variance - Three degrees of freedom (three pieces of independent information): <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sigma^2=\frac{\sum(X-\mu)^2}{N}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma^2=\frac{\sum(X-\mu)^2}{N}" title="\sigma^2=\frac{\sum(X-\mu)^2}{N}" /></a>
   - Sample Variance - Two degrees of freedom: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;s^2=\frac{\sum(X-\bar{X})^2}{n-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;s^2=\frac{\sum(X-\bar{X})^2}{n-1}" title="s^2=\frac{\sum(X-\bar{X})^2}{n-1}" /></a>
 
