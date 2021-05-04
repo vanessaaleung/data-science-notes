@@ -14,6 +14,7 @@
     - [Statistical Power](#statistical-power)
 7. [Confidence Interval](#confidence-interval)
 8. [Covariance and Correlation](#covariance-and-correlation)
+9. [Descriptive Statistics](https://github.com/vanessaaleung/data-science-notes/tree/master/statistics/descriptive-statistics)
   
 ## Linear Regression Assumptions
 1. Linearity
