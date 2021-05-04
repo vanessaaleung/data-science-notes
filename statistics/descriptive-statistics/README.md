@@ -1,7 +1,7 @@
 # Descriptive Statistics
 - [Mean](#Mean)
 - [Median](#Median)
-- [Variance + STD DEV](#Variance-+-STD-DEV)
+- [Variance](#Variance)
 ## Mean
 
 ## Median
@@ -23,7 +23,7 @@ _Middle number of the series when ordered_
 ## Quantiles
 ## Range + IQR
 
-## Variance + STD DEV
+## Variance
 _Describe the spread of the data_
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Variance&space;=&space;s^2&space;=&space;\frac{\sum(x-\bar{x})^2}{n-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Variance&space;=&space;s^2&space;=&space;\frac{\sum(x-\bar{x})^2}{n-1}" title="Variance = s^2 = \frac{\sum(x-\bar{x})^2}{n-1}" /></a>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Std&space;dev&space;=&space;s&space;=&space;\sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Std&space;dev&space;=&space;s&space;=&space;\sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}" title="Std dev = s = \sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}" /></a>
