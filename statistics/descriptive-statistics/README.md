@@ -3,11 +3,9 @@
   <img src="https://luminousmen.com/media/descriptive-and-inferential-statistics.jpeg" width="500px">
 </p>
 
-- [Mean](#Mean)
 - [Median](#Median)
 - [Variance](#Variance)
-
-## Mean
+- [Skewness](#Skewness)
 
 ## Median
 _Middle number of the series when ordered_
@@ -18,18 +16,14 @@ _Middle number of the series when ordered_
   - Bell curve
   - Bimodal distribution
 - Asymmetric distributions
-  - median is more robust/reflective of the central tendency when there're extreme values/heavily skewed
+  - median is more robust/reflective of the central tendency when there're **extreme values**/heavily skewed
 - When median is preferred
   - house prices
   - car prices
   - salaries
 
-## Mode
-## Quantiles
-## Range + IQR
-
 ## Variance
-_Describe the spread of the data_
+_Describe the **spread** of the data_
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Variance&space;=&space;s^2&space;=&space;\frac{\sum(x-\bar{x})^2}{n-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Variance&space;=&space;s^2&space;=&space;\frac{\sum(x-\bar{x})^2}{n-1}" title="Variance = s^2 = \frac{\sum(x-\bar{x})^2}{n-1}" /></a>
 - <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;Std&space;dev&space;=&space;s&space;=&space;\sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;Std&space;dev&space;=&space;s&space;=&space;\sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}" title="Std dev = s = \sqrt{\frac{\sum(x-\bar{x})^2}{n-1}}" /></a>
 - Variance: the average **squared deviation** from the **population** mean
@@ -42,4 +36,8 @@ _Describe the spread of the data_
   - Population variance - Three degrees of freedom (three pieces of independent information): <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;\sigma^2=\frac{\sum(X-\mu)^2}{N}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;\sigma^2=\frac{\sum(X-\mu)^2}{N}" title="\sigma^2=\frac{\sum(X-\mu)^2}{N}" /></a>
   - Sample Variance - Two degrees of freedom: <a href="https://www.codecogs.com/eqnedit.php?latex=\inline&space;s^2=\frac{\sum(X-\bar{X})^2}{n-1}" target="_blank"><img src="https://latex.codecogs.com/svg.latex?\inline&space;s^2=\frac{\sum(X-\bar{X})^2}{n-1}" title="s^2=\frac{\sum(X-\bar{X})^2}{n-1}" /></a>
 
-## Coefficient of Variation
+## Skewness
+<img src="images/skewness_types.png">
+- Symmetric/no skew: mean = median = mode
+- Positively/Right skewed: Mode < Median < Mean (pulled by the extreme values on the right)
+- Negatively/Left skewed: Mean < Median < Mode
