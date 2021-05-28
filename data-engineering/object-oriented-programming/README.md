@@ -119,7 +119,7 @@ class Book:
 
     # create a static method
     # don't modify the state of a class or an instance
-    # usesful for name spacing
+    # usesful for name spacing + when you want to make a class callable and not have its state modified
     @staticmethod
     def getbooklist():
         if Book.__booklist == None:
