@@ -3,7 +3,11 @@
   <img src="https://miro.medium.com/max/810/1*xiYI_rl-_pX_27BAjxBL3g.png" height="300px">
 </p>
 
-## Class Definition
+- [Object-Oriented Python](#object-oriented-python)
+- [Inheritance and Composition](#inheritance-and-composition)
+
+## Object-Oriented Python
+### Class Definition
 ```python
 # create a basic class
 class Book:
@@ -22,7 +26,7 @@ print(b1)
 print(b1.title)
 ```
 
-## Instance methods and attributes
+### Instance methods and attributes
 ```python
 class Book:
     # the "init" function is called when the instance is
@@ -68,7 +72,7 @@ print(b2._Book__secret)
 # This is a secret attribute
 ```
 
-## Checking instance types
+### Checking instance types
 ```python
 class Book:
     def __init__(self, title):
@@ -103,7 +107,7 @@ print(isinstance(n1, Newspaper)) # True
 print(isinstance(n2, object)) # True, in Python every thing is a subclass of the object class
 ```
 
-## Class methods and members
+### Class methods and members
 ```python
 class Book:
     # Properties defined at the class level are shared by all instances
@@ -156,7 +160,10 @@ thebooks.append(b2)
 print(thebooks)
 ```
 
-## Inheritance
+## Inheritance and Composition
+<img src="https://miro.medium.com/max/749/0*J_Dm57bKTppN51oZ.png" height="200px">
+
+### Inheritance
 ```python
 class Publication:
     def __init__(self, title, price) -> None:
@@ -195,7 +202,7 @@ print(n1.publisher)
 print(b1.price, m1.price, n1.price)
 ```
 
-## Abstract base classes
+### Abstract base classes
 - You want to provide a base class that defines a template for other classes to inherit from, but you don't want the consumer of the base class to be able to create instance of the base class itself, you want subclasses to provide concrete implementation
 - There are certain classes in the base class that subclasses have to implement
 - Useful for enforcing a set of constraints among the consumers of your classes
@@ -241,6 +248,3 @@ print(c.calcArea())
 s = Square(12)
 print(s.calcArea())
 ```
-
-## Inheritance & Composition
-<img src="https://miro.medium.com/max/749/0*J_Dm57bKTppN51oZ.png" height="200px">
