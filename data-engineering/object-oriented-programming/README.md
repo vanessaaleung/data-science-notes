@@ -5,6 +5,7 @@
 
 - [Object-Oriented Python](#object-oriented-python)
 - [Inheritance and Composition](#inheritance-and-composition)
+- [Magic Object Methods](#magic-object-methods)
 
 ## Object-Oriented Python
 ### Class Definition
@@ -370,3 +371,40 @@ print(b1.author)
 print(b1.getbookpagecount())
 ```
 
+## Magic Object Methods
+- Automatically associate with any class definition
+- classes can overwrite the methods to customize object behavior
+- Control access to attribute values for get and set
+- Built in comparison and equality testing capabilities
+- Allow objects to be called like functions - make codes more consise and readable
+
+- [String Representation](#string-representation)
+
+### String Representation
+- The `__str__` function is used to return a user-friendly stringrepresentation of the object. Usually intended to display to user
+- The `__repr__` method to used to generate developer-facing strings. Can be used to re-create the object of the current stsate. Used for debugging.
+
+```python
+class Book:
+    def __init__(self, title, author, price):
+        super().__init__()
+        self.title = title
+        self.author = author
+        self.price = price
+
+    # use the __str__ method to return a string
+    def __str__(self) -> str:
+        return f"{self.title} by {self.author}, costs {self.price}"
+
+    # use the __repr__ method to return an obj representation
+    def __repr__(self) -> str:
+        return f"title={self.title},author={self.author},price={self.price}"
+
+b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
+b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
+
+print(b1)
+print(b2)
+print(str(b1))
+print(repr(b2))
+```
