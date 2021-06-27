@@ -378,6 +378,7 @@ print(b1.getbookpagecount())
 - Built in comparison and equality testing capabilities
 - Allow objects to be called like functions - make codes more consise and readable
 
+### Contents
 - [String Representation](#string-representation)
 
 ### String Representation
