@@ -26,6 +26,127 @@
 
 
 ## Common Data Structures
+- [Arrays](#arrays)
+- [Linked Lists](#linked-lists)
+- [Stacks and Queues](#stacks-and-queues)
+- [Hash Tables](#hash-tables)
+
+### Arrays
+_Collection of elements identified by index or key_
+- Insert/Delete at beginning/in middle: O(n), since the remaining items have to be moved
+- Insert/Delete at the end: O(1)
+
+### Linked Lists
+_Collection of nodes_
+- Contain reference to the next node in the list
+- Elements can be easily inserted and removed
+- Underlying memory doesn't need to be reorganized like arrays
+- Can't do constant-time random item access
+- Item lookup: O(n)
+
+```python
+# the Node class
+class Node(object):
+    def __init__(self, val):
+        self.val = val
+        self.next = None
+
+    def get_data(self):
+        return self.val
+
+    def set_data(self, val):
+        self.val = val
+
+    def get_next(self):
+        return self.next
+
+    def set_next(self, next):
+        self.next = next
+
+
+# the LinkedList class
+class LinkedList(object):
+    def __init__(self, head=None):
+        self.head = head
+        self.count = 0
+
+    def get_count(self):
+        return self.count
+
+    def insert(self, data):
+        # TODO: insert a new node
+        new_node = Node(data)
+        new_node.set_next(self.head)
+        self.head = new_node
+        self.count += 1
+
+    def find(self, val):
+        # TODO: find the first item with a given value
+        item = self.head
+        while item != None:
+            if item.get_data() == val:
+                return item
+            else:
+                item = item.get_next()
+        return None
+
+    def deleteAt(self, idx):
+        # TODO: delete an item at given index
+        if idx > self.count-1:
+            return
+        if idx == 0:
+            self.head = self.head.next
+        else:
+            tempIdx = 0
+            node = self.head
+            while tempIdx < idx - 1:
+                node = node.get_next()
+                tempIdx += 1
+            node.set_next(node.get_next().get_next())
+            self.count -= 1
+
+    def dump_list(self):
+        tempnode = self.head
+        while (tempnode != None):
+            print("Node: ", tempnode.get_data())
+            tempnode = tempnode.get_next()
+
+
+# create a linked list and insert some items
+itemlist = LinkedList()
+itemlist.insert(38)
+itemlist.insert(49)
+itemlist.insert(13)
+itemlist.insert(15)
+itemlist.dump_list()
+
+# Node:  15
+# Node:  13
+# Node:  49
+# Node:  38
+# Item count:  4
+
+# exercise the list
+print("Item count: ", itemlist.get_count())
+print("Finding item: ", itemlist.find(13))
+print("Finding item: ", itemlist.find(78))
+
+# delete an item
+itemlist.deleteAt(3)
+print("Item count: ", itemlist.get_count())
+print("Finding item: ", itemlist.find(38))
+itemlist.dump_list()
+# Item count:  3
+# Finding item:  None
+# Node:  15
+# Node:  13
+# Node:  49
+```
+
+### Stacks and Queues
+
+
+### Hash Tables
 
 ## Recursion
 
