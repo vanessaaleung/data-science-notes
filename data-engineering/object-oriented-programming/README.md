@@ -6,6 +6,7 @@
 - [Object-Oriented Python](#object-oriented-python)
 - [Inheritance and Composition](#inheritance-and-composition)
 - [Magic Object Methods](#magic-object-methods)
+- [Data Classes](#data-classes)
 
 ## Object-Oriented Python
 ### Class Definition
@@ -526,3 +527,79 @@ print(b1.randomprop) # randomprop is not here!
 
 ### Callable Objects
 - `__call__` method can be used to call the object like a function. Beneficial when the object will be modified frequently. Results in more compact codes.
+
+```python
+from typing import Any
+
+class Book:
+    def __init__(self, title, author, price):
+        super().__init__()
+        self.title = title
+        self.author = author
+        self.price = price
+
+    def __str__(self):
+        return f"{self.title} by {self.author}, costs {self.price}"
+
+    # TODO: the __call__ method can be used to call the object like a function
+    def __call__(self, title, author, price) -> Any:
+        self.title = title
+        self.author = author
+        self.price = price
+
+b1 = Book("War and Peace", "Leo Tolstoy", 39.95)
+b2 = Book("The Catcher in the Rye", "JD Salinger", 29.95)
+
+# TODO: call the object as if it were a function
+print(b1)
+# War and Peace by Leo Tolstoy, costs 39.95
+b1("Anna Karenina", "Leo Tolstoy", 49.95)
+print(b1)
+# Anna Karenina by Leo Tolstoy, costs 49.95
+```
+
+## Data Classes
+- [Defining a Data Class](#defining-a-data-class)
+- [Using Post Initialization](#using-post-initialization)
+- [Using Default Values](#using-default-values)
+- [Immutable Data Classes](#immutable-data-classes)
+
+### Defining a Data Class
+- the `@dataclass` decorator will re-write the class to automatically add the init function and the attributes will be initialized. It also automatically implements `__repr__` and `__eq__`
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Book:
+    # type isn't actually enforced
+    title : str
+    author : str
+    pages : int
+    price : float
+
+    def bookinfo(self):
+        return f"{self.title}, by {self.author}"
+
+# create some instances
+b1 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
+b2 = Book("The Catcher in the Rye", "JD Salinger", 234, 29.95)
+b3 = Book("War and Peace", "Leo Tolstoy", 1225, 39.95)
+
+# access fields
+print(b1.title)  # War and Peace
+print(b2.author) # JD Salinger
+
+# TODO: print the book itself - dataclasses implement __repr__
+print(b1) # Book(title='War and Peace', author='Leo Tolstoy', pages=1225, price=39.95)
+
+# TODO: comparing two dataclasses - they implement __eq__
+print(b1 == b3) # True
+
+# TODO: change some fields
+b1.title = "Anna Karenina"
+b1.pages = 864
+print(b1.bookinfo()) # Anna Karenina, by Leo Tolstoy
+```
+### Using Post Initialization
+### Using Default Values
+### Immutable Data Classes
