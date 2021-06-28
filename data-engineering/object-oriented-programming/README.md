@@ -600,13 +600,13 @@ b1.title = "Anna Karenina"
 b1.pages = 864
 print(b1.bookinfo()) # Anna Karenina, by Leo Tolstoy
 ```
+
 ### Using Post Initialization
 - the `__post_init__` function lets us customize additional properties after the object has been initialized via built-in `__init__`
 - add additional attributes that might depends on the values of other attributes when using dataclasses
 
 ```python
 from dataclasses import dataclass
-
 
 @dataclass
 class Book:
@@ -633,11 +633,11 @@ print(b2.description) # The Catcher in the Rye by JD Salinger, 234 pages
 ### Using Default Values
 - Multiple ways
   - Specify directly
-    ```python price: float = 10.0```
+    `price: float = 10.0`
   - Use the field function
-    ```python price: float = field(default=10.0)```
+    `price: float = field(default=10.0)`
   - Call a function that can generate values dynamically
-    ```python price: float = field(default_factory=price_func)```
+    `price: float = field(default_factory=price_func)`
 - Default values have to come first, can't have non-default values following default values
 
 ```python
