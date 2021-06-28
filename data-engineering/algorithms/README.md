@@ -39,6 +39,7 @@ _Collection of elements identified by index or key_
 ### Linked Lists
 _Collection of nodes_
 - Contain reference to the next node in the list
+- Easier and faster to iterate sequentially
 - Elements can be easily inserted and removed
 - Underlying memory doesn't need to be reorganized like arrays
 - Can't do constant-time random item access
@@ -196,7 +197,9 @@ print(queue)  # deque([2, 3, 4])
 ### Hash Tables
 - i.e. Dictionary
 - Maps keys to associated values using the hash function
-- Hash function: Uses the key to compute an index into a slot, map the key to the value. Assign each key to a unique slot in the table.
+- Hash function: Uses the key to compute an index into a slot, map the key to the value. Assign each key to a unique slot in the table
+- Benefits: very fast, key-to-value mappings are unique
+- Drawback: when entries are small, array might be more efficient as there won't be collision to solve. Doesn't order entries in a predictable way
 
 
 ## Recursion
