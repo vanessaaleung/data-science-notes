@@ -382,10 +382,11 @@ print(b1.getbookpagecount())
 - [String Representation](#string-representation)
 - [Equality and Comparison](#equality-and-comparison)
 - [Attribute Access](#attribute-access)
+- [Callable Objects](#callable-objects)
 
 ### String Representation
 - The `__str__` function is used to return a user-friendly stringrepresentation of the object. Usually intended to display to user
-- The `__repr__` method to used to generate developer-facing strings. Can be used to re-create the object of the current stsate. Used for debugging.
+- The `__repr__` method to used to generate developer-facing strings. Can be used to re-create the object of the current stsate. Used for debugging. Useful when you need an exact representation of the object during development and debugging tasks.
 
 ```python
 class Book:
@@ -522,3 +523,6 @@ print(b2) # The Catcher in the Rye by JD Salinger, costs 36.0
 
 print(b1.randomprop) # randomprop is not here!
 ```
+
+### Callable Objects
+- `__call__` method can be used to call the object like a function. Beneficial when the object will be modified frequently. Results in more compact codes.
