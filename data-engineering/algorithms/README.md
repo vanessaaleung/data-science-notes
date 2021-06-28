@@ -144,9 +144,60 @@ itemlist.dump_list()
 ```
 
 ### Stacks and Queues
+- Stack
+  - LIFO: the last item pushed is the first one popped
+  - Application: math expression processing, backtracking like browser back stack
+- Queue
+  - FIFO: first added is the first item out
+  - Application: order processing, messaging (make sure msgs are sent in order)
 
+- Stack
+```python
+# TODO: create a new empty stack
+stack = []
+
+# TODO: push items onto the stack
+stack.append(1)
+stack.append(2)
+stack.append(3)
+stack.append(4)
+
+# TODO: print the stack contents
+print(stack) # [1, 2, 3, 4]
+
+# TODO: pop an item off the stack
+x = stack.pop()
+print(x)     # 4
+print(stack) # [1, 2, 3]
+```
+
+- Queue
+```python
+from collections import deque
+
+# TODO: create a new empty deque object that will function as a queue
+queue = deque()
+
+# TODO: add some items to the queue
+queue.append(1)
+queue.append(2)
+queue.append(3)
+queue.append(4)
+
+# TODO: print the queue contents
+print(queue)   # deque([1, 2, 3, 4])
+
+# TODO: pop an item off the front of the queue
+x = queue.popleft()
+print(x)      # 1
+print(queue)  # deque([2, 3, 4])
+```
 
 ### Hash Tables
+- i.e. Dictionary
+- Maps keys to associated values using the hash function
+- Hash function: Uses the key to compute an index into a slot, map the key to the value. Assign each key to a unique slot in the table.
+
 
 ## Recursion
 
