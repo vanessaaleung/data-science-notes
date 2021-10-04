@@ -12,3 +12,4 @@
 10. [Visualization](https://github.com/vanessaaleung/DS-notes/tree/master/visualization)
 11. [Data Mining](https://github.com/vanessaaleung/DS-notes/tree/master/data-mining)
 12. [Network Analysis](https://github.com/vanessaaleung/DS-notes/tree/master/network-analysis)
+13. [Programming](https://github.com/vanessaaleung/data-science-notes/tree/master/programming)
