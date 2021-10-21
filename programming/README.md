@@ -1,5 +1,6 @@
 # Programming
 - [Big-O Notation](#big-o-notation)
+- [Python Design Pattern](#python-design-pattern)
 
 ## Big-O Notation
 > The purpose of the Big-O notation is to find what is the dominant factor in the asymptotic behavior of a function as the value tends towards the infinity.
@@ -11,3 +12,5 @@
     -  Different computers with different architectures have different constant factors. A faster computer might be able to access memory faster than a slower computer, **so faster computers will have a lower constant factor for memory access than slower computers**. However, we're just interested in the algorithm, not the hardware, when doing asymptotic analysis, so we ignore such constant factors.
     -  As 𝑛→∞, constant factors aren't really a big deal. Constant factors are very small in the face of arbitrarily large 𝑛.
     -  **Overall**: we ignore constant factors because it removes a lot of the noise from hardware and small changes in algorithms that really aren't important for analysis, making algorithms easier to compare.
+
+## Python Design Pattern
