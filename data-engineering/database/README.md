@@ -1,5 +1,6 @@
 # Database
 - [Dimensional Modeling](#dimensional-modeling)
+- [Normalization](#normalization)
 
 ## Dimensional Modeling
 Optimize the database for faster retrieval of data
@@ -29,3 +30,18 @@ Optimize the database for faster retrieval of data
 
 ### Future Reading
 (https://www.guru99.com/dimensional-model-data-warehouse.html#2)
+
+## Normalization
+- Purpose: reduce data redundency
+
+### 1NF
+- Atomic values (No `X,Y` or `Z,W`)
+- Values of the same type
+- Unique column name
+- Order of saved data doesn't matter
+
+### 2NF
+- Should not have partial dependency: a column on the table depends on partial of the primary key
+
+### 3NF
+- Should not have transitive dependency: a column on the table depends on a column that's not the primary key
