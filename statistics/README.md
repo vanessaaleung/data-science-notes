@@ -207,7 +207,12 @@ Quantifies whether a result is likely **due to chance** or to some factor of int
 - low p-value
 
 ### P-value
-_Probability of an observed (or more extreme) result assuming that the null hypothesis is true_
+_Probability of an observed (or more extreme) result assuming that the **null hypothesis is true**_
+- Example: 
+    - H0: the coin is fair
+    - An observed (or more extreme) result: getting values >= 56 or <= 44 in the below graph
+    - <img src="images/p-value.png" height="200px">
+    - p=0.193 means: If the coin is fair, the probability of getting 56 heads (or more extreme) is 19.3%
 - The closer to 0, the more confidence we have that A and B are different
 - Commonly used threshold: 0.05
 - e.g. a vaccine study produced a P value of 0.04: Assuming that the vaccine had no effect, you’d obtain the observed difference or more in 4% of studies due to random sampling error
