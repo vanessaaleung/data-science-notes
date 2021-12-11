@@ -30,6 +30,8 @@
 - [Linked Lists](#linked-lists)
 - [Stacks and Queues](#stacks-and-queues)
 - [Hash Tables](#hash-tables)
+- [Heap](#heap)
+- [Priority Queue](#priority-queue)
 
 ### Arrays
 _Collection of elements identified by index or key_
@@ -201,6 +203,13 @@ print(queue)  # deque([2, 3, 4])
 - Benefits: very fast, key-to-value mappings are unique
 - Drawback: when entries are small, array might be more efficient as there won't be collision to solve. Doesn't order entries in a predictable way
 
+### Heap
+Heaps are binary trees for which every parent node has a value less than or equal to any of its children. 
+
+### Priority Queue
+Also called heap queue
+1. An element with high priority is dequeued before an element with low priority.
+2. If two elements have the same priority, they are served according to their order in the queue.
 
 ## Recursion
 
