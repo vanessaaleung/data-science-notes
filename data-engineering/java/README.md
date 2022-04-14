@@ -15,3 +15,5 @@ NewExample obj=new NewExample();
 - It is used to create the object.
 - It allocates the memory at runtime.
 - It invokes the object constructor.
+
+![image](https://user-images.githubusercontent.com/24954551/163467845-0ab2853a-96b6-45b5-9833-c9cd4b76c630.png)
