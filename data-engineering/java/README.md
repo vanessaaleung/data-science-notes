@@ -19,7 +19,7 @@ NewExample obj=new NewExample();
 <img src="https://user-images.githubusercontent.com/24954551/163467845-0ab2853a-96b6-45b5-9833-c9cd4b76c630.png" height="300px" />
 
 
-### Input
+### Capture User Input
 - `.next()` is used to get the user input
 ```java 
 Scanner in = new Scanner(System.in);
