@@ -1,4 +1,8 @@
+- Main()
+- Java new Keyword
+- Capture User Input
 
+### - Main()
 ![image](https://user-images.githubusercontent.com/24954551/163208415-bc145071-8dcc-4aa5-924c-87d337237c97.png)
 
 - **main**: tell the compiler it's the starting point of the program
@@ -24,4 +28,10 @@ NewExample obj=new NewExample();
 ```java 
 Scanner in = new Scanner(System.in);
 String name = in.next();
+```
+
+### Cast Integer to String
+```java
+int myVariable = 5;
+String myString = Integer.toString(myVariable);
 ```
