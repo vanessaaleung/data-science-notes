@@ -1,6 +1,7 @@
 - Main()
 - Java new Keyword
 - Capture User Input
+- [Non-Static vs Static](#non-static-vs-static)
 
 ### - Main()
 ![image](https://user-images.githubusercontent.com/24954551/163208415-bc145071-8dcc-4aa5-924c-87d337237c97.png)
@@ -34,4 +35,27 @@ String name = in.next();
 ```java
 int myVariable = 5;
 String myString = Integer.toString(myVariable);
+```
+
+### Non-Static vs Static
+- Non-static member: a part of a class that's accessible with an instance and belongs to that instance. You'll need to create an instance to access an non-static members. In the below example, you'll need to create a Tree to access the `heightFt` and `trunkDiameterInches` attributes. Also called instance member.
+```java
+public class Tree {
+  double heightFt;
+  double trunkDiameterInches;
+}
+```
+- Static member: a part of a class that's accessible through the class and belongs to that class. Behavior that's not based on a particular instance, instead it belongs to all instances.
+```java
+public class Tree {
+  static Color TRUNK_COLOR = new Color(102, 51, 0);
+}
+...
+System.out.println(Tree.TRUNK_COLOR);
+```
+```java
+public class Tree{
+  static void announceTree() {
+    System.out.println("Look out for that " + TRUNK_COLOR + " tree!");
+}
 ```
