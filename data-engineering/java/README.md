@@ -2,6 +2,7 @@
 - Java new Keyword
 - Capture User Input
 - [Non-Static vs Static](#non-static-vs-static)
+- [Encapsulation](#encapsulation)
 
 ### - Main()
 ![image](https://user-images.githubusercontent.com/24954551/163208415-bc145071-8dcc-4aa5-924c-87d337237c97.png)
@@ -59,3 +60,17 @@ public class Tree{
     System.out.println("Look out for that " + TRUNK_COLOR + " tree!");
 }
 ```
+
+### Encapsulation
+- Combine data and code acting on that data
+- Bind state and behavior together into a single unit
+- We need a clear interface between a class and the rest of the program
+- Everything can't have direct access - Makek a class's attributes ihdden from other classes - More secure and less error-prone with less code change
+- Access modifiers
+  - determine where certain variables and methods can be accessed in the code
+  - private: only visible in the class
+  - public: visible everywhere
+  - no modifier: visible in the package
+  - protected: visible to the package and all subclasses
+- write public methods to access private attributes
+
