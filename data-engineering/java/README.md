@@ -3,6 +3,7 @@
 - Capture User Input
 - [Non-Static vs Static](#non-static-vs-static)
 - [Encapsulation](#encapsulation)
+- [Inheritance](#inheritance)
 
 ### - Main()
 ![image](https://user-images.githubusercontent.com/24954551/163208415-bc145071-8dcc-4aa5-924c-87d337237c97.png)
@@ -74,3 +75,21 @@ public class Tree{
   - protected: visible to the package and all subclasses
 - write public methods to access private attributes
 
+## Inheritance
+```java
+public class Employee {
+  private String name;
+  private Integer age;
+  protected double salary;
+}
+
+public class Salesperson extends Employee {
+  public Salesperson(String name, double salary, int age) {
+    super(name, salary, age); // refers to the superclass's constructor
+  }
+  
+  public double getAnnualBonus() {
+    return super.salary * .05;
+  }
+}
+```
