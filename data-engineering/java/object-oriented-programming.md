@@ -1,4 +1,4 @@
-# Java Object-oriented Programming
+# Java Object-Oriented Programming
 [Link to the class](https://www.linkedin.com/learning/java-object-oriented-programming-2/")
 
 - [Non-Static vs Static](#non-static-vs-static)
