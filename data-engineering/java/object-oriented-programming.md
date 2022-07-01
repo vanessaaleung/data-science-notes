@@ -7,7 +7,7 @@
 - [Polymorphism](#polymorphism)
 - [Abstraction](#abstraction)
 
-### Non-Static vs Static
+## Non-Static vs Static
 - Non-static member: a part of a class that's accessible with an instance and belongs to that instance. You'll need to create an instance to access an non-static members. In the below example, you'll need to create a Tree to access the `heightFt` and `trunkDiameterInches` attributes. Also called instance member.
 ```java
 public class Tree {
@@ -30,7 +30,7 @@ public class Tree{
 }
 ```
 
-### Encapsulation
+## Encapsulation
 - Combine data and code acting on that data
 - Bind state and behavior together into a single unit
 - We need a clear interface between a class and the rest of the program
@@ -62,7 +62,7 @@ public class Salesperson extends Employee {
 }
 ```
 
-### Polymorphism
+## Polymorphism
 - runtime and compile-time polymorphism
 - reduce complexity and write reusable code
 - able to overwrite methods
@@ -88,7 +88,7 @@ public class ConditionArrayList extends ArrayList<Integer> {
 ```
 - makes code more flexible by providing multiple ways to use similar functionality
 
-### Abstraction
+## Abstraction
 - generalize features of a system
 - An abstract class's like a template class where some functionalities haven't been implemented yet
 - Cannot instantiate an abstract class. Other classes can extend the abstract class and implement the functionality
