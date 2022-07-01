@@ -4,6 +4,7 @@
 - [Non-Static vs Static](#non-static-vs-static)
 - [Encapsulation](#encapsulation)
 - [Inheritance](#inheritance)
+- [Polymorphism](#polymorphism)
 
 ### - Main()
 ![image](https://user-images.githubusercontent.com/24954551/163208415-bc145071-8dcc-4aa5-924c-87d337237c97.png)
@@ -93,3 +94,8 @@ public class Salesperson extends Employee {
   }
 }
 ```
+
+### Polymorphism
+- runtime and compile-time polymorphism
+- reduce complexity and write reusable code
+- able to overwrite methods
