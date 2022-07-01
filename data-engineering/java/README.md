@@ -1,7 +1,7 @@
 - Main()
 - Java new Keyword
 - Capture User Input
-- [Object-oriented Programming](https://github.com/vanessaaleung/data-science-notes/blob/master/data-engineering/java/object-oriented-programming.md)
+- [Object-Oriented Programming](https://github.com/vanessaaleung/data-science-notes/blob/master/data-engineering/java/object-oriented-programming.md)
 
 ### - Main()
 ![image](https://user-images.githubusercontent.com/24954551/163208415-bc145071-8dcc-4aa5-924c-87d337237c97.png)
