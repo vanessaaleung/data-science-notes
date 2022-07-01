@@ -1,5 +1,5 @@
 # Java Object-oriented Programming
-[Link to the class](#https://www.linkedin.com/learning/java-object-oriented-programming-2/")
+[Link to the class](https://www.linkedin.com/learning/java-object-oriented-programming-2/")
 
 - [Non-Static vs Static](#non-static-vs-static)
 - [Encapsulation](#encapsulation)
