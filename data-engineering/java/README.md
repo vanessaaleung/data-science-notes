@@ -99,3 +99,25 @@ public class Salesperson extends Employee {
 - runtime and compile-time polymorphism
 - reduce complexity and write reusable code
 - able to overwrite methods
+```java
+public class ConditionArrayList extends ArrayList<Integer> {
+  ...
+  @Override
+  public void add(int index, Integer element) {
+    ...
+  }
+}
+```
+- Compile time Polymorphism - can have more than one methods with the same name. Enable multiple ways to create objects with different sets of input.
+```java
+public class ConditionArrayList extends ArrayList<Integer> {
+  public ConditionArrayList(Predicate<Integer> predicate, Integer... nums) {
+    ...
+  }
+  public ConditionArrayList(Predicate<Integer> predicate, ArrayList<Integer> arrayList) {
+    ...
+  }
+}
+```
+- makes code more flexible by providing multiple ways to use similar functionality
+
