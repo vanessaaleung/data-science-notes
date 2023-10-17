@@ -1,4 +1,34 @@
-# Testing
+# Scala
+- [Traits](#traits)
+- [Testing](#testing)
+
+## Traits
+_Traits are used to share interfaces and fields between classes_
+- Classes and objects can extend traits, but traits cannot be instantiated and therefore have no parameters.
+```scala
+trait Iterator[A]:
+  def hasNext: Boolean
+  def next(): A
+
+class IntIterator(to: Int) extends Iterator[Int]:
+  private var current = 0
+  override def hasNext: Boolean = current < to
+  override def next(): Int =
+    if hasNext then
+      val t = current
+      current += 1
+      t
+    else
+      0
+end IntIterator
+
+val iterator = new IntIterator(10)
+iterator.next()  // returns 0
+iterator.next()  // returns 1
+```
+
+
+## Testing
 ```sbt
  libraryDependencies += "org.scalatest" %% "scalatest" % "3.0.8" % Test
 ```
@@ -15,8 +45,8 @@ class CubeCalculatorTest extends FunSuite {
 
 - `"CubeCalculator.cube"`: name for the test. Convention is “ClassName.methodName”
 
-# Definitions and Evaluation
-## VAL VS DEF
+## Definitions and Evaluation
+### VAL VS DEF
 - `def` is evaluaated on each use
 - `val` is evaluated at the point of the definition
 ```scala
@@ -25,19 +55,19 @@ val y = square(x)
 ```
 - `y` refers to `4` not `square(2)`
 
-## Call-by-value AND Call-by-name
+### Call-by-value AND Call-by-name
 - Call-by-value: evaluates every function argument only once. Normally used by Scala
 - Call-by-name: a function argument is not evaluated if the corresponding parameter is unused in the evaluation of the function body
 
-# CONDITIONAL EXPRESSIONS
+## CONDITIONAL EXPRESSIONS
 ```scala
 def factorial(n: Int): Int =
   if (n == 1) 1
   else factorial(n - 1) * n
 ```
 
-# Lexical Scopes
-## BLOCKS AND VISIBILITY
+## Lexical Scopes
+### BLOCKS AND VISIBILITY
 - The definitions inside a block are only visible from within the block
 ```scala
 val x = 0
@@ -49,7 +79,7 @@ val result = {
 ```
 - result should be 16
 
-## SEMICOLONS
+### SEMICOLONS
 - Semicolons are optional
 - Can have more than one statements on a line
 ```scala
@@ -66,7 +96,7 @@ someLongExpression +
   someOtherExpression
 ```
 
-## TOP-LEVEL DEFINITIONS
+### TOP-LEVEL DEFINITIONS
 - `def` and `val` definitions must be writen within a top-level object definition
 ```scala
 object MyExecutableProgram {
@@ -75,7 +105,7 @@ object MyExecutableProgram {
 }
 ```
 
-## PACKAGES AND IMPORTS
+### PACKAGES AND IMPORTS
 - Definitions located in a package are visible from other definitions located in the same package
 ```scala
 // file foo/Bar.scala
@@ -109,7 +139,7 @@ object Quux {
 }
 ```
 
-# TAIL RECURSION
+## TAIL RECURSION
 - If a recursive function that calls itself as its last action, then it can reuse the stack frame of that function.
 - If the last action of a function consists of calling another function, maybe the same, maybe some other function, the stack frame could be reused for both functions. Such calls are called tail calls.
 ```scala
@@ -127,8 +157,8 @@ def factorial(n: Int): Int = {
 }
 ```
 
-# Structuring Information
-## DEFINING ALTERNATIVES WITH SEALED TRAITS
+## Structuring Information
+### DEFINING ALTERNATIVES WITH SEALED TRAITS
 -  something that can be embodied by a fixed set of alternatives
 ```scala
 sealed trait Symbol
@@ -140,7 +170,7 @@ val symbol1: Symbol = Note("C", "Quarter", 3)
 val symbol2: Symbol = Rest("Whole")
 ```
 
-## PATTERN MATCHING
+### PATTERN MATCHING
 ```scala
 def symbolDuration(symbol: Symbol): String =
   symbol match {
@@ -149,7 +179,7 @@ def symbolDuration(symbol: Symbol): String =
   }
 ```
 
-## Exhausitivity
+### Exhausitivity
 Having defined Symbol as a sealed trait gives us the guarantee that the possible case of symbols is fixed. The compiler can leverage this knowledge to warn us if we write code that does not handle all the cases:
 ```scala
 def unexhaustive(): Unit = {
@@ -170,7 +200,7 @@ def unexhaustive(): Unit = {
 [warn]       ^
 ```
 
-## ALGEBRAIC DATA TYPES
+### ALGEBRAIC DATA TYPES
 An algebraic data type definition can be thought of as a set of possible values.
 
 ```scala
@@ -194,16 +224,16 @@ fractionOfWhole(Half) shouldBe 0.5
 fractionOfWhole(Quarter) shouldBe 0.25
 ```
 
-#  Higher-Order Functions
+##  Higher-Order Functions
 - Functions that take other functions as parameters or that return functions as results
 
-## Anonymous Functions
+### Anonymous Functions
 ```scala
 println("abc")
 ```
 
-# Functional Programming
-## Programming Paradigms
+## Functional Programming
+### Programming Paradigms
 - imperative programming
   - modifying mutable variables
   - using assignments
@@ -216,19 +246,19 @@ println("abc")
 Orthogonal:
 - object-oriented programming
 
-## Read-Eval-Print Loop
+### Read-Eval-Print Loop
 - an interactive shell lets one write expressions and responds with results
 ```sbt
 scala> 34+65
 res0: Int = 99
 ```
 
-### Evaluation
+#### Evaluation
 1. Take the leftmost operator
 2. Evaluate its operands (left before right)
 3. Apply the operator to the operands
 
-### Parameters and Return Types
+#### Parameters and Return Types
 ```scala
 def power(x: Double, y: Int): Double = ...
 ```
